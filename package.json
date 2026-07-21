@@ -1,0 +1,23 @@
+{
+  "name": "aous-abdo-astrophotography",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && rm -rf dist && vite build --base=/ --outDir dist/client && mkdir -p dist/server && cp worker/index.js dist/server/index.js",
+    "build:pages": "tsc -b && rm -rf dist && vite build --outDir dist/client",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
+  },
+  "devDependencies": {}
+}

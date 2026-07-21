@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#101713"/>
+  <path d="M8 20V8h12M44 56h12V44" fill="none" stroke="#e4ad63" stroke-width="4"/>
+  <text x="32" y="38" fill="#fbf8ef" font-family="monospace" font-size="18" font-weight="700" text-anchor="middle">QA</text>
+</svg>
