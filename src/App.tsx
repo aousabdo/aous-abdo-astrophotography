@@ -246,10 +246,11 @@ function App() {
         <section className="manifesto" id="about">
           <p className="section-number">01 / ABOUT</p>
           <div>
-            <h2>These are not illustrations.</h2>
-            <p>They are old photons, collected from my backyard and under darker skies, then carefully stacked until the invisible starts to show.</p>
+            <h2>It began with one borrowed eye.</h2>
+            <p>As a kid in Amman, Jordan, I borrowed my cousin’s Russian monocular to see what was out there. Then my uncle, Mazen Qaisi, returned from England with a PhD in engineering—and a new Newtonian telescope. It was the early 1990s. I was hooked.</p>
+            <p>Serious work in astronomy and astrophysics followed at Los Alamos and Michigan State in 2003, then NASA in 2007. I left academia in 2013, but never the universe. Nebulae still pull me back to the dark.</p>
           </div>
-          <aside><span>Since</span><strong>2011</strong><small>still looking up</small></aside>
+          <aside><span>Since the early</span><strong>1990s</strong><small>Amman, Jordan · still looking up</small></aside>
         </section>
 
         <section className="collection" id="collection">
