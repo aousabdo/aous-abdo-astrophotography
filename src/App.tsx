@@ -27,6 +27,10 @@ const photographs: Photograph[] = [
   { slug: 'starfield', title: 'Uncounted', note: 'A small window. An unreasonable number of suns.', src: asset('astro/starfield.jpg'), shape: 'standard', group: 'Star fields' },
   { slug: 'lagoon-wide', title: 'Lagoon, Wide', note: 'The full neighborhood around the Lagoon Nebula.', src: asset('astro/lagoon-wide.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'dark-dust', title: 'The Seahorse Nebula', note: 'A dark nebula drifting in silhouette across a crowded field of stars.', src: asset('astro/dark-dust.jpg'), shape: 'wide', group: 'Nebulae' },
+  { slug: 'lagoon-origin', title: 'The Lagoon Nebula — Origin', note: 'A wide field of the Lagoon Nebula, captured with my Celestron Origin.', src: asset('astro/lagoon-origin.jpg'), shape: 'wide', group: 'Nebulae' },
+  { slug: 'trifid-nebula', title: 'The Trifid Nebula', note: 'Emission, reflection, and dark dust sharing one remarkable frame.', src: asset('astro/trifid-nebula.jpg'), shape: 'standard', group: 'Nebulae' },
+  { slug: 'pillars-of-creation', title: 'The Pillars of Creation', note: 'The great stellar nursery rising through the Eagle Nebula, captured with my C11 EdgeHD.', src: asset('astro/pillars-of-creation.jpg'), shape: 'standard', group: 'Nebulae' },
+  { slug: 'rosette-nebula', title: 'The Rosette Nebula', note: 'A vast stellar nursery opening like a flower, captured with my Celestron Origin.', src: asset('astro/rosette-nebula.jpg'), shape: 'wide', group: 'Nebulae' },
 ]
 
 const archiveUrl = 'https://photos.app.goo.gl/6wq4MaV3zakDoaQB6'
