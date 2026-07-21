@@ -248,7 +248,7 @@ function App() {
           <div>
             <h2>It began with one borrowed eye.</h2>
             <p>As a kid in Amman, Jordan, I borrowed my cousin’s Russian monocular to see what was out there. Then my uncle, Mazen Qaisi, returned from England with a PhD in engineering—and a new Newtonian telescope. It was the early 1990s. I was hooked.</p>
-            <p>Serious work in astronomy and astrophysics followed at Los Alamos and Michigan State in 2003, then NASA in 2007. I left academia in 2013, but never the universe. Nebulae still pull me back to the dark.</p>
+            <p>Serious work in astronomy and astrophysics followed at Los Alamos National Laboratory and Michigan State University in 2003, then NASA in 2007. I left academia in 2013, but never the universe. Nebulae still pull me back to the dark.</p>
           </div>
           <aside><span>Since the early</span><strong>1990s</strong><small>Amman, Jordan · still looking up</small></aside>
         </section>
