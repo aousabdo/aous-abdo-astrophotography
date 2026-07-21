@@ -1,11 +1,11 @@
-# Aous Abdo — Astrophotography
+# One More Photon
 
 A cinematic portfolio of deep-sky astrophotography, related astronomy projects, and wider scientific visualization work.
 
 ## Live site
 
-- [GitHub Pages](https://aousabdo.github.io/aous-abdo-astrophotography/)
-- [Primary public site](https://aous-abdo-astrophotography.aousabdo.chatgpt.site/)
+- [Primary site](https://onemorephoton.com/)
+- [GitHub Pages fallback](https://aousabdo.github.io/aous-abdo-astrophotography/)
 
 ## Local development
 

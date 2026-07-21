@@ -138,7 +138,7 @@ function App() {
   const share = async (photo?: Photograph | null) => {
     const chosen = photo || null
     const shareData = {
-      title: chosen ? `${chosen.title} — Aous Abdo Astrophotography` : 'Aous Abdo Astrophotography',
+      title: chosen ? `${chosen.title} — One More Photon` : 'One More Photon',
       text: chosen ? chosen.note : 'A collection of deep-sky astrophotography.',
       url: urlFor(chosen),
     }
@@ -157,10 +157,10 @@ function App() {
   return (
     <div className="site-shell">
       <header className="topbar">
-        <a className="wordmark" href="#top" aria-label="Aous Abdo astrophotography home">
+        <a className="wordmark" href="#top" aria-label="One More Photon astrophotography home">
           <span className="orbit-dot" />
-          <span>Aous Abdo</span>
-          <small>Astrophotography</small>
+          <span>One More Photon</span>
+          <small>Astrophotography by Aous Abdo</small>
         </a>
         <nav aria-label="Primary navigation">
           <a href="#collection">Collection</a>
