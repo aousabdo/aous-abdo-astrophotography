@@ -82,6 +82,54 @@ const widerProjects = [
   { title: 'Islamic Viz Hub', note: 'Bilingual visualizations of Islamic science, time, qibla, and sky geometry.', url: 'https://islamicviz.analyticadss.com/en/' },
 ]
 
+const signalProjects = [
+  {
+    title: 'Skywatch',
+    label: 'Counter-UAS incident atlas',
+    note: 'A decade of FAA drone sightings mapped against the infrastructure that matters, with forecasting and reproducible public-data analysis.',
+    url: 'https://skywatch.analyticadss.com/',
+    signal: 'Air / observation',
+    tone: 'skywatch',
+    featured: true,
+  },
+  {
+    title: 'Constellation',
+    label: 'Federal market intelligence',
+    note: 'Agencies, primes, and subcontractors mapped as a living network across Counter-UAS, cybersecurity, and AI/ML markets.',
+    url: 'https://constellation.analyticadss.com/',
+    signal: 'Networks / markets',
+    tone: 'constellation',
+    featured: true,
+  },
+  {
+    title: 'Drift',
+    label: 'Defense cost growth explorer',
+    note: 'A transparent view of how major acquisition programs move from their original promise to their current cost and shape.',
+    url: 'https://drift.analyticadss.com/',
+    signal: 'Time / trajectory',
+    tone: 'drift',
+    featured: true,
+  },
+  {
+    title: 'Watchstander',
+    label: 'Maritime domain awareness',
+    note: 'Unusual vessel behavior surfaced from public AIS, satellite radar, sanctions, and critical-infrastructure data.',
+    url: 'https://watchstander.analyticadss.com/',
+    signal: 'Sea / anomaly',
+    tone: 'watchstander',
+    featured: false,
+  },
+  {
+    title: 'Crucible',
+    label: 'Federal SBIR pipeline intelligence',
+    note: 'Follow an idea from solicitation topic to awardee, Phase II, and the federal contracts that may come afterward.',
+    url: 'https://crucible.analyticadss.com/',
+    signal: 'Ideas / outcomes',
+    tone: 'crucible',
+    featured: false,
+  },
+]
+
 function App() {
   const [filter, setFilter] = useState<'All' | Photograph['group']>('All')
   const [active, setActive] = useState<Photograph | null>(null)
@@ -258,6 +306,38 @@ function App() {
             {widerProjects.map((project) => (
               <a href={project.url} target="_blank" rel="noreferrer" key={project.title}>
                 <div><h3>{project.title}</h3><p>{project.note}</p></div><span>↗</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="frequencies" id="frequencies">
+          <header className="frequencies-head">
+            <p className="section-number">04 / OTHER FREQUENCIES</p>
+            <div>
+              <p className="frequency-kicker"><span className="orbit-dot" /> Signal work</p>
+              <h2>Seeing what is<br /><em>difficult to see.</em></h2>
+              <p>The camera is not the only way I search for faint signals. These projects find structure in noisy public data—from the sky and sea to science, technology, and federal systems.</p>
+            </div>
+          </header>
+
+          <div className="frequency-featured">
+            {signalProjects.filter((project) => project.featured).map((project, index) => (
+              <a className={`frequency-card frequency-${project.tone}`} href={project.url} target="_blank" rel="noreferrer" key={project.title}>
+                <div className="frequency-top"><span>{String(index + 1).padStart(2, '0')}</span><small>{project.signal}</small></div>
+                <div className="frequency-visual" aria-hidden="true"><i /><i /><i /></div>
+                <div className="frequency-copy"><small>{project.label}</small><h3>{project.title}</h3><p>{project.note}</p></div>
+                <b>Follow the signal ↗</b>
+              </a>
+            ))}
+          </div>
+
+          <div className="frequency-secondary">
+            {signalProjects.filter((project) => !project.featured).map((project, index) => (
+              <a className={`frequency-card frequency-compact frequency-${project.tone}`} href={project.url} target="_blank" rel="noreferrer" key={project.title}>
+                <div className="frequency-top"><span>{String(index + 4).padStart(2, '0')}</span><small>{project.signal}</small></div>
+                <div className="frequency-copy"><small>{project.label}</small><h3>{project.title}</h3><p>{project.note}</p></div>
+                <b>Open project ↗</b>
               </a>
             ))}
           </div>
