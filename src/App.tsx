@@ -128,6 +128,15 @@ const signalProjects = [
     featured: false,
   },
   {
+    title: 'Chokepoint',
+    label: 'Strait of Hormuz consequence engine',
+    note: 'Model how disruption strands oil, tests overland bypass capacity, exposes producers, and transmits into an illustrative price shock—all from public data.',
+    url: 'https://chokepoint.analyticadss.com/',
+    signal: 'Energy / exposure',
+    tone: 'chokepoint',
+    featured: false,
+  },
+  {
     title: 'Crucible',
     label: 'Federal SBIR pipeline intelligence',
     note: 'Follow an idea from solicitation topic to awardee, Phase II, and the federal contracts that may come afterward.',

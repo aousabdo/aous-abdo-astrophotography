@@ -138,7 +138,7 @@ a { text-decoration: none; }
 .frequencies-head h2 em { color: var(--blue); font-weight: 300; }
 .frequencies-head > div > p:last-child { margin: 0 0 7px; color: rgba(255,255,255,.52); font: 300 clamp(16px, 1.35vw, 20px)/1.6 var(--sans); }
 .frequency-featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 1px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.14); }
-.frequency-secondary { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 24px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.14); }
+.frequency-secondary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 24px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.14); }
 .frequency-card { min-height: 560px; padding: 30px; display: flex; flex-direction: column; position: relative; isolation: isolate; overflow: hidden; background: #0d1117; transition: transform .35s, filter .35s; }
 .frequency-card::before { content: ''; position: absolute; z-index: -2; inset: 0; opacity: .92; transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .35s; }
 .frequency-card::after { content: ''; position: absolute; z-index: -1; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(to bottom, #000, transparent 78%); }
@@ -146,6 +146,7 @@ a { text-decoration: none; }
 .frequency-constellation::before { background: radial-gradient(circle at 73% 20%, rgba(175,153,255,.65) 0 2px, transparent 3px), radial-gradient(circle at 44% 37%, rgba(139,179,255,.6) 0 2px, transparent 3px), radial-gradient(circle at 82% 54%, rgba(211,185,255,.52) 0 2px, transparent 3px), radial-gradient(ellipse at 72% 28%, rgba(85,55,155,.32), transparent 45%), linear-gradient(145deg, #181329, #090a10 72%); }
 .frequency-drift::before { background: linear-gradient(158deg, transparent 0 42%, rgba(243,174,94,.48) 42.2% 42.7%, transparent 43% 51%, rgba(243,174,94,.17) 51.2% 51.7%, transparent 52%), radial-gradient(circle at 80% 18%, rgba(236,148,77,.28), transparent 37%), linear-gradient(145deg, #21170e, #0b0b0d 72%); }
 .frequency-watchstander::before { background: radial-gradient(ellipse at 76% 20%, rgba(63,181,166,.31), transparent 42%), linear-gradient(145deg, #0d201f, #090c10 72%); }
+.frequency-chokepoint::before { background: linear-gradient(156deg, transparent 0 44%, rgba(235,170,65,.38) 44.2% 44.7%, transparent 45% 53%, rgba(60,188,205,.2) 53.2% 53.7%, transparent 54%), radial-gradient(ellipse at 78% 18%, rgba(224,128,49,.28), transparent 43%), linear-gradient(145deg, #171c1e, #080c11 72%); }
 .frequency-crucible::before { background: radial-gradient(circle at 78% 18%, rgba(232,102,69,.31), transparent 41%), linear-gradient(145deg, #26130f, #0c0a0b 72%); }
 .frequency-card:hover { transform: translateY(-5px); filter: brightness(1.14); }
 .frequency-card:hover::before { transform: scale(1.04); opacity: 1; }
@@ -201,6 +202,7 @@ footer button, footer a { padding: 0; background: none; color: #858689; cursor: 
   .wider-orbit > a { border-top: 1px solid #c9c8c1; }
   .frequencies-head, .frequencies-head > div { grid-template-columns: 1fr; }
   .frequency-featured { grid-template-columns: 1fr 1fr; }
+  .frequency-secondary { grid-template-columns: 1fr 1fr; }
   .frequency-card { min-height: 500px; }
   .lightbox { padding: 35px 22px 28px; }
   footer { grid-template-columns: 1fr 1fr; }
