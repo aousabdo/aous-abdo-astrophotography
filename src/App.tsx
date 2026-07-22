@@ -16,7 +16,9 @@ const photographs: Photograph[] = [
   { slug: 'lagoon', title: 'Lagoon Light', note: 'A red sky quietly building new stars.', src: asset('astro/lagoon.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'cyan-rift', title: 'The Cyan Rift', note: 'A bright edge through the summer Milky Way.', src: asset('astro/cyan-rift.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'spiral', title: "Bode's Galaxy", note: 'A grand spiral turning quietly in the dark.', src: asset('astro/spiral.jpg'), shape: 'tall', group: 'Galaxies' },
+  { slug: 'sombrero-galaxy-origin', title: 'The Sombrero Galaxy — Origin', note: 'M104 suspended in black, its bright core divided by a razor-thin dust lane—captured with my Celestron Origin.', src: asset('astro/sombrero-galaxy-origin.jpg'), shape: 'wide', group: 'Galaxies' },
   { slug: 'crescent', title: 'Crescent', note: 'Faint oxygen wrapped around a stellar storm.', src: asset('astro/crescent.jpg'), shape: 'standard', group: 'Nebulae' },
+  { slug: 'crescent-origin', title: 'The Crescent Nebula — Origin', note: 'A wide-field view of NGC 6888, captured with my Celestron Origin.', src: asset('astro/crescent-origin.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'stellar-dust', title: 'Rho Ophiuchi', note: 'Blue reflection, golden dust, and young stars tangled together.', src: asset('astro/stellar-dust.jpg'), shape: 'wide', group: 'Nebulae' },
   { slug: 'veil', title: 'The Veil', note: 'The beautiful remains of an exploded star.', src: asset('astro/veil.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'cosmic-garden', title: 'The Crescent Nebula', note: 'A stellar wind carving light into a cosmic shell.', src: asset('astro/cosmic-garden.jpg'), shape: 'standard', group: 'Nebulae' },
@@ -25,11 +27,13 @@ const photographs: Photograph[] = [
   { slug: 'blue-hour', title: 'The Iris Nebula', note: 'Blue starlight reflected through a field of cold dust.', src: asset('astro/blue-hour.jpg'), shape: 'wide', group: 'Nebulae' },
   { slug: 'red-emission', title: 'The Lagoon Nebula Region', note: 'Hydrogen, dust, and newborn stars across the wider Lagoon.', src: asset('astro/red-emission.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'starfield', title: 'Uncounted', note: 'A small window. An unreasonable number of suns.', src: asset('astro/starfield.jpg'), shape: 'standard', group: 'Star fields' },
+  { slug: 'sagittarius-star-cloud-origin', title: 'The Sagittarius Star Cloud — Origin', note: 'A river of stars and dark dust across Sagittarius, captured with my Celestron Origin.', src: asset('astro/sagittarius-star-cloud-origin.jpg'), shape: 'wide', group: 'Star fields' },
   { slug: 'lagoon-wide', title: 'Lagoon, Wide', note: 'The full neighborhood around the Lagoon Nebula.', src: asset('astro/lagoon-wide.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'dark-dust', title: 'The Seahorse Nebula', note: 'A dark nebula drifting in silhouette across a crowded field of stars.', src: asset('astro/dark-dust.jpg'), shape: 'wide', group: 'Nebulae' },
   { slug: 'lagoon-origin', title: 'The Lagoon Nebula — Origin', note: 'A wide field of the Lagoon Nebula, captured with my Celestron Origin.', src: asset('astro/lagoon-origin.jpg'), shape: 'wide', group: 'Nebulae' },
   { slug: 'trifid-nebula', title: 'The Trifid Nebula', note: 'Emission, reflection, and dark dust sharing one remarkable frame.', src: asset('astro/trifid-nebula.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'pillars-of-creation', title: 'The Pillars of Creation', note: 'The great stellar nursery rising through the Eagle Nebula, captured with my C11 EdgeHD.', src: asset('astro/pillars-of-creation.jpg'), shape: 'standard', group: 'Nebulae' },
+  { slug: 'pillars-of-creation-askar-103apo', title: 'The Pillars of Creation — Askar 103APO', note: 'A wider view of the Eagle Nebula and its famous pillars, captured with my Askar 103APO.', src: asset('astro/pillars-of-creation-askar-103apo.jpg'), shape: 'wide', group: 'Nebulae' },
   { slug: 'rosette-nebula', title: 'The Rosette Nebula', note: 'A vast stellar nursery opening like a flower, captured with my Celestron Origin.', src: asset('astro/rosette-nebula.jpg'), shape: 'wide', group: 'Nebulae' },
 ]
 
