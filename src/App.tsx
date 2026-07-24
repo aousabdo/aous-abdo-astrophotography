@@ -27,6 +27,8 @@ const photographs: Photograph[] = [
   { slug: 'blue-hour', title: 'The Iris Nebula', note: 'Blue starlight reflected through a field of cold dust.', src: asset('astro/blue-hour.jpg'), shape: 'wide', group: 'Nebulae' },
   { slug: 'red-emission', title: 'The Lagoon Nebula Region', note: 'Hydrogen, dust, and newborn stars across the wider Lagoon.', src: asset('astro/red-emission.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'starfield', title: 'Uncounted', note: 'A small window. An unreasonable number of suns.', src: asset('astro/starfield.jpg'), shape: 'standard', group: 'Star fields' },
+  { slug: 'loch-ness-nebula', title: 'The Loch Ness Nebula', note: 'The LDN 772 dark-nebula complex winding through a dense river of Milky Way stars in Vulpecula.', src: asset('astro/loch-ness-nebula.jpg'), shape: 'wide', group: 'Nebulae' },
+  { slug: 'v389-vulpeculae', title: 'V389 Vulpeculae Field', note: 'A crowded Milky Way field around V389 Vulpeculae, threaded with dark interstellar dust.', src: asset('astro/v389-vulpeculae.jpg'), shape: 'wide', group: 'Star fields' },
   { slug: 'sagittarius-star-cloud-origin', title: 'The Sagittarius Star Cloud — Origin', note: 'A river of stars and dark dust across Sagittarius, captured with my Celestron Origin.', src: asset('astro/sagittarius-star-cloud-origin.jpg'), shape: 'wide', group: 'Star fields' },
   { slug: 'lagoon-wide', title: 'Lagoon, Wide', note: 'The full neighborhood around the Lagoon Nebula.', src: asset('astro/lagoon-wide.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'dark-dust', title: 'The Seahorse Nebula', note: 'A dark nebula drifting in silhouette across a crowded field of stars.', src: asset('astro/dark-dust.jpg'), shape: 'wide', group: 'Nebulae' },
