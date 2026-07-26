@@ -12,6 +12,7 @@ type Photograph = {
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
 
 const photographs: Photograph[] = [
+  { slug: 'm51-whirlpool-galaxy', title: 'The Whirlpool Galaxy', note: 'M51 and its companion, caught in a luminous gravitational embrace.', src: asset('astro/m51-whirlpool-galaxy.jpg'), shape: 'wide', group: 'Galaxies' },
   { slug: 'dark-river', title: 'Dark River', note: 'Dust, light, and a ridiculous number of stars.', src: asset('astro/dark-river.jpg'), shape: 'wide', group: 'Star fields' },
   { slug: 'lagoon', title: 'Lagoon Light', note: 'A red sky quietly building new stars.', src: asset('astro/lagoon.jpg'), shape: 'standard', group: 'Nebulae' },
   { slug: 'cyan-rift', title: 'The Cyan Rift', note: 'A bright edge through the summer Milky Way.', src: asset('astro/cyan-rift.jpg'), shape: 'standard', group: 'Nebulae' },
@@ -239,7 +240,7 @@ function App() {
 
       <main id="top">
         <section className="hero">
-          <img src={asset('astro/dark-river.jpg')} alt="A richly detailed dark nebula crossing a gold and blue star field" />
+          <img src={asset('astro/m51-whirlpool-galaxy.jpg')} alt="The Whirlpool Galaxy M51 and its interacting companion surrounded by a field of stars" />
           <div className="hero-vignette" />
           <div className="hero-copy">
             <p className="kicker"><span /> Deep sky, from Earth</p>
@@ -252,8 +253,8 @@ function App() {
           </div>
           <div className="hero-caption">
             <span>Featured exposure</span>
-            <strong>Dark River</strong>
-            <small>Milky Way · Deep sky</small>
+            <strong>Whirlpool Galaxy</strong>
+            <small>M51 · Canes Venatici</small>
           </div>
           <div className="scroll-cue">Scroll to drift <span>↓</span></div>
         </section>
