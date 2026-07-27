@@ -5,14 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && rm -rf dist && vite build --base=/ --outDir dist/client && mkdir -p dist/server && cp worker/index.js dist/server/index.js",
-    "build:pages": "tsc -b && rm -rf dist && vite build --outDir dist/client",
+    "build": "tsc -b && rm -rf dist && vite build --base=/ --outDir dist/client && node scripts/generate-static-routes.mjs && mkdir -p dist/server && cp worker/index.js dist/server/index.js",
+    "build:pages": "tsc -b && rm -rf dist && vite build --outDir dist/client && node scripts/generate-static-routes.mjs",
     "store:check": "node --check store-worker/src/index.js && node --test store-worker/test/*.test.js && wrangler deploy --dry-run --config store-worker/wrangler.jsonc",
     "store:dev": "wrangler dev --config store-worker/wrangler.jsonc",
     "store:deploy": "wrangler deploy --config store-worker/wrangler.jsonc",
     "store:migrate:local": "wrangler d1 migrations apply one-more-photon-orders --local --config store-worker/wrangler.jsonc",
     "store:migrate:remote": "wrangler d1 migrations apply one-more-photon-orders --remote --config store-worker/wrangler.jsonc",
-    "preview": "vite preview",
+    "preview": "vite preview --outDir dist/client",
     "lint": "eslint ."
   },
   "dependencies": {

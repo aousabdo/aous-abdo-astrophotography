@@ -1,0 +1,243 @@
+[
+  {
+    "slug": "m51-whirlpool-galaxy",
+    "title": "The Whirlpool Galaxy",
+    "note": "M51 and its companion, caught in a luminous gravitational embrace.",
+    "src": "astro/m51-whirlpool-galaxy.jpg",
+    "shape": "wide",
+    "group": "Galaxies",
+    "featured": true,
+    "catalog": "M51"
+  },
+  {
+    "slug": "dark-river",
+    "title": "Dark River",
+    "note": "Dust, light, and a ridiculous number of stars.",
+    "src": "astro/dark-river.jpg",
+    "shape": "wide",
+    "group": "Star fields"
+  },
+  {
+    "slug": "lagoon",
+    "title": "Lagoon Light",
+    "note": "A red sky quietly building new stars.",
+    "src": "astro/lagoon.jpg",
+    "shape": "standard",
+    "group": "Nebulae"
+  },
+  {
+    "slug": "cyan-rift",
+    "title": "The Cyan Rift",
+    "note": "A bright edge through the summer Milky Way.",
+    "src": "astro/cyan-rift.jpg",
+    "shape": "standard",
+    "group": "Nebulae"
+  },
+  {
+    "slug": "spiral",
+    "title": "Bode's Galaxy",
+    "note": "A grand spiral turning quietly in the dark.",
+    "src": "astro/spiral.jpg",
+    "shape": "tall",
+    "group": "Galaxies",
+    "catalog": "M81"
+  },
+  {
+    "slug": "sombrero-galaxy-origin",
+    "title": "The Sombrero Galaxy — Origin",
+    "note": "M104 suspended in black, its bright core divided by a razor-thin dust lane—captured with my Celestron Origin.",
+    "src": "astro/sombrero-galaxy-origin.jpg",
+    "shape": "wide",
+    "group": "Galaxies",
+    "equipment": "Celestron Origin",
+    "catalog": "M104"
+  },
+  {
+    "slug": "crescent",
+    "title": "The Crescent Nebula — Green Bank",
+    "note": "Faint oxygen wrapped around a stellar storm, captured under the Green Bank sky.",
+    "src": "astro/crescent.jpg",
+    "shape": "standard",
+    "group": "Nebulae",
+    "featured": true,
+    "equipment": "Askar SQA 55",
+    "location": "Green Bank, West Virginia",
+    "catalog": "NGC 6888"
+  },
+  {
+    "slug": "crescent-origin",
+    "title": "The Crescent Nebula — Origin",
+    "note": "A wide-field view of NGC 6888, captured with my Celestron Origin.",
+    "src": "astro/crescent-origin.jpg",
+    "shape": "standard",
+    "group": "Nebulae",
+    "equipment": "Celestron Origin",
+    "catalog": "NGC 6888"
+  },
+  {
+    "slug": "stellar-dust",
+    "title": "Rho Ophiuchi",
+    "note": "Blue reflection, golden dust, and young stars tangled together.",
+    "src": "astro/stellar-dust.jpg",
+    "shape": "wide",
+    "group": "Nebulae",
+    "featured": true
+  },
+  {
+    "slug": "veil",
+    "title": "The Veil",
+    "note": "The beautiful remains of an exploded star.",
+    "src": "astro/veil.jpg",
+    "shape": "standard",
+    "group": "Nebulae"
+  },
+  {
+    "slug": "cosmic-garden",
+    "title": "The Crescent Nebula",
+    "note": "A stellar wind carving light into a cosmic shell.",
+    "src": "astro/cosmic-garden.jpg",
+    "shape": "standard",
+    "group": "Nebulae",
+    "catalog": "NGC 6888"
+  },
+  {
+    "slug": "silver-island",
+    "title": "The Cigar Galaxy",
+    "note": "A restless starburst galaxy glowing through its own dust.",
+    "src": "astro/silver-island.jpg",
+    "shape": "wide",
+    "group": "Galaxies",
+    "catalog": "M82"
+  },
+  {
+    "slug": "north-america",
+    "title": "Hydrogen Coast",
+    "note": "A familiar coastline, thousands of light-years away.",
+    "src": "astro/north-america.jpg",
+    "shape": "standard",
+    "group": "Nebulae"
+  },
+  {
+    "slug": "blue-hour",
+    "title": "The Iris Nebula",
+    "note": "Blue starlight reflected through a field of cold dust.",
+    "src": "astro/blue-hour.jpg",
+    "shape": "wide",
+    "group": "Nebulae",
+    "featured": true,
+    "catalog": "NGC 7023"
+  },
+  {
+    "slug": "red-emission",
+    "title": "The Lagoon Nebula Region",
+    "note": "Hydrogen, dust, and newborn stars across the wider Lagoon.",
+    "src": "astro/red-emission.jpg",
+    "shape": "standard",
+    "group": "Nebulae",
+    "catalog": "M8"
+  },
+  {
+    "slug": "starfield",
+    "title": "Uncounted",
+    "note": "A small window. An unreasonable number of suns.",
+    "src": "astro/starfield.jpg",
+    "shape": "standard",
+    "group": "Star fields"
+  },
+  {
+    "slug": "loch-ness-nebula",
+    "title": "The Loch Ness Nebula",
+    "note": "The LDN 772 dark-nebula complex winding through a dense river of Milky Way stars in Vulpecula.",
+    "src": "astro/loch-ness-nebula.jpg",
+    "shape": "wide",
+    "group": "Nebulae",
+    "catalog": "LDN 772"
+  },
+  {
+    "slug": "ic-4756",
+    "title": "IC 4756",
+    "note": "Twenty-three subframes, one immense sweep of starlight.",
+    "src": "astro/ic-4756.jpg",
+    "shape": "wide",
+    "group": "Star fields",
+    "catalog": "IC 4756"
+  },
+  {
+    "slug": "sagittarius-star-cloud-origin",
+    "title": "The Sagittarius Star Cloud — Origin",
+    "note": "A river of stars and dark dust across Sagittarius, captured with my Celestron Origin.",
+    "src": "astro/sagittarius-star-cloud-origin.jpg",
+    "shape": "wide",
+    "group": "Star fields",
+    "equipment": "Celestron Origin"
+  },
+  {
+    "slug": "lagoon-wide",
+    "title": "Lagoon, Wide",
+    "note": "The full neighborhood around the Lagoon Nebula.",
+    "src": "astro/lagoon-wide.jpg",
+    "shape": "standard",
+    "group": "Nebulae",
+    "catalog": "M8"
+  },
+  {
+    "slug": "dark-dust",
+    "title": "The Seahorse Nebula",
+    "note": "A dark nebula drifting in silhouette across a crowded field of stars.",
+    "src": "astro/dark-dust.jpg",
+    "shape": "wide",
+    "group": "Nebulae"
+  },
+  {
+    "slug": "lagoon-origin",
+    "title": "The Lagoon Nebula — Origin",
+    "note": "A wide field of the Lagoon Nebula, captured with my Celestron Origin.",
+    "src": "astro/lagoon-origin.jpg",
+    "shape": "wide",
+    "group": "Nebulae",
+    "featured": true,
+    "equipment": "Celestron Origin",
+    "catalog": "M8"
+  },
+  {
+    "slug": "trifid-nebula",
+    "title": "The Trifid Nebula",
+    "note": "Emission, reflection, and dark dust sharing one remarkable frame.",
+    "src": "astro/trifid-nebula.jpg",
+    "shape": "standard",
+    "group": "Nebulae",
+    "featured": true,
+    "catalog": "M20"
+  },
+  {
+    "slug": "pillars-of-creation",
+    "title": "The Pillars of Creation",
+    "note": "The great stellar nursery rising through the Eagle Nebula, captured with my C11 EdgeHD.",
+    "src": "astro/pillars-of-creation.jpg",
+    "shape": "standard",
+    "group": "Nebulae",
+    "featured": true,
+    "equipment": "C11 EdgeHD",
+    "catalog": "M16"
+  },
+  {
+    "slug": "pillars-of-creation-askar-103apo",
+    "title": "The Pillars of Creation — Askar 103APO",
+    "note": "A wider view of the Eagle Nebula and its famous pillars, captured with my Askar 103APO.",
+    "src": "astro/pillars-of-creation-askar-103apo.jpg",
+    "shape": "wide",
+    "group": "Nebulae",
+    "equipment": "Askar 103APO",
+    "catalog": "M16"
+  },
+  {
+    "slug": "rosette-nebula",
+    "title": "The Rosette Nebula",
+    "note": "A vast stellar nursery opening like a flower, captured with my Celestron Origin.",
+    "src": "astro/rosette-nebula.jpg",
+    "shape": "wide",
+    "group": "Nebulae",
+    "featured": true,
+    "equipment": "Celestron Origin"
+  }
+]
