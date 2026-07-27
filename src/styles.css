@@ -116,14 +116,18 @@ img { max-width: 100%; }
 .project-card:hover { transform: translateY(-4px); }
 .project-card:hover .project-bg { filter: brightness(.75) saturate(1.05); transform: scale(1.045); }
 .project-no { font: 400 8px/1 var(--mono); letter-spacing: .1em; opacity: .46; }
+.project-card > .project-mark { position: absolute; z-index: 1; top: 27px; right: 27px; width: 58px; height: 58px; border-radius: 15px; box-shadow: 0 13px 38px rgba(0,0,0,.28); }
 .project-card > div { margin: auto 0 43px; }
 .project-card small { font: 400 8px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .58; }
 .project-card h3 { margin: 16px 0 19px; font: 300 clamp(33px, 3vw, 53px)/.94 var(--serif); letter-spacing: -.043em; }
 .project-card p { margin: 0; color: rgba(255,255,255,.64); font-size: 12px; line-height: 1.7; }
 .project-card b { font: 400 8px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
 .project-card.compact { min-height: 500px; }
-.tone-sujud { background: radial-gradient(circle at 75% 20%, #b49245 0 2%, transparent 28%), #12182b; }
-.tone-sujud .project-bg { background-size: 210px; background-repeat: no-repeat; background-position: 76% 25%; filter: none; opacity: .88; }
+.tone-sujud { background: radial-gradient(circle at 78% 15%, rgba(201,162,75,.32), transparent 26%), #141830; }
+.tone-sujud::after { background: linear-gradient(180deg, rgba(14,18,38,.08), rgba(14,18,38,.98) 88%), linear-gradient(90deg, rgba(14,18,38,.72), transparent 75%); }
+.tone-sujud .project-bg { background-position: 58% center; filter: brightness(.62) saturate(.85); opacity: 1; }
+.tone-sujud:hover .project-bg { filter: brightness(.78) saturate(1); }
+.tone-sujud .project-mark { outline: 1px solid rgba(233,201,120,.34); }
 .tone-sciviz { background: radial-gradient(circle at 80% 20%, #166d82, transparent 32%), #10151b; }
 .tone-skywatch { background: radial-gradient(circle at 75% 20%, #365f7c, transparent 30%), repeating-linear-gradient(90deg, transparent 0 54px, rgba(255,255,255,.04) 55px), #101820; }
 .tone-chokepoint { background: radial-gradient(circle at 82% 12%, rgba(238,135,49,.32), transparent 25%), linear-gradient(145deg, #241610, #0d1015 68%); }

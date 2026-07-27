@@ -19,6 +19,7 @@ export type Project = {
   description: string
   url: string
   image?: string
+  mark?: string
   tone: string
   featured?: boolean
 }
@@ -90,11 +91,12 @@ export const projectFamilies: ProjectFamily[] = [
         tone: 'moon',
       },
       {
-        title: 'Sujūd — The Shadow as Witness',
-        label: 'Revelation, physics & astronomy',
-        description: 'A careful reading of Qur’an 22:18 alongside modern physics—where science serves as witness, not interpretation.',
+        title: 'Sujūd — How Creation Bows',
+        label: 'Revelation, physics & observation',
+        description: 'The sun, mountain, tree, and shadow: a bilingual reading of Qur’an 22:18 alongside modern physics—science as witness, not interpretation.',
         url: 'https://sujud.analyticadss.com/en/',
-        image: 'projects/sujud.png',
+        image: 'https://sujud.analyticadss.com/assets/sujud-share.jpg',
+        mark: 'https://sujud.analyticadss.com/icon.svg',
         tone: 'sujud',
         featured: true,
       },
@@ -203,4 +205,3 @@ export const homeProjects = [
   projectFamilies[2].projects[0],
   projectFamilies[3].projects[0],
 ]
-

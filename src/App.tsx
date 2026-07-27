@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from 'react'
 import { homeProjects, photographs, projectFamilies, type Photograph, type Project } from './content'
 
-const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+const asset = (path: string) => /^https?:\/\//.test(path) ? path : `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
 const archiveUrl = 'https://photos.app.goo.gl/6wq4MaV3zakDoaQB6'
 
 const navItems = [
@@ -362,6 +362,7 @@ function ProjectCard({ project, index, compact = false }: { project: Project, in
     <a className={`project-card tone-${project.tone} ${compact ? 'compact' : ''} ${project.featured ? 'featured' : ''}`} href={project.url} target="_blank" rel="noreferrer">
       {project.image && <span className="project-bg" style={{ backgroundImage: `url(${asset(project.image)})` }} aria-hidden="true" />}
       <span className="project-no">{String(index + 1).padStart(2, '0')}</span>
+      {project.mark && <img className="project-mark" src={asset(project.mark)} alt="" loading="lazy" aria-hidden="true" />}
       <div><small>{project.label}</small><h3>{project.title}</h3><p>{project.description}</p></div>
       <b>Open project ↗</b>
     </a>
