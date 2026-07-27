@@ -358,6 +358,26 @@ function AboutPage() {
 }
 
 function ProjectCard({ project, index, compact = false }: { project: Project, index: number, compact?: boolean }) {
+  if (project.tone === 'sujud') {
+    return (
+      <a className={`project-card sujud-feature ${compact ? 'compact' : ''}`} href={project.url} target="_blank" rel="noreferrer" aria-label="Open Sujūd — How Creation Bows">
+        <div className="sujud-copy-panel">
+          <header className="sujud-brand">
+            {project.mark && <img src={asset(project.mark)} alt="" loading="lazy" aria-hidden="true" />}
+            <span><strong>SUJŪD</strong><small>creation, in submission</small></span>
+          </header>
+          <p className="sujud-kicker">{project.label}</p>
+          <h3>How creation<br /><em>bows.</em></h3>
+          <p className="sujud-intro">{project.description}</p>
+          <b>Watch the shadow move <span>↗</span></b>
+        </div>
+        <div className="sujud-scene" style={{ backgroundImage: `url(${asset(project.image || '')})` }} aria-hidden="true">
+          <span>One rule, from the first light<br />to the farthest star.</span>
+        </div>
+      </a>
+    )
+  }
+
   return (
     <a className={`project-card tone-${project.tone} ${compact ? 'compact' : ''} ${project.featured ? 'featured' : ''}`} href={project.url} target="_blank" rel="noreferrer">
       {project.image && <span className="project-bg" style={{ backgroundImage: `url(${asset(project.image)})` }} aria-hidden="true" />}

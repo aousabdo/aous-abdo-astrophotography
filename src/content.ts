@@ -75,6 +75,16 @@ export const projectFamilies: ProjectFamily[] = [
     intro: 'Places where scripture, observation, language, and the physical universe meet carefully.',
     projects: [
       {
+        title: 'Sujūd — How Creation Bows',
+        label: 'A reading of al-Ḥajj 22:18',
+        description: 'The sun, the mountain, the tree, the shadow: none chooses, yet all submit. What can physics show us—and where must it remain silent?',
+        url: 'https://sujud.analyticadss.com/en/',
+        image: 'https://sujud.analyticadss.com/assets/sujud-share.jpg',
+        mark: 'https://sujud.analyticadss.com/icon.svg',
+        tone: 'sujud',
+        featured: true,
+      },
+      {
         title: 'Al-Tariq',
         label: 'Pulsars & the Quran',
         description: 'A rigorous bilingual look at pulsars, neutron stars, and the “knocking star” of Surah At-Tariq.',
@@ -89,16 +99,6 @@ export const projectFamilies: ProjectFamily[] = [
         url: 'https://aousabdo.github.io/moon-splitting/',
         image: 'projects/moon.png',
         tone: 'moon',
-      },
-      {
-        title: 'Sujūd — How Creation Bows',
-        label: 'Revelation, physics & observation',
-        description: 'The sun, mountain, tree, and shadow: a bilingual reading of Qur’an 22:18 alongside modern physics—science as witness, not interpretation.',
-        url: 'https://sujud.analyticadss.com/en/',
-        image: 'https://sujud.analyticadss.com/assets/sujud-share.jpg',
-        mark: 'https://sujud.analyticadss.com/icon.svg',
-        tone: 'sujud',
-        featured: true,
       },
       {
         title: 'Islamic Viz Hub',
@@ -201,7 +201,7 @@ export const projectFamilies: ProjectFamily[] = [
 
 export const homeProjects = [
   projectFamilies[0].projects[1],
-  projectFamilies[1].projects[2],
+  projectFamilies[1].projects[0],
   projectFamilies[2].projects[0],
   projectFamilies[3].projects[0],
 ]
