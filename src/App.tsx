@@ -83,6 +83,14 @@ const relatedProjects = [
     className: 'project-related',
     image: asset('projects/moon.png'),
   },
+  {
+    title: 'Sujūd — The Shadow as Witness',
+    label: 'Revelation, physics & astronomy',
+    description: 'A careful reading of Qur’an 22:18 alongside modern physics—where science serves as witness, not interpretation.',
+    url: 'https://sujud.analyticadss.com/en/',
+    className: 'project-sujud',
+    image: asset('projects/sujud.png'),
+  },
 ]
 
 const widerProjects = [
