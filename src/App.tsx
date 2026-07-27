@@ -41,7 +41,7 @@ function Header() {
   }, [menuOpen])
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${menuOpen ? 'menu-active' : ''}`}>
       <a className="wordmark" href="/" aria-label="One More Photon home">
         <span className="orbit-dot" />
         <span>One More Photon</span>
