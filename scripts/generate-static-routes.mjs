@@ -38,8 +38,9 @@ async function emit(route, metadata) {
 
 await emit('gallery', {
   title: 'Gallery — One More Photon',
-  description: 'The complete deep-sky astrophotography archive by Aous Abdo: nebulae, galaxies, and star fields.',
+  description: 'The complete deep-sky astrophotography archive by Aous Abdo, led by the New Light 2026 collection from the FLT 120 and Askar SQA55.',
   pathname: '/gallery/',
+  image: `${siteUrl}/astro/dark-shark-nebula-flt120.jpg`,
 })
 
 await emit('about', {

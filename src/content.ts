@@ -6,11 +6,16 @@ export type Photograph = {
   note: string
   src: string
   shape: 'wide' | 'tall' | 'standard'
-  group: 'Nebulae' | 'Galaxies' | 'Star fields'
+  group: 'Nebulae' | 'Dark nebulae' | 'Galaxies' | 'Star fields'
   featured?: boolean
+  spotlight?: boolean
   equipment?: string
   location?: string
   catalog?: string
+  collection?: string
+  captured?: string
+  integration?: string
+  frames?: number
 }
 
 export type Project = {

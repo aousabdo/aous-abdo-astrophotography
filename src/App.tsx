@@ -116,10 +116,11 @@ function SectionHeading({ number, eyebrow, title, description, action }: { numbe
 
 function PhotoCard({ photo, index, eager = false, className = '' }: { photo: Photograph, index: number, eager?: boolean, className?: string }) {
   return (
-    <article className={`photo-card ${photo.shape} ${className}`}>
+    <article className={`photo-card ${photo.shape} ${photo.collection ? 'new-photo' : ''} ${className}`}>
       <a className="photo-open" href={photoHref(photo)} aria-label={`View ${photo.title}`}>
         <ResponsivePhoto photo={photo} eager={eager} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 66vw" />
         <span className="photo-index">{String(index + 1).padStart(2, '0')}</span>
+        {photo.collection && <span className="new-light-badge">New light · 2026</span>}
         <span className="view-label">Enter the frame ↗</span>
       </a>
       <div className="photo-meta">
@@ -137,6 +138,8 @@ function PhotoCard({ photo, index, eager = false, className = '' }: { photo: Pho
 function HomePage() {
   const hero = photographs[0]
   const featured = photographs.filter((photo) => photo.featured && photo.slug !== hero.slug)
+  const newLight = photographs.filter((photo) => photo.collection === 'New Light · 2026')
+  const seasonHighlights = newLight.filter((photo) => photo.spotlight)
 
   return (
     <Layout pageClass="home-page">
@@ -160,12 +163,34 @@ function HomePage() {
         <div className="scroll-cue">Scroll into the light <span>↓</span></div>
       </section>
 
+      <section className="new-light-section">
+        <header className="new-light-intro">
+          <div>
+            <p className="section-number">01 / NEW LIGHT · 2026</p>
+            <p className="release-date">August — September 2026</p>
+          </div>
+          <div>
+            <h2>New glass.<br /><em>A deeper dark.</em></h2>
+            <p>The first major release from the William Optics FLT 120 and a new run beneath the immense field of the Askar SQA55—thirteen photographs of dust, hydrogen, and neighboring galaxies.</p>
+            <a href="/gallery/?series=new-light-2026">Enter the new collection <span>↗</span></a>
+          </div>
+          <aside aria-label="Collection details">
+            <span><strong>{newLight.length}</strong> new frames</span>
+            <span><strong>02</strong> telescopes</span>
+            <span><strong>∞</strong> old light</span>
+          </aside>
+        </header>
+        <div className="new-light-grid">
+          {seasonHighlights.map((photo, index) => <PhotoCard photo={photo} index={index} eager={index < 2} className={`new-light-${index + 1}`} key={photo.slug} />)}
+        </div>
+      </section>
+
       <section className="featured-section">
         <SectionHeading
-          number="01"
+          number="02"
           eyebrow="CROWN JEWELS"
           title={<>A few photons<br />worth waiting for.</>}
-          description="Seven frames from a much larger night sky—selected for the light, dust, distance, and stories they carry."
+          description="A hand-picked constellation from the wider archive—selected for the light, dust, distance, and stories these frames carry."
           action={<a href="/gallery/">View all {photographs.length} photographs ↗</a>}
         />
         <div className="featured-flow">
@@ -174,7 +199,7 @@ function HomePage() {
       </section>
 
       <section className="story-bridge">
-        <p className="section-number">02 / THE BEGINNING</p>
+        <p className="section-number">03 / THE BEGINNING</p>
         <div>
           <h2>It began with<br />one borrowed eye.</h2>
           <p>As a kid in Amman, Jordan, I borrowed my cousin’s Russian monocular to see what was out there. Then my uncle, Mazen Qaisi, returned from England with a Newtonian telescope. It was the early 1990s. I was hooked.</p>
@@ -185,7 +210,7 @@ function HomePage() {
 
       <section className="home-work">
         <SectionHeading
-          number="03"
+          number="04"
           eyebrow="BEYOND THE CAMERA"
           title={<>Photography is<br />only one orbit.</>}
           description="Astronomy, revelation, scientific visualization, and signal work—all different ways of looking for structure in the faint."
@@ -206,9 +231,10 @@ function HomePage() {
 }
 
 const series = [
-  { name: 'Lagoon studies', catalog: 'M8' },
-  { name: 'Crescent studies', catalog: 'NGC 6888' },
-  { name: 'Pillars studies', catalog: 'M16' },
+  { name: 'New Light 2026', key: 'new-light-2026', collection: 'New Light · 2026' },
+  { name: 'Lagoon studies', key: 'M8', catalog: 'M8' },
+  { name: 'Crescent studies', key: 'NGC 6888', catalog: 'NGC 6888' },
+  { name: 'Pillars studies', key: 'M16', catalog: 'M16' },
 ]
 
 function GalleryPage() {
@@ -222,7 +248,7 @@ function GalleryPage() {
   const filtered = useMemo(() => photographs.filter((photo) => {
     const groupMatch = group === 'All' || photo.group === group
     const equipmentMatch = equipment === 'All equipment' || photo.equipment === equipment
-    const seriesMatch = !selectedSeries || photo.catalog === selectedSeries
+    const seriesMatch = !selectedSeries || (selectedSeries === 'new-light-2026' ? photo.collection === 'New Light · 2026' : photo.catalog === selectedSeries)
     return groupMatch && equipmentMatch && seriesMatch
   }), [equipment, group, selectedSeries])
 
@@ -243,17 +269,17 @@ function GalleryPage() {
 
   return (
     <Layout pageClass="gallery-page">
-      <section className="page-hero gallery-hero">
+      <section className="page-hero gallery-hero" style={{ '--gallery-image': `url(${asset('astro/dark-shark-nebula-flt120.jpg')})` } as CSSProperties}>
         <p className="kicker"><span /> The complete archive</p>
-        <h1>Twenty-six windows.<br /><em>One universe.</em></h1>
-        <p>Browse nebulae, galaxies, and crowded fields of stars—then open any frame to see it without the noise around it.</p>
+        <h1>{photographs.length} windows.<br /><em>One universe.</em></h1>
+        <p>The 2026 observing season now leads the archive. Browse nebulae, galaxies, dark clouds, and crowded fields—then enter any frame.</p>
       </section>
 
       <section className="series-strip" aria-label="Photograph series">
         <p>Browse a series</p>
         {series.map((item) => {
-          const count = photographs.filter((photo) => photo.catalog === item.catalog).length
-          return <button className={selectedSeries === item.catalog ? 'active' : ''} onClick={() => setSelectedSeries(selectedSeries === item.catalog ? '' : item.catalog)} key={item.catalog}>{item.name}<span>{count} frames</span></button>
+          const count = photographs.filter((photo) => item.collection ? photo.collection === item.collection : photo.catalog === item.catalog).length
+          return <button className={`${selectedSeries === item.key ? 'active' : ''} ${item.collection ? 'season-series' : ''}`} onClick={() => setSelectedSeries(selectedSeries === item.key ? '' : item.key)} key={item.key}>{item.name}<span>{count} frames</span></button>
         })}
       </section>
 
@@ -265,7 +291,7 @@ function GalleryPage() {
           </div>
           <div className="filter-stack">
             <div className="filters" aria-label="Filter by subject">
-              {(['All', 'Nebulae', 'Galaxies', 'Star fields'] as const).map((item) => (
+              {(['All', 'Nebulae', 'Dark nebulae', 'Galaxies', 'Star fields'] as const).map((item) => (
                 <button key={item} className={group === item ? 'active' : ''} onClick={() => { setGroup(item); setSelectedSeries('') }} aria-pressed={group === item}>{item}</button>
               ))}
             </div>
@@ -278,7 +304,7 @@ function GalleryPage() {
         </header>
 
         <div className="gallery-status">
-          <p>{filtered.length} photograph{filtered.length === 1 ? '' : 's'}{selectedSeries ? ` in ${selectedSeries}` : ''}</p>
+          <p>{filtered.length} photograph{filtered.length === 1 ? '' : 's'}{selectedSeries ? ` in ${series.find((item) => item.key === selectedSeries)?.name || selectedSeries}` : ''}</p>
           {(group !== 'All' || equipment !== 'All equipment' || selectedSeries) && <button onClick={reset}>Clear filters ×</button>}
         </div>
 
@@ -291,9 +317,9 @@ function GalleryPage() {
         )}
       </section>
 
-      <section className="archive-callout" style={{ '--archive-image': `url(${asset('astro/blue-hour.jpg')})` } as CSSProperties}>
-        <p>There is still more light in the archive.</p>
-        <h2>Years of looking up.<br />One growing collection.</h2>
+      <section className="archive-callout" style={{ '--archive-image': `url(${asset('astro/witch-head-nebula-sqa55.jpg')})` } as CSSProperties}>
+        <p>The public gallery is only the edit.</p>
+        <h2>Years of looking up.<br />More light beyond the frame.</h2>
         <a href={archiveUrl} target="_blank" rel="noreferrer">Open the complete Google Photos archive <span>↗</span></a>
       </section>
     </Layout>
@@ -310,9 +336,10 @@ function AboutPage() {
   ]
   const equipment = [
     { name: 'Celestron Origin', use: 'Wide-field nebulae, star clouds, and an observatory that can travel.' },
+    { name: 'William Optics FLT 120', use: 'The newest deep-sky instrument: 120 millimeters of aperture for fine dust, narrow structures, and long integrations.', isNew: true },
     { name: 'C11 EdgeHD', use: 'Long focal length and close studies of structures such as the Pillars of Creation.' },
     { name: 'Askar 103APO', use: 'A wider, detailed view of nebulae and stellar nurseries.' },
-    { name: 'Askar SQA 55', use: 'Portable wide-field imaging beneath darker skies, including Green Bank.' },
+    { name: 'Askar SQA 55', use: 'An immense, flat field for dust rivers, reflection nebulae, and the full architecture around a target.', isNew: true },
   ]
 
   return (
@@ -339,7 +366,7 @@ function AboutPage() {
       <section className="equipment-section">
         <SectionHeading number="02" eyebrow="INSTRUMENTS" title={<>Different glass.<br />The same sky.</>} description="Each telescope changes the scale of the conversation—from an entire star cloud to the face of a stellar nursery." />
         <div className="equipment-grid">
-          {equipment.map((item, index) => <article key={item.name}><span>0{index + 1}</span><h3>{item.name}</h3><p>{item.use}</p></article>)}
+          {equipment.map((item, index) => <article className={item.isNew ? 'instrument-new' : ''} key={item.name}><span>0{index + 1}</span>{item.isNew && <small>2026 field work</small>}<h3>{item.name}</h3><p>{item.use}</p></article>)}
         </div>
       </section>
 
@@ -424,6 +451,9 @@ function PhotographPage({ photo }: { photo: Photograph }) {
     { label: 'Class', value: photo.group },
     photo.equipment && { label: 'Telescope', value: photo.equipment },
     photo.location && { label: 'Location', value: photo.location },
+    photo.captured && { label: 'Captured', value: photo.captured },
+    photo.integration && { label: 'Integration', value: photo.integration },
+    photo.frames && { label: 'Exposures', value: `${photo.frames} subframes` },
   ].filter(Boolean) as { label: string, value: string }[]
 
   return (
@@ -441,7 +471,7 @@ function PhotographPage({ photo }: { photo: Photograph }) {
         </figure>
 
         <section className="photo-narrative">
-          <div><p className="section-number">THE PHOTOGRAPH</p><h1>{photo.title}</h1></div>
+          <div><p className="section-number">{photo.collection || 'THE PHOTOGRAPH'}</p><h1>{photo.title}</h1></div>
           <div><p className="photo-note">{photo.note}</p>{facts.length > 0 && <dl>{facts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>}</div>
         </section>
 
