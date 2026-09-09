@@ -179,7 +179,8 @@
     "collection": "New Light · 2026",
     "captured": "September 2026",
     "integration": "2h 15m",
-    "frames": 27
+    "frames": 27,
+    "spotlight": true
   },
   {
     "slug": "ny-cephei-sqa55",

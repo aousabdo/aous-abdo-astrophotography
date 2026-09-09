@@ -82,12 +82,13 @@ img { max-width: 100%; }
 .new-light-intro aside strong { color: var(--paper); font: 300 28px/1 var(--serif); }
 .new-light-grid { margin-top: 76px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 76px 16px; }
 .new-light-grid .photo-card { grid-column: span 6; }
-.new-light-grid .new-light-1, .new-light-grid .new-light-6 { grid-column: 1 / -1; }
+.new-light-grid .new-light-1, .new-light-grid .new-light-6, .new-light-grid .new-light-7 { grid-column: 1 / -1; }
 .new-light-grid .new-light-2, .new-light-grid .new-light-5 { grid-column: span 7; }
 .new-light-grid .new-light-3, .new-light-grid .new-light-4 { grid-column: span 5; }
 .new-light-grid .new-light-1 .photo-open { height: min(58vw, 860px); }
 .new-light-grid .new-light-2 .photo-open, .new-light-grid .new-light-5 .photo-open { height: min(47vw, 680px); }
 .new-light-grid .new-light-6 .photo-open { height: min(52vw, 760px); }
+.new-light-grid .new-light-7 .photo-open { height: min(56vw, 820px); }
 
 .featured-section { padding: 140px clamp(18px, 4vw, 64px) 120px; }
 .featured-flow { display: grid; grid-template-columns: repeat(12, 1fr); gap: 76px 16px; margin-top: 76px; }
@@ -361,7 +362,7 @@ footer button, footer a:not(.footer-mark) { padding: 0; background: none; color:
   .new-light-intro aside span { min-height: 62px; padding: 0; border-left: 0; }
   .new-light-grid { display: block; margin-top: 52px; }
   .new-light-grid .photo-card { margin-bottom: 60px; }
-  .new-light-grid .photo-open, .new-light-grid .new-light-1 .photo-open, .new-light-grid .new-light-2 .photo-open, .new-light-grid .new-light-5 .photo-open, .new-light-grid .new-light-6 .photo-open { height: 82vw; min-height: 330px; }
+  .new-light-grid .photo-open, .new-light-grid .new-light-1 .photo-open, .new-light-grid .new-light-2 .photo-open, .new-light-grid .new-light-5 .photo-open, .new-light-grid .new-light-6 .photo-open, .new-light-grid .new-light-7 .photo-open { height: 82vw; min-height: 330px; }
   .featured-flow { display: block; margin-top: 50px; }
   .featured-flow .photo-card { margin-bottom: 58px; }
   .featured-flow .photo-open, .featured-flow .feature-1 .photo-open, .featured-flow .feature-2 .photo-open, .featured-flow .feature-5 .photo-open { height: 82vw; min-height: 330px; }
