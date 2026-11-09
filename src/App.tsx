@@ -1,3 +1,4 @@
+import Atlas from './Atlas'
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from 'react'
 import { homeProjects, photographs, projectFamilies, type Photograph, type Project } from './content'
 
@@ -7,6 +8,7 @@ const archiveUrl = 'https://photos.app.goo.gl/6wq4MaV3zakDoaQB6'
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/gallery/', label: 'Gallery' },
+  { href: '/#films', label: '▶ Sun & Moon videos' },
   { href: '/about/', label: 'About' },
   { href: '/work/', label: 'Work' },
 ]
@@ -502,8 +504,8 @@ function App() {
   const photographMatch = path.match(/^\/photographs\/([^/]+)$/)
   const photo = photographMatch ? photographs.find((item) => item.slug === photographMatch[1]) : undefined
 
-  if (path === '/') return <HomePage />
-  if (path === '/gallery') return <GalleryPage />
+  if (path === '/') return <Atlas />
+  if (path === '/gallery') return <Atlas />
   if (path === '/about') return <AboutPage />
   if (path === '/work') return <WorkPage />
   if (photo) return <PhotographPage photo={photo} />
