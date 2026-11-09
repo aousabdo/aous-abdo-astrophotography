@@ -317,7 +317,7 @@ export const photographs: Photograph[] = [
     "catalog": "M42 · M43",
     "group": "emission",
     "caption": "A stellar nursery, in more than one palette.",
-    "description": "The Orion Nebula in sulfur and oxygen, with an exposure blend retaining the bright central region.",
+    "description": "The Orion Nebula in hydrogen and oxygen, with alternate palettes and an exposure blend retaining the bright central region.",
     "alt": "The Orion Nebula: A stellar nursery, in more than one palette.",
     "tags": [
       "M42_FLT120_D2",

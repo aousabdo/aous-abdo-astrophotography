@@ -1,0 +1,326 @@
+{
+  "iris": {
+    "kind": "Reflection nebula",
+    "where": "Cepheus",
+    "lead": "A star lights up an otherwise dark cloud. The blue center is scattered starlight; the brown surroundings reveal dust that both scatters and blocks light.",
+    "topic": "reflection"
+  },
+  "seahorse": {
+    "kind": "Dark cloud & reflection nebula",
+    "where": "Cepheus",
+    "lead": "An illuminated blue cap sits at the end of a much darker cloud. The same dusty material can glow beside a star and hide the stars behind it.",
+    "topic": "dust"
+  },
+  "horsehead": {
+    "kind": "Dark, emission & reflection nebulae",
+    "where": "Orion",
+    "lead": "The Horsehead is a foreground silhouette against glowing IC 434. The wider mosaic brings together the Flame and blue reflection light around NGC 2023.",
+    "topic": "dust"
+  },
+  "andromeda": {
+    "kind": "Spiral galaxy",
+    "where": "Andromeda",
+    "lead": "M31 is an entire galaxy beyond the Milky Way. Its bright bulge, broad disk and dust lanes trace different stellar populations and the raw material for future stars.",
+    "topic": "galaxy"
+  },
+  "pleiades": {
+    "kind": "Open cluster & reflection nebula",
+    "where": "Taurus",
+    "lead": "The Seven Sisters illuminate interstellar dust as the cluster passes through a cloud. The blue veil is scattered starlight, rather than gas glowing from ionization.",
+    "topic": "reflection"
+  },
+  "barnards-e": {
+    "kind": "Dark nebulae",
+    "where": "Aquila",
+    "lead": "Barnard 142 and 143 form an apparent letter E by obscuring the crowded Milky Way behind them. The outline is a pattern in our line of sight, not an empty region of space.",
+    "topic": "dust"
+  },
+  "orion": {
+    "kind": "Star-forming emission nebula",
+    "where": "Orion",
+    "lead": "Young massive stars flood M42 with ultraviolet light. Gas glows where it is ionized, while dense dusty material shelters the next generation of stars.",
+    "topic": "emission"
+  },
+  "ngc1333": {
+    "kind": "Star-forming cloud & reflection nebula",
+    "where": "Perseus",
+    "lead": "NGC 1333 mixes scattered blue starlight with opaque cloud material. Much of its young stellar population is hidden at visible wavelengths and is better studied in infrared light.",
+    "topic": "reflection"
+  },
+  "shark": {
+    "kind": "Dark cloud & reflection nebulae",
+    "where": "Cepheus",
+    "lead": "The shape of LDN 1235 is drawn by dust against a star-rich background. Nearby patches of blue reflection light show where starlight illuminates that material.",
+    "topic": "dust"
+  },
+  "helix": {
+    "kind": "Planetary nebula",
+    "where": "Aquarius",
+    "lead": "The Helix is a late chapter in a star’s life: expelled gas illuminated by its hot remnant core. Its apparent ring is a projection of a three-dimensional structure.",
+    "topic": "planetary"
+  },
+  "m78": {
+    "kind": "Reflection nebula",
+    "where": "Orion",
+    "lead": "M78 glows by scattering the light of embedded stars. Dust makes bright blue patches where it is illuminated and dark lanes where it obscures the view.",
+    "topic": "reflection"
+  },
+  "ngc891": {
+    "kind": "Edge-on spiral galaxy",
+    "where": "Andromeda",
+    "lead": "We see NGC 891 almost along the plane of its disk. That geometry stacks dusty material along the line of sight, producing the striking central dark lane.",
+    "topic": "galaxy"
+  },
+  "heart": {
+    "kind": "Star-forming emission nebula",
+    "where": "Cassiopeia",
+    "lead": "Young stars in Melotte 15 illuminate and reshape the surrounding Heart Nebula. Dark pillars survive where denser material resists erosion longer than its surroundings.",
+    "topic": "emission"
+  },
+  "ghost": {
+    "kind": "Dust cloud & reflection nebula",
+    "where": "Cepheus",
+    "lead": "The Ghost’s pale wisps are dust illuminated by nearby stars. Its sculpted appearance combines real cloud structure with the angle from which we see it.",
+    "topic": "reflection"
+  },
+  "iris-ghost": {
+    "kind": "Dust & reflection-nebula field",
+    "where": "Cepheus",
+    "lead": "A wide view connects the Iris and Ghost regions on the sky. Bright reflection patches are only the most conspicuous parts of a much larger dusty field.",
+    "topic": "reflection"
+  },
+  "ldn1147": {
+    "kind": "Dark-cloud complex",
+    "where": "Cepheus",
+    "lead": "Faint scattered light outlines the LDN 1147/1158 clouds, while the densest lanes suppress the background star field. Optical darkness can mark material rather than absence.",
+    "topic": "dust"
+  },
+  "cocoon": {
+    "kind": "Star-forming nebula",
+    "where": "Cygnus",
+    "lead": "IC 5146 combines glowing gas, reflected starlight and a trailing dark cloud. These are different ways in which light encounters a star-forming environment.",
+    "topic": "emission"
+  },
+  "crescent": {
+    "kind": "Wind-blown stellar nebula",
+    "where": "Cygnus",
+    "lead": "The Crescent’s shell records a massive star losing material. Fast wind from the Wolf–Rayet star WR 136 interacts with previously expelled gas, sculpting a luminous bubble.",
+    "topic": "wind"
+  },
+  "sombrero": {
+    "kind": "Dusty galaxy",
+    "where": "Virgo",
+    "lead": "M104’s bright central bulge rises above a thin dark dust lane. Its near-edge-on view makes the contrast between stellar light and obscuring material especially clear.",
+    "topic": "galaxy"
+  },
+  "pelican": {
+    "kind": "Star-forming emission nebula",
+    "where": "Cygnus",
+    "lead": "A bright boundary separates illuminated gas from denser, darker cloud material in IC 5070. Ultraviolet radiation changes both the ionization and the shape of the cloud.",
+    "topic": "emission"
+  },
+  "moon": {
+    "kind": "Rocky natural satellite",
+    "where": "Earth–Moon system",
+    "lead": "Sunlight reveals ancient impact scars, volcanic plains and bright highlands. This nearly full view emphasizes surface brightness differences and crater rays.",
+    "topic": "moon"
+  },
+  "rho-ophiuchi": {
+    "kind": "Star-forming cloud complex",
+    "where": "Ophiuchus & Scorpius field",
+    "lead": "Blue and warm reflection clouds share the frame with dark lanes. The globular cluster M4 is a separate system along the same broad line of sight.",
+    "topic": "reflection"
+  },
+  "elephant-trunk": {
+    "kind": "Dust pillar in an emission nebula",
+    "where": "Cepheus",
+    "lead": "The Elephant Trunk is dense material embedded in the glowing IC 1396 region. Radiation illuminates its boundary while dust protects parts of its interior.",
+    "topic": "emission"
+  },
+  "eagle": {
+    "kind": "Star-forming emission nebula",
+    "where": "Serpens",
+    "lead": "M16’s pillars are dense remnants inside an environment shaped by young massive stars. Their surfaces glow as radiation erodes and ionizes the surrounding gas.",
+    "topic": "emission"
+  },
+  "broom": {
+    "kind": "Dark nebula",
+    "where": "Cepheus",
+    "lead": "A long, narrow cloud winds across a dense stellar background. Its visibility comes mainly from how much starlight the dust removes from our view.",
+    "topic": "dust"
+  },
+  "lagoon": {
+    "kind": "Star-forming emission nebula",
+    "where": "Sagittarius",
+    "lead": "M8 is a stellar nursery where bright gas is interrupted by dust lanes. Young stars supply the radiation and winds that excavate cavities in their birth cloud.",
+    "topic": "emission"
+  },
+  "lagoon-trifid": {
+    "kind": "Wide star-forming field",
+    "where": "Sagittarius",
+    "lead": "M8 and M20 occupy the same wide Sagittarius view. The frame brings together ionized gas, scattered starlight and dust silhouettes without making them a single physical object.",
+    "topic": "emission"
+  },
+  "trifid": {
+    "kind": "Emission, reflection & dark nebula",
+    "where": "Sagittarius",
+    "lead": "M20 shows three light-making mechanisms together: gas emits, dust scatters, and denser dust blocks. The dark lanes divide the bright emission region into its familiar lobes.",
+    "topic": "emission"
+  },
+  "triangulum": {
+    "kind": "Spiral galaxy",
+    "where": "Triangulum",
+    "lead": "M33’s open spiral pattern is sprinkled with star-forming regions. The galaxy offers a broad view of how gas, dust and young stars trace a galactic disk.",
+    "topic": "galaxy"
+  },
+  "pacman": {
+    "kind": "Star-forming emission nebula",
+    "where": "Cassiopeia",
+    "lead": "A dark lane bites into NGC 281’s luminous gas. The contrast reveals dense dusty material embedded in an environment illuminated by hot young stars.",
+    "topic": "emission"
+  },
+  "monkey-head": {
+    "kind": "Star-forming emission nebula",
+    "where": "Orion",
+    "lead": "NGC 2174’s bright gas and dark pillars mark the interface between ionized and denser cloud material. Its familiar outline is a projection, not a solid surface.",
+    "topic": "emission"
+  },
+  "bubble": {
+    "kind": "Wind-blown emission nebula",
+    "where": "Cassiopeia",
+    "lead": "A massive star drives a wind into its surroundings, inflating NGC 7635’s shell. Uneven surrounding material keeps the bubble from being a perfect sphere.",
+    "topic": "wind"
+  },
+  "swan": {
+    "kind": "Star-forming emission nebula",
+    "where": "Sagittarius",
+    "lead": "M17’s bright ridge is part of a larger stellar nursery. Dust hides some of the young stars whose radiation powers the visible gas.",
+    "topic": "emission"
+  },
+  "flying-bat": {
+    "kind": "Emission nebula & bipolar outflow candidate",
+    "where": "Cepheus",
+    "lead": "The extremely faint oxygen-emitting Ou4 structure overlaps Sh2-129 on the sky. Its association and origin require spectroscopy and distance evidence; the photograph alone cannot establish them.",
+    "topic": "emission"
+  },
+  "ngc6559": {
+    "kind": "Mixed star-forming nebula",
+    "where": "Sagittarius",
+    "lead": "NGC 6559 places red emission, blue reflection and dark absorption close together. Massive young stars begin reshaping the cloud from which they formed.",
+    "topic": "emission"
+  },
+  "cygnus": {
+    "kind": "Emission-cloud field",
+    "where": "Cygnus",
+    "lead": "The Sadr region is threaded with glowing gas and dark lanes. A crowded view on the sky does not imply that every star and cloud lies at the same distance.",
+    "topic": "emission"
+  },
+  "v379-vul": {
+    "kind": "Milky Way star field",
+    "where": "Vulpecula",
+    "lead": "This view combines a dense stellar background, dark dust and faint nebulosity. Brightness alone does not tell us whether a star is nearby, intrinsically luminous, or less obscured.",
+    "topic": "field"
+  },
+  "saturn": {
+    "kind": "Ringed gas giant",
+    "where": "Solar System",
+    "lead": "Saturn shines by reflected sunlight. Its rings look thin here because their tilt to our line of sight changes as Saturn travels around the Sun.",
+    "topic": "saturn"
+  },
+  "sun": {
+    "kind": "Main-sequence star",
+    "where": "Solar System",
+    "lead": "White-light imaging reveals the photosphere: the layer from which most visible sunlight escapes. Dark sunspots mark cooler regions associated with strong magnetic fields.",
+    "topic": "sun"
+  },
+  "starfield": {
+    "kind": "Milky Way star field",
+    "where": "Field identification not recorded",
+    "lead": "Many apparently neighboring stars are separated greatly in depth. A photograph compresses that three-dimensional distribution into a single plane.",
+    "topic": "field"
+  },
+  "m81": {
+    "kind": "Spiral galaxy & companion field",
+    "where": "Ursa Major",
+    "lead": "M81’s spiral disk contrasts with nearby M82’s narrow appearance. They belong to an interacting group, where gravity can disturb gas and affect star formation.",
+    "topic": "galaxy"
+  },
+  "m82": {
+    "kind": "Starburst galaxy",
+    "where": "Ursa Major",
+    "lead": "M82 is forming stars intensely. Dust obscures parts of its bright body; observations beyond visible light reveal additional activity and its powerful galactic outflow.",
+    "topic": "galaxy"
+  },
+  "m51": {
+    "kind": "Interacting spiral galaxy pair",
+    "where": "Canes Venatici",
+    "lead": "M51’s grand spiral arms curl toward companion NGC 5195. Gravitational interaction rearranges gas and stars over times far longer than an exposure.",
+    "topic": "galaxy"
+  },
+  "m64": {
+    "kind": "Dusty spiral galaxy",
+    "where": "Coma Berenices",
+    "lead": "M64’s dark feature is foreground dust against its luminous central region. It is an example of how material can be mapped by the light it blocks.",
+    "topic": "galaxy"
+  },
+  "rosette": {
+    "kind": "Emission nebula & young cluster",
+    "where": "Monoceros",
+    "lead": "Young stars in NGC 2244 illuminate the Rosette and help clear its central cavity. The surrounding glowing ring is a projected view through a larger cloud.",
+    "topic": "emission"
+  },
+  "m27": {
+    "kind": "Planetary nebula",
+    "where": "Vulpecula",
+    "lead": "The Dumbbell is expelled stellar-envelope material illuminated by a hot remnant. Its name describes its appearance, not a connection to planets.",
+    "topic": "planetary"
+  },
+  "m5": {
+    "kind": "Globular star cluster",
+    "where": "Serpens",
+    "lead": "M5 is a dense, old stellar system held together by gravity. Its crowded center reminds us that stars form and evolve in environments very different from the Sun’s neighborhood.",
+    "topic": "cluster"
+  },
+  "ic4756": {
+    "kind": "Open star cluster",
+    "where": "Serpens",
+    "lead": "IC 4756 is a loose stellar gathering born from a common cloud. Open clusters gradually lose members as their stars move through the Galaxy.",
+    "topic": "cluster"
+  },
+  "witch-head": {
+    "kind": "Reflection nebula",
+    "where": "Eridanus",
+    "lead": "The Witch Head’s glow is scattered starlight, associated with illumination from Rigel. Its long profile is a dust cloud, not hot gas shaped like a flame.",
+    "topic": "reflection"
+  },
+  "cave": {
+    "kind": "Mixed emission & dust region",
+    "where": "Cepheus",
+    "lead": "The Cave region combines ionized gas, reflected light and obscuring dust. Bright rims show where stellar radiation meets denser material.",
+    "topic": "emission"
+  },
+  "vdb126": {
+    "kind": "Reflection nebula",
+    "where": "Vulpecula",
+    "lead": "A small blue reflection patch sits within broader dust. Scattering redirects stellar light toward us without requiring the whole cloud to be ionized.",
+    "topic": "reflection"
+  },
+  "veil": {
+    "kind": "Supernova remnant",
+    "where": "Cygnus",
+    "lead": "The Veil’s thin filaments mark shocked material in the Cygnus Loop. They trace the aftermath of a stellar explosion, a different end from the gentle envelope loss of the Helix.",
+    "topic": "supernova"
+  },
+  "north-america": {
+    "kind": "Star-forming emission nebula",
+    "where": "Cygnus",
+    "lead": "NGC 7000’s coastline is created partly by foreground dust against glowing gas. The Cygnus Wall is a bright interface where radiation meets denser cloud material.",
+    "topic": "emission"
+  },
+  "loch-ness": {
+    "kind": "Dark nebula",
+    "where": "Milky Way",
+    "lead": "LDN 772 is seen through its effect on background starlight. A dark cloud can contain abundant gas and dust even when little visible light escapes toward us.",
+    "topic": "dust"
+  }
+}

@@ -1,3 +1,4 @@
+import { scienceObjects } from './science'
 import Atlas from './Atlas'
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from 'react'
 import { homeProjects, photographs, projectFamilies, type Photograph, type Project } from './content'
@@ -443,7 +444,11 @@ function WorkPage() {
   )
 }
 
+const legacyScienceIds:Record<string,string> = {"m51-whirlpool-galaxy": "m51", "dark-shark-nebula-flt120": "shark", "andromeda-galaxy-flt120": "andromeda", "rho-ophiuchi-sqa55-2026": "rho-ophiuchi", "heart-nebula-flt120": "heart", "horsehead-nebula-flt120": "horsehead", "witch-head-nebula-sqa55": "witch-head", "cocoon-nebula-flt120": "cocoon", "elephant-trunk-nebula-sqa55": "elephant-trunk", "pillars-of-creation-flt120": "eagle", "lagoon-nebula-flt120-2026": "lagoon", "cave-nebula-flt120": "cave", "sh2-131-flt120": "elephant-trunk", "ny-cephei-sqa55": "cave", "dark-river": "elephant-trunk", "lagoon": "lagoon", "cyan-rift": "north-america", "spiral": "m81", "sombrero-galaxy-origin": "sombrero", "crescent": "crescent", "crescent-origin": "crescent", "stellar-dust": "rho-ophiuchi", "veil": "veil", "cosmic-garden": "crescent", "silver-island": "m82", "north-america": "north-america", "blue-hour": "iris", "red-emission": "lagoon", "starfield": "starfield", "loch-ness-nebula": "loch-ness", "ic-4756": "ic4756", "sagittarius-star-cloud-origin": "starfield", "lagoon-wide": "lagoon-trifid", "dark-dust": "elephant-trunk", "lagoon-origin": "lagoon", "trifid-nebula": "trifid", "pillars-of-creation": "eagle", "pillars-of-creation-askar-103apo": "eagle", "rosette-nebula": "rosette"}
+
 function PhotographPage({ photo }: { photo: Photograph }) {
+  const scienceId = legacyScienceIds[photo.slug]
+  const science = scienceObjects[scienceId]
   const currentIndex = photographs.findIndex((item) => item.slug === photo.slug)
   const previous = photographs[(currentIndex - 1 + photographs.length) % photographs.length]
   const next = photographs[(currentIndex + 1) % photographs.length]
@@ -477,6 +482,7 @@ function PhotographPage({ photo }: { photo: Photograph }) {
           <div><p className="photo-note">{photo.note}</p>{facts.length > 0 && <dl>{facts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>}</div>
         </section>
 
+        {science && <section className="legacy-science"><p className="section-number">BEYOND THE FRAME / THE SCIENCE</p><h2>{science.kind}</h2><p>{science.lead}</p><a href={`/?photo=${scienceId}&media=science`}>Explore the science, current views & sources ↗</a></section>}
         <nav className="photo-pagination" aria-label="Photograph navigation">
           <a href={photoHref(previous)}><span>← Previous</span><strong>{previous.title}</strong></a>
           <a href={photoHref(next)}><span>Next →</span><strong>{next.title}</strong></a>

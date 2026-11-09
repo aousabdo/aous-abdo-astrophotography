@@ -448,3 +448,9 @@ footer button, footer a:not(.footer-mark) { padding: 0; background: none; color:
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+.legacy-science { margin:50px 0;padding:36px;border:1px solid #34424c;background:#0d181e;color:#c4d6dc; }
+.legacy-science h2 { font:400 38px/1.2 var(--serif,Georgia);margin:20px 0; }
+.legacy-science>p:not(.section-number) { max-width:750px;font-size:15px;line-height:1.9; }
+.legacy-science>a { display:inline-block;margin-top:20px;font-size:13px;color:#c6dfdd;border-bottom:1px solid;padding-bottom:8px; }
+@media(max-width:600px){.legacy-science{padding:24px}.legacy-science h2{font-size:30px}}
