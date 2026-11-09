@@ -487,3 +487,60 @@ body.lightbox-open { overflow: hidden; }
 @media(min-width:1101px){.atlas-site .topbar nav{gap:18px}}
 @media(max-width:1100px){.atlas-site .science-story-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.atlas-site .story-card-copy strong{min-height:2.3em}.atlas-site .science-reader{padding-right:14px}.atlas-site .lab-layout{grid-template-columns:1fr}.atlas-site .lab-visual{max-width:420px}.atlas-site .science-chapters button{padding:10px}}
 @media(max-width:700px){.atlas-site .science-stories{padding:60px 22px;scroll-margin-top:92px}.atlas-site .science-story-grid{grid-template-columns:1fr 1fr;gap:12px}.atlas-site .science-story-card:last-child{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr}.atlas-site .science-story-card:last-child img{height:100%;object-fit:cover}.atlas-site .story-card-copy{padding:16px 12px}.atlas-site .story-card-copy strong{font-size:24px;min-height:0;margin:10px 0 16px}.atlas-site .story-card-copy small,.atlas-site .story-card-copy>span{font-size:8px}.atlas-site .science-reader{overflow:visible;padding:26px 0}.atlas-site .science-reader h3{font-size:38px}.atlas-site .science-reader h4{font-size:25px}.atlas-site .science-deck{font-size:23px!important}.atlas-site .science-prose{grid-template-columns:22px minmax(0,1fr);gap:9px}.atlas-site .science-prose p,.atlas-site .science-reader p{font-size:13px}.atlas-site .science-chapters{gap:6px}.atlas-site .science-chapters button{font-size:9px;padding:12px 10px;flex:1 0 40%}.atlas-site .science-summary dl{display:block}.atlas-site .science-summary dl>div{display:grid;grid-template-columns:100px 1fr;gap:10px}.atlas-site .annotation-image button{width:32px;height:32px}.atlas-site .annotation-labels{display:grid;grid-template-columns:1fr}.atlas-site .annotation-note{padding:20px;min-height:150px}.atlas-site .photon-track{gap:6px}.atlas-site .photon-track button small{font-size:10px}.atlas-site .photon-scene{padding:22px 18px;min-height:330px}.atlas-site .lab-layout{gap:24px}.atlas-site .lab-visual{max-width:none}.atlas-site .film-notes dl>div{grid-template-columns:80px 1fr}.atlas-site .science-stories .section-intro h2{font-size:55px}}
+
+/* Image-led science: observations first, technical detail on request. */
+.atlas-site .science-reader-head>p:last-child { font:400 20px/1.5 var(--serif);max-width:780px;color:#c8d7da; }
+.atlas-site .science-reader h3 { font-size:clamp(30px,3vw,46px);max-width:830px; }
+.atlas-site .image-led-science .annotation-image { margin:0 auto 18px;border:1px solid #253640; }
+.atlas-site .image-led-science .annotation-note { min-height:0;margin:18px 0 28px;padding:18px 22px; }
+.atlas-site .image-led-science .annotation-note h4 { font-size:22px;margin-bottom:8px; }
+.atlas-site .image-insight { max-width:760px;margin:32px 0; }
+.atlas-site .image-insight h4 { font-size:29px;line-height:1.25; }
+.atlas-site .image-insight>p:not(.science-eyebrow) { color:#b8cbd2; }
+.atlas-site .image-insight blockquote { margin:24px 0;padding:20px 24px;border-left:2px solid #d2c8a5;background:#13252d;font:400 23px/1.5 var(--serif);color:#e2e5d5; }
+.atlas-site .inference-note { border-block:1px solid #334c59;margin:24px 0;padding:18px 0;font-size:12px;line-height:1.9;color:#afc8d1; }
+.atlas-site .inference-note summary { color:#c8d9dd;font:400 11px/1.7 var(--mono);cursor:pointer; }
+.atlas-site .inference-note strong { color:#e4e6d6;font-weight:500; }
+.atlas-site .science-reader-sources summary { font:400 11px/1.8 var(--mono);color:#abc7d3;cursor:pointer; }
+.atlas-site .science-reader-sources details>p { color:#89a2b0;font-size:11px;line-height:1.8; }
+.atlas-site .visual-experiment>h4 { font-size:32px;max-width:750px;line-height:1.2; }
+.atlas-site .experiment-intro { color:#b4cbd5;max-width:780px; }
+.atlas-site .experiment-canvas { border:1px solid #34505e;background:#0e1d25;margin:28px 0 0;padding:16px; }
+.atlas-site .experiment-svg { display:block;width:100%;height:auto; }
+.atlas-site .experiment-svg text,.atlas-site .experiment-visual-pair svg text { font-family:var(--mono); }
+.atlas-site .svg-label { fill:#b8d1da;font-size:10px;letter-spacing:.04em; }
+.atlas-site .svg-note { fill:#90abb7;font-size:11px; }
+.atlas-site .experiment-visual-pair { display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center; }
+.atlas-site .experiment-visual-pair svg { display:block;width:100%; }
+.atlas-site .experiment-bottom { display:grid;grid-template-columns:1.3fr 1fr;gap:25px;padding:24px 0;align-items:center; }
+.atlas-site .experiment-range { display:block;margin:12px 0 20px; }
+.atlas-site .experiment-range>span { display:flex;gap:14px;justify-content:space-between;color:#b9d1d8;font:400 10px/1.7 var(--mono); }
+.atlas-site .experiment-range b { color:#e6dcb6;font-weight:400;white-space:nowrap; }
+.atlas-site .experiment-range input { width:100%;min-height:36px;margin:8px 0 0;accent-color:#d0d9b8;cursor:pointer; }
+.atlas-site .experiment-presets { display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px; }
+.atlas-site .experiment-presets button { background:transparent;border:1px solid #456472;padding:11px;color:#accad4;font:400 10px/1.6 var(--mono);cursor:pointer; }
+.atlas-site .experiment-presets button[aria-pressed=true] { background:#c5dad5;border-color:#c5dad5;color:#13262d; }
+.atlas-site .experiment-result { display:block;border-left:1px solid #3a5562;padding:18px 0 18px 25px; }
+.atlas-site .experiment-result strong { display:block;font:400 34px/1.2 var(--serif);color:#e9e2c9; }
+.atlas-site .experiment-result span { display:block;font:400 11px/1.8 var(--mono);color:#93b2c1;margin-top:14px; }
+.atlas-site .experiment-takeaway { padding:23px 26px;background:#15272c;border-left:2px solid #b5c8ad;margin:10px 0 28px; }
+.atlas-site .experiment-takeaway small { font:400 9px/1.7 var(--mono);color:#a3b99c; }
+.atlas-site .experiment-takeaway p { color:#d0dcdb;margin-bottom:0; }
+.atlas-site .energy-scale { padding:15px; }
+.atlas-site .energy-scale>span { color:#a0bdc9;font:400 10px/1.6 var(--mono); }
+.atlas-site .energy-scale>strong { display:block;font:400 43px/1.5 var(--serif);color:#e5dec4; }
+.atlas-site .energy-scale>strong small { font-size:20px; }
+.atlas-site .energy-meter { height:18px;background:#213946;position:relative;margin:18px 0; }
+.atlas-site .energy-meter i { display:block;height:100%;background:#c5afcf; }
+.atlas-site .energy-meter>b { position:absolute;height:30px;top:-6px;border-right:2px solid #f4dec1; }
+.atlas-site .energy-scale p { font-size:12px;line-height:1.7; }
+.atlas-site .energy-scale p b { display:block;font-weight:400; }
+.atlas-site .energy-pass { color:#c6dfc4; }.atlas-site .energy-fail { color:#d8b8a3; }
+@media(max-width:1100px){.atlas-site .experiment-bottom{grid-template-columns:1fr}.atlas-site .experiment-result{border-left:0;border-top:1px solid #3a5562;padding:20px 0}.atlas-site .experiment-visual-pair{gap:8px}}
+@media(max-width:700px){.atlas-site .science-reader-head>p:last-child{font-size:20px}.atlas-site .science-reader h3{font-size:34px}.atlas-site .image-insight h4{font-size:26px}.atlas-site .image-insight blockquote{font-size:22px;padding:18px}.atlas-site .experiment-canvas{padding:12px}.atlas-site .experiment-visual-pair{grid-template-columns:1fr}.atlas-site .experiment-visual-pair svg{max-width:350px;margin:auto}.atlas-site .experiment-svg .svg-label{font-size:16px}.atlas-site .experiment-svg .svg-note{font-size:16px}.atlas-site .visual-experiment>h4{font-size:29px}.atlas-site .experiment-result strong{font-size:31px}.atlas-site .experiment-takeaway{padding:20px}.atlas-site .experiment-range>span{font-size:10px}.atlas-site .energy-scale{max-width:320px;width:100%;margin:auto}.atlas-site .image-led-science .annotation-labels{display:flex}.atlas-site .image-led-science .annotation-labels button{flex:1 0 40%;padding:11px 9px}.atlas-site .image-led-science .annotation-labels button:last-child{flex-basis:100%}}
+
+@media(max-width:700px){.atlas-site .iris-path-diagram .svg-note{display:none}.atlas-site .iris-path-diagram .svg-label{font-size:18px}}
+
+.atlas-site .shell-comparison{border-block:1px solid #334c59;padding:18px 0;margin:25px 0}.atlas-site .shell-comparison summary{font:400 11px/1.8 var(--mono);color:#bdd3da;cursor:pointer}.atlas-site .shell-comparison>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}.atlas-site .shell-comparison a{display:block;border:1px solid #304653;padding-bottom:15px}.atlas-site .shell-comparison img{display:block;width:100%;aspect-ratio:1.6;object-fit:cover}.atlas-site .shell-comparison strong{display:block;font:400 20px/1.3 var(--serif);padding:14px 12px 8px}.atlas-site .shell-comparison span{display:block;font-size:11px;line-height:1.6;color:#9ebdc9;padding:0 12px}.atlas-site .shell-comparison>p{font-size:11px;color:#8fabb8}@media(max-width:500px){.atlas-site .shell-comparison>div{grid-template-columns:1fr}.atlas-site .shell-comparison a{display:grid;grid-template-columns:100px 1fr;padding:0;gap:0 10px}.atlas-site .shell-comparison img{grid-row:span 2;aspect-ratio:1;height:100%;object-fit:cover}.atlas-site .shell-comparison strong{font-size:21px;padding:13px 8px 5px}.atlas-site .shell-comparison span{padding:0 8px 13px}}
+
+@media(max-width:700px){.atlas-site .experiment-svg .svg-label,.atlas-site .experiment-svg .svg-note,.atlas-site .iris-path-diagram .svg-label{font-size:22px}}

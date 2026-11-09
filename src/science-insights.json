@@ -1,0 +1,345 @@
+{
+  "iris": {
+    "notice": "Follow the blue petals outward into brown filaments and the darkest lanes.",
+    "explain": "The Iris makes one cloud behave like both a lampshade and a curtain. Dust near its illuminating star scatters visible light toward us, while thicker columns suppress the stars behind them. Scattering favors different wavelengths by different amounts, helping produce the blue center. The faint surrounding dust extends the story beyond that bright patch: the boundary of the familiar nebula is a boundary of illumination and detectability, rather than a hard edge to its material.",
+    "reveal": "The blue flower is a spotlight inside a much larger cloud, not the whole cloud.",
+    "sources": []
+  },
+  "seahorse": {
+    "notice": "Find the small blue-lit cap at the end of the much longer dark column.",
+    "explain": "The reflection nebula vdB 152 marks where starlight catches the end of a dusty cloud. Farther along the column, there is less light scattered toward us and more background light blocked. Interestingly, the illuminating star's measured motion differs from the cloud's: it may have encountered this material rather than formed inside it. That makes this scene an example of a star revealing a cloud without necessarily being one of its children.",
+    "reveal": "A star can light a nebula it did not create and was not born in.",
+    "sources": []
+  },
+  "horsehead": {
+    "notice": "Compare the dark Horsehead silhouette, the brighter Flame, and the blue light around NGC 2023.",
+    "explain": "The Horsehead is a dense protrusion seen against the glowing hydrogen of IC 434. Ultraviolet radiation changes the chemistry and temperature at its exposed edge, gradually removing material from the cloud. Elsewhere in this mosaic, dust scatters starlight around NGC 2023 and obscures parts of the Flame. The same field therefore shows three different relationships between light and matter: photons created in gas, redirected by dust, and removed from our sight line.",
+    "reveal": "The Horsehead's dark outline is material in front of a luminous background, not a hole cut into the nebula.",
+    "sources": []
+  },
+  "andromeda": {
+    "notice": "Trace the dark lanes around the bright central bulge and out across the tilted disk.",
+    "explain": "The bright center blends the light of an enormous stellar population; the dark lanes are dusty parts of the disk lying in front of that light. Farther out, spiral structure organizes stars, gas and sites of star formation. M31 is close enough that its broad disk fills a large patch of our sky, yet the bright foreground stars superposed on its portrait belong to our own Milky Way. A galaxy portrait contains multiple depths at once.",
+    "reveal": "The obvious individual stars in front of Andromeda usually belong to our own galaxy; Andromeda's glow lies far beyond them.",
+    "sources": []
+  },
+  "pleiades": {
+    "notice": "Look for wisps of blue light around the bright cluster stars, especially where the veil becomes finely streaked.",
+    "explain": "The Pleiades stars are passing through interstellar material that scatters their light. This dust is not simply the leftover cocoon of the cluster's birth. Near bright stars, radiation pressure acts on grains, and different grain sizes respond differently; high-resolution observations around Merope reveal structure shaped by that interaction. The blue veils in this wider view show a chance encounter between an established star cluster and material along its path through the Galaxy.",
+    "reveal": "The famous blue dust is largely a cloud the Seven Sisters are traveling through, rather than their original nursery.",
+    "sources": [
+      {
+        "title": "NASA / WISE · Seven Sisters get WISE",
+        "url": "https://science.nasa.gov/photojournal/seven-sisters-get-wise/"
+      },
+      {
+        "title": "NASA / Hubble · Dust and radiation pressure near Merope",
+        "url": "https://science.nasa.gov/missions/hubble/reflecting-merope/"
+      }
+    ]
+  },
+  "barnards-e": {
+    "notice": "Compare the crowded stellar background with the sharply reduced star counts inside the dark E-shaped pattern.",
+    "explain": "Barnard 142 and 143 become visible by concealing what lies behind them. Their dust absorbs and scatters optical light, so a densely populated Galactic sight line appears locally depleted of stars. A star that remains visible inside the silhouette could be in front of the cloud or shine through a thinner column. The apparent letter is our projection of an irregular three-dimensional distribution of material, with no need for an actual E-shaped cavity in space.",
+    "reveal": "Here the shortage of visible stars is evidence for more intervening matter, not less.",
+    "sources": []
+  },
+  "orion": {
+    "notice": "Look from the intensely bright central region into the broad wings and the dark material cutting into them.",
+    "explain": "Massive young stars in the Trapezium supply ultraviolet photons that ionize their surroundings. Electrons recombine with ions and atoms emit light as they change energy states, making part of the cloud luminous. The stars also excavate and erode their birth environment while dense regions continue forming stars. This extraordinary contrast between a brilliant core and faint outskirts reflects both strong differences in illumination and the amount of gas along each sight line.",
+    "reveal": "The stars making Orion visible are also dismantling the cloud that made them.",
+    "sources": []
+  },
+  "ngc1333": {
+    "notice": "Contrast the blue reflection glow with the broad opaque lanes and the stars that disappear into them.",
+    "explain": "NGC 1333 is an active stellar nursery inside the Perseus molecular cloud. Starlight escaping through openings illuminates nearby dust, while thicker regions hide much of the young population from optical cameras. Astronomers use infrared light to find those embedded objects and other observations to study their outflows. This visible portrait shows the illuminated surface and windows through the cloud; its darkest areas can conceal some of the region's most active early stellar development.",
+    "reveal": "A dark patch in this nursery can hide young stars rather than mark a place where nothing is happening.",
+    "sources": []
+  },
+  "shark": {
+    "notice": "Follow the long dusty profile, then find the small blue reflection patches set against the surrounding brown material.",
+    "explain": "The Shark's recognizable outline comes from variations in dust column, illumination and viewing angle. Where dust blocks a bright stellar background it reads as a silhouette; where nearby stars illuminate it, patches such as vdB 149 and vdB 150 appear blue. Its apparent shape is not the outline of a rigid object. It is one perspective through a cloud whose faint edges become easier to see as longer integrations separate weak astronomical signal from noise.",
+    "reveal": "The dark body and blue patches are different ways of seeing dusty material, not different substances shaped like an animal.",
+    "sources": []
+  },
+  "helix": {
+    "notice": "Compare the luminous rim with the fainter interior and the more diffuse material outside the main ring.",
+    "explain": "A star near the end of its life lost its outer envelope, exposing a hot core whose ultraviolet radiation makes the expelled gas shine. The bright ring is the projected view of a more complicated three-dimensional nebula. Looking through a longer column of emitting gas can brighten an edge even without a locally stronger light source. The Helix records stellar mass loss and ionization; it is not the blast wave of a supernova or a structure powered by planets.",
+    "reveal": "The glowing shell is a star's former outer layers, while its compact remnant remains near the center.",
+    "sources": []
+  },
+  "m78": {
+    "notice": "Look for blue-lit cloud surfaces bounded by dark, sharply textured dust lanes.",
+    "explain": "M78's glow is borrowed from stars: dust redirects their light toward us rather than generating the blue continuum through ionization. Dense material around those illuminated patches remains opaque to visible light. Infrared observations penetrate more of that dust and reveal additional young objects, so a blue optical nebula and an infrared stellar nursery can be two views of the same environment. The visible boundary follows where light escapes and scatters, not necessarily where the cloud ends.",
+    "reveal": "An optical picture shows the cloud's illuminated windows; infrared observations can reveal stars behind the curtains.",
+    "sources": []
+  },
+  "ngc891": {
+    "notice": "Notice how a narrow dark lane divides the galaxy's much smoother glow.",
+    "explain": "NGC 891 is a spiral galaxy viewed almost edge-on. Along that angle our sight line passes through much more dusty disk material than it would in a face-on view, making the central lane especially prominent. Light above and below the plane comes from a thicker distribution of stars. Its thin appearance does not mean it lacks spiral arms: the viewing geometry hides their plan while revealing the vertical structure that a face-on portrait would conceal.",
+    "reveal": "Turning a galaxy edge-on hides its spiral pattern but makes the thickness of its dusty disk much easier to read.",
+    "sources": []
+  },
+  "heart": {
+    "notice": "Find the central stellar gathering and compare it with the sculpted dark pillars inside the larger luminous cloud.",
+    "explain": "The young stars associated with Melotte 15 supply energetic radiation and winds to their surroundings. Gas exposed to that radiation becomes ionized and emits light, while denser condensations shield their interiors and survive erosion longer. That produces the contrast between bright rims and darker pillars. The central cluster and broad glowing structure are stages of one feedback story: a generation of stars changes the density, temperature and future evolution of the material around it.",
+    "reveal": "The cloud is being sculpted from within by stars that recently formed out of similar material.",
+    "sources": []
+  },
+  "ghost": {
+    "notice": "Study the pale, contorted wisps where they emerge from the much less luminous dust around them.",
+    "explain": "The Ghost Nebula's light is predominantly starlight scattered by dusty material in Cepheus. A luminous reflection patch is therefore a sign of favorable illumination, rather than a hot solid surface. Within the region, denser cores show evidence of early star formation in other observations. The ghostlike forms combine the cloud's real irregular structure with our viewing angle; a brighter edge can result from more scattering material or different illumination rather than a separate object.",
+    "reveal": "The eerie figures are folds in an illuminated cloud, while denser parts of the same region can be preparing to make stars.",
+    "sources": []
+  },
+  "iris-ghost": {
+    "notice": "Move between the compact blue Iris, the paler Ghost region, and the faint dust linking the wider field on the sky.",
+    "explain": "A wide image changes the apparent subject: the bright named nebulae become illuminated patches within a much larger dusty landscape. Variations in star-cloud geometry determine where dust reflects strongly, while thicker columns obscure the background. The structures share a region of the sky, but a continuous-looking filament in a flat image does not alone establish its three-dimensional connection. Distance measurements and gas velocities are needed to turn this projected landscape into a physical map.",
+    "reveal": "A nebula's familiar name often describes the brightest patch our telescopes first noticed, not the full extent of its surrounding material.",
+    "sources": []
+  },
+  "ldn1147": {
+    "notice": "Compare the faint brown cloud surfaces with the narrow, nearly opaque lanes and their reduced background star counts.",
+    "explain": "The LDN 1147/1158 complex contains structured molecular material rather than empty space. Dust makes its densest columns conspicuous by extinguishing starlight, while diffuse illumination can reveal thinner surfaces. Researchers study related clouds using molecular spectra and polarization to trace gas motions and magnetic fields. Those measurements test how gravity competes with support during star formation; the shape of a dark filament in a photograph alone cannot establish whether it is presently collapsing.",
+    "reveal": "A dark filament is a projected column; spectra and polarization help test whether gravity is overcoming its internal support.",
+    "sources": []
+  },
+  "cocoon": {
+    "notice": "Compare the luminous Cocoon with the long dark trail that seems to lead away from it.",
+    "explain": "IC 5146 contains a young cluster whose stars illuminate and clear a cavity in surrounding material. The bright region combines emission from energized gas with scattered starlight, while the Barnard 168 cloud remains conspicuous through obscuration. The trailing shape is not a comet tail produced by the nebula racing through space. It places an optically bright star-forming region beside a reservoir of darker material, demonstrating how dramatically newborn stars change the visibility of their environment.",
+    "reveal": "The dark trail is a cloud, not a tail of material streaming behind a moving cosmic object.",
+    "sources": []
+  },
+  "crescent": {
+    "notice": "Trace the curved luminous shell and its broken, filamentary texture against the broader Cygnus emission.",
+    "explain": "The Crescent preserves changes in one massive star's mass loss. During an earlier supergiant stage, WR 136 shed material relatively slowly. Its later Wolf–Rayet wind caught up with that ejecta, compressed it and helped produce a bright, structured shell. This is a collision between successive outflows and their surroundings, rather than a planetary nebula from a Sun-like star. The central star is still alive; the visible shell is not the remnant of its eventual supernova.",
+    "reveal": "The Crescent is a massive star colliding with its own earlier wind before its final explosion.",
+    "sources": []
+  },
+  "sombrero": {
+    "notice": "Look at the thin dark rim crossing the luminous central bulge and the broader glow extending above it.",
+    "explain": "The Sombrero combines a striking dust-bearing disk with a large, smooth central stellar component. Because we see the disk almost edge-on, dust blocks light from the stars behind it and draws the famous hat brim. The galaxy also hosts a rich population of globular clusters documented in deeper observations. Its central black hole is inferred from the behavior of material near the nucleus; the bright bulge in this image is stellar light, not a resolved view of that black hole.",
+    "reveal": "The black stripe is ordinary dust seen against billions of stars; it is unrelated to the galaxy's central black hole silhouette.",
+    "sources": []
+  },
+  "pelican": {
+    "notice": "Follow the bright boundary where luminous gas meets darker cloud, especially around protruding ridges.",
+    "explain": "The Pelican is part of the North America/Pelican star-forming complex. Ultraviolet light ionizes exposed gas and eats into the denser material behind the bright front. Dense protrusions can remain while their surroundings erode, producing ridges and pillar-like shapes. Infrared and outflow observations reveal young stars in this complex, but the bright outline alone does not tell us which individual stars were triggered by the advancing front. It records the interface between very different physical conditions.",
+    "reveal": "A bright rim can be an eroding surface rather than the edge of a solid object or proof of newly triggered star birth.",
+    "sources": []
+  },
+  "moon": {
+    "notice": "Compare the broad dark maria with bright cratered highlands and the long rays around prominent impacts.",
+    "explain": "The dark maria are basaltic volcanic plains, while brighter highlands preserve older crust and extensive impact damage. This nearly full illumination makes reflectance differences and ray systems stand out, but reduces the long shadows that normally reveal relief near the terminator. Crater rays are ejecta spread across the surface, not illuminated fractures. The portrait therefore reads most clearly as a map of different surface materials and impact history, rather than a direct topographic map.",
+    "reveal": "A nearly full Moon can reveal material contrasts beautifully while making deep craters look deceptively flat.",
+    "sources": []
+  },
+  "rho-ophiuchi": {
+    "notice": "Compare blue reflection clouds, warmer illuminated dust, dark lanes, and the compact stellar gathering of M4.",
+    "explain": "This rich field combines different light sources and very different depths. Nearby dust redirects light from stars of different colors and hides background stars along thicker sight lines. Young stars are forming within the broader Rho Ophiuchi cloud complex. M4, by contrast, is an old globular cluster much farther away, superposed in the same view. Its proximity to the clouds on the screen does not mean that it belongs to their young stellar population.",
+    "reveal": "One photograph places a nearby stellar nursery beside an ancient, much more distant cluster.",
+    "sources": [
+      {
+        "title": "NASA · Messier 4",
+        "url": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-4/"
+      }
+    ]
+  },
+  "elephant-trunk": {
+    "notice": "Follow the dark elongated trunk and the bright rim separating it from the glowing IC 1396 background.",
+    "explain": "The Elephant Trunk is a dense globule exposed to radiation from massive stars in the surrounding IC 1396 region. Its outer skin is heated and ionized, while thicker material shields the interior. Young stars are known within the globule. This makes the object a natural laboratory for external feedback: radiation can compress parts of a cloud and also remove its gas, with the outcome depending on density, geometry and timescale rather than brightness alone.",
+    "reveal": "The bright skin and dark interior are exposed and sheltered parts of the same star-forming cloud.",
+    "sources": []
+  },
+  "eagle": {
+    "notice": "Look for the compact Pillars of Creation within the much larger Eagle Nebula, rather than treating the pillars as the whole object.",
+    "explain": "Young massive stars in M16 irradiate and erode surrounding gas. Dense columns survive longer than the more diffuse material around them and can shelter stars forming inside. Their illuminated surfaces are therefore both structures of star birth and evidence of a cloud being dismantled. The famous pillars occupy only a small part of the Eagle complex; the wide view reveals the much larger environment that supplies the radiation and material shaping them.",
+    "reveal": "The pillars are small surviving remnants inside a far larger nursery that its own stars are clearing away.",
+    "sources": []
+  },
+  "broom": {
+    "notice": "Trace the narrow winding silhouette and compare its star-poor interior with the crowded field beside it.",
+    "explain": "The LDN 1082/Barnard 150 field is a dark-cloud scene: dust removes background starlight from our line of sight and exposes the shape of the column. The apparent narrowness describes a projection, not a measured cylindrical cross-section. Along a moderately obscured path, some stars may appear reddened; through denser material they disappear at optical wavelengths. This explains how an apparently delicate strand can register strongly against a rich field without emitting much visible light of its own.",
+    "reveal": "This dark Seahorse is an obscuring cloud; it is physically different from the glowing supernova filaments also nicknamed the Witch's Broom.",
+    "sources": []
+  },
+  "lagoon": {
+    "notice": "Compare the bright central gas with the dark dividing lanes and the faint outer reaches of M8.",
+    "explain": "The Lagoon is a large stellar nursery where massive young stars supply ionizing ultraviolet light. The emission outlines exposed gas, while dust lanes hide denser parts of the molecular environment. Winds and radiation excavate cavities as new stars continue to form in other parts of the complex. The huge brightness range in the image reflects this uneven illumination and obscuration: the most luminous patch is only the most conspicuous portion of a much larger region.",
+    "reveal": "The Lagoon's bright center is a window into a nursery whose surrounding darker material can hide additional young stars.",
+    "sources": []
+  },
+  "lagoon-trifid": {
+    "notice": "Compare the Lagoon's broad luminous body with the Trifid's divided emission region and blue reflection patch.",
+    "explain": "This broad Sagittarius view places two stellar nurseries in the same frame without making them one nebula. In the Lagoon, hot stars energize a large cloud; in the Trifid, dark lanes divide an emission region beside scattered blue starlight. Their apparent separation is an angle on our sky, not a direct measurement of the physical gap between them. The surrounding stellar field adds still more depth, making this a landscape assembled along many overlapping sight lines.",
+    "reveal": "A single wide field can unite objects aesthetically while their actual separation requires distance measurements.",
+    "sources": []
+  },
+  "trifid": {
+    "notice": "Follow the dark lanes dividing the bright nebula, then compare them with the blue reflection lobe.",
+    "explain": "The Trifid puts three radiative processes into one recognizable structure. Ultraviolet light from massive young stars ionizes gas, which emits characteristic spectral lines. Nearby dust redirects starlight into the blue reflection region, while thicker lanes absorb and scatter light away, splitting the emission into apparent lobes. The dark divisions do not mean the bright gas is separated by empty cracks: those divisions mark intervening material, and can conceal parts of the star-forming environment.",
+    "reveal": "The Trifid's three-part appearance is drawn by extra dust, not by missing material between three separate glowing clouds.",
+    "sources": []
+  },
+  "triangulum": {
+    "notice": "Trace the loose spiral arms and the bright knots scattered through the galaxy's disk.",
+    "explain": "M33 gives us a relatively open view of a gas-rich Local Group spiral. Its disk contains numerous star-forming regions, including the enormous NGC 604 complex documented in detailed observations. Bright knots therefore represent collective activity from gas and groups of stars rather than single oversized stars. The arms bring together young stellar populations and the material from which stars form, allowing astronomers to compare star formation across a whole galaxy rather than one Milky Way cloud.",
+    "reveal": "A bright knot in another galaxy can be an entire stellar nursery vastly larger than Orion.",
+    "sources": []
+  },
+  "pacman": {
+    "notice": "Find the dark bite in the luminous gas and the smaller opaque knots nearby.",
+    "explain": "NGC 281 is illuminated by young massive stars, while dusty material creates its familiar dark mouth at optical wavelengths. The high-energy radiation and winds change the surrounding cloud, ionizing exposed gas and pushing on denser regions. Infrared observations make the apparently dark material glow because dust absorbs energy and reradiates it at longer wavelengths. A feature that looks absent in this optical view can therefore be a conspicuous emitter in another part of the spectrum.",
+    "reveal": "Pacman's dark mouth is filled with material that can shine brightly in infrared light.",
+    "sources": []
+  },
+  "monkey-head": {
+    "notice": "Look for the contrast between the broad luminous face and the darker projecting pillars.",
+    "explain": "The Monkey Head region contains young stars and the material from which they formed. Intense radiation and stellar winds remove lower-density gas faster, leaving dense protrusions that resemble pillars. Their exposed skins are illuminated, while their interiors obscure optical light. Hubble's infrared observations reveal additional stars and background objects through parts of the cloud. This means the familiar visible outline is partly a map of where our chosen wavelengths can penetrate, rather than a complete inventory of the region.",
+    "reveal": "The Monkey Head would not keep the same face if we could change our eyes from visible to infrared light.",
+    "sources": []
+  },
+  "bubble": {
+    "notice": "Locate the compact rounded shell and notice how uneven its brightness and surrounding cloud are.",
+    "explain": "The massive star powering NGC 7635 launches a fast wind into interstellar gas. As that outflow encounters surrounding material, it sweeps gas into a shell. Unequal ambient density resists the expansion by different amounts, helping place the star away from the bubble's apparent geometric center. Its near-round outline therefore does not imply a uniform environment. This bubble is mainly wind interacting with surrounding cloud, unlike the Crescent's especially clear collision with earlier stellar ejecta.",
+    "reveal": "The star need not sit at the bubble's apparent center because its wind meets different resistance in different directions.",
+    "sources": []
+  },
+  "swan": {
+    "notice": "Follow M17's bright curved ridge and the dark material pressed against its luminous gas.",
+    "explain": "The Swan's conspicuous ridge is only the optically exposed part of a substantial stellar nursery. Much of the young stellar population is hidden by surrounding dust, even though those stars provide the radiation that makes nearby gas luminous. Their ultraviolet light both ionizes exposed material and erodes denser condensations. The resulting shape therefore combines a cloud being illuminated with a cloud being dismantled; the familiar swan outline does not show the full extent of the young cluster.",
+    "reveal": "Some of the stars responsible for the Swan's brightness are concealed by the cloud they illuminate.",
+    "sources": []
+  },
+  "flying-bat": {
+    "notice": "Compare Ou4's faint, elongated oxygen-emitting shape with the broader hydrogen-emitting Flying Bat around it.",
+    "explain": "Ou4 is a striking bipolar structure projected across the Sh2-129 emission region. Spectroscopy supports shock-excited, collimated outflow, rather than treating every luminous patch as gas energized only by stellar ultraviolet light. Research finds a plausible association with the HR 8119 system and Sh2-129, while alternative origins have not been fully excluded. The unusually faint oxygen structure becomes conspicuous through narrowband selection: its contrast in this rendering does not mean it dominates the total visible light.",
+    "reveal": "Spectra reveal evidence for shocks in the Squid, but its origin is less settled than its memorable outline suggests.",
+    "sources": []
+  },
+  "ngc6559": {
+    "notice": "Compare the red emission, blue reflection and dark dividing clouds in this compact region.",
+    "explain": "NGC 6559 shows neighboring material responding differently to the same stellar environment. Energetic young stars ionize gas, producing emission; dust scatters some stellar light into blue patches, and thick columns block the background. As stars form, their radiation and winds begin rearranging the surrounding cloud. The resulting complexity is not three unrelated substances with fixed colors: geometry, excitation and how much material lies along each sight line determine which process becomes most conspicuous.",
+    "reveal": "This region is a compact demonstration that red glow, blue glow and darkness can have three different physical causes.",
+    "sources": []
+  },
+  "cygnus": {
+    "notice": "Compare the sweeping luminous clouds with the dark lanes and the bright stars superposed on them.",
+    "explain": "The Sadr region compresses a deep Galactic landscape into one view. Although the bright star Sadr appears surrounded by IC 1318, distance measurements put the star in front of that nebular material. It is not automatically the source of energy for every nearby-looking cloud. The glow traces energized gas, and the dark lanes mark obscuring dust; the stars scattered across them lie at multiple depths. Apparent proximity is therefore a poor guide to physical association.",
+    "reveal": "Sadr appears embedded in the clouds on the sky, but it is actually in front of the main IC 1318 nebulosity.",
+    "sources": []
+  },
+  "v379-vul": {
+    "notice": "Watch how the density of visible stars changes across the darker lanes and faint nebulosity.",
+    "explain": "This Vulpecula field looks like an almost continuous sea of stars, yet its unevenness contains information about intervening material. Dust removes some of the background light, while stars in front of the cloud remain visible. Apparent brightness mixes intrinsic luminosity, distance and extinction, so the brightest points do not necessarily mark the nearest objects. The still image is a spatial portrait; establishing variability for a named star requires measurements at multiple times, not its appearance in one exposure.",
+    "reveal": "A gap in the star field can act as a silhouette of foreground dust, while the bright stars inside it may lie on our side of the cloud.",
+    "sources": []
+  },
+  "saturn": {
+    "notice": "Notice how narrowly the rings project beside the planet compared with the broad, rounded disk.",
+    "explain": "Saturn's rings are a vast, thin collection of separately orbiting particles, mostly water ice. Their narrow appearance here comes from our viewing angle rather than a sudden change in their physical width. The planet's tilted rotation axis and its changing position in orbit alter that angle over time. Both globe and rings shine by reflected sunlight; their different textures and brightness arise from different materials, scattering properties and illumination geometries.",
+    "reveal": "The rings can seem to nearly disappear when viewed edge-on even though the enormous ring system is still present.",
+    "sources": []
+  },
+  "sun": {
+    "notice": "Compare the dark sunspots, the bright surrounding photosphere, and the disk's dimmer edge.",
+    "explain": "Sunspots are magnetic regions where the supply of heat by convection is reduced. They look dark only by comparison with the much brighter surrounding photosphere and still radiate strongly. Toward the disk's edge, an oblique sight line samples higher, cooler layers, producing limb darkening. These white-light patterns reveal the Sun's visible surface; the warm display color is a rendering choice, and the underlying energy comes from fusion deep in the core rather than surface combustion.",
+    "reveal": "A sunspot is still intensely luminous: it appears dark because its surroundings are even brighter.",
+    "sources": []
+  },
+  "starfield": {
+    "notice": "Compare the brightest isolated points with the numerous fainter ones and the apparently crowded patches.",
+    "explain": "A star field folds distance into a flat image. A faint point might be a nearby low-luminosity star, a distant luminous star, or a star dimmed by dust; brightness alone cannot choose between them. Angular crowding likewise does not establish a real cluster. Astronomers add parallax, proper motion and spectra to separate those possibilities. With this field's exact identification unrecorded, its compelling subject remains that enormous range of stars and sight lines rather than a claimed single stellar family.",
+    "reveal": "Two stars almost touching in the photograph may be separated by enormous distances along our line of sight.",
+    "sources": []
+  },
+  "m81": {
+    "notice": "Compare M81's broad spiral disk and luminous bulge with M82's much narrower appearance in the wider view.",
+    "explain": "M81 and M82 are members of an interacting galaxy group. Their gravitational encounters can rearrange gas and influence where stars form, although their present appearances also depend strongly on viewing angle. M81's smooth central glow is dominated by older populations, while its arms contain younger stars, gas and dust. The wider frame therefore combines two distinct galactic responses to a shared environment, rather than simply showing the same kind of galaxy at two different sizes.",
+    "reveal": "Neighbors can share a gravitational history while displaying radically different patterns of star formation.",
+    "sources": []
+  },
+  "m82": {
+    "notice": "Study the elongated bright body and the dark lanes interrupting its central light.",
+    "explain": "M82's narrow appearance hides an unusually active center. Gravitational interaction with M81 is linked to intense star formation there, and the combined energy of many young stars and stellar deaths drives a galactic outflow documented in other observations. Dust hides parts of that activity at visible wavelengths; infrared and X-ray data reveal complementary pieces. Its bright central region is therefore a collective stellar phenomenon on a galactic scale, not the flare of one exceptionally bright star.",
+    "reveal": "A galaxy-wide wind can be powered by the combined activity of many stars concentrated in a starburst.",
+    "sources": []
+  },
+  "m51": {
+    "notice": "Trace the grand spiral arms toward the smaller companion, NGC 5195.",
+    "explain": "M51's arms organize stars, gas, dust and regions of recent star formation. Its encounter with NGC 5195 contributes to the striking structure and can compress gas, changing where new stars form. The companion's apparent attachment to an arm is a projection of a three-dimensional encounter; detailed observations place it behind the main galaxy. The still portrait records the accumulated result of gravity acting for immense spans of time rather than showing a motion we could watch during an exposure.",
+    "reveal": "The companion appears hooked onto an arm, but the encounter has depth: NGC 5195 lies behind the main galaxy in this view.",
+    "sources": []
+  },
+  "m64": {
+    "notice": "Find the asymmetric dark dust feature beside the bright nucleus.",
+    "explain": "M64's dark eye is dust in front of its central starlight, but spectroscopy reveals an even stranger story beyond the visible shape. Gas in its outer regions rotates in the opposite direction from inner gas and stars, possibly following an encounter or merger. Where different flows meet, gas can be compressed and form stars. The photograph supplies the distinctive dust pattern; the counterrotation is a separate discovery made from Doppler shifts, not a motion visible in this still.",
+    "reveal": "The Black Eye Galaxy contains counterrotating gas, a hidden dynamical story that requires spectra to uncover.",
+    "sources": []
+  },
+  "rosette": {
+    "notice": "Compare the relatively open center containing NGC 2244 with the brighter surrounding ring of gas.",
+    "explain": "The Rosette's young central stars illuminate their environment and help clear gas from the cavity around them. Their ultraviolet light ionizes exposed material, while denser, dusty portions of the surrounding cloud remain less transparent. The ring is a projection through a three-dimensional structure, with brighter sight lines crossing more emitting material or more strongly illuminated surfaces. The central clearing and luminous boundary show how the birth of a cluster can rapidly transform the cloud around it.",
+    "reveal": "The stars in the center are helping excavate the very cavity that makes the Rosette look like a flower.",
+    "sources": []
+  },
+  "m27": {
+    "notice": "Compare the bright opposing lobes with the fainter surrounding emission.",
+    "explain": "The Dumbbell is an evolved star's expelled envelope, illuminated by its hot exposed core. Its two prominent lobes give a different projected appearance from the Helix, although both belong to the planetary-nebula stage of stellar evolution. Gas density, ionization and three-dimensional geometry influence which parts become brightest. The shape is therefore not a pair of solid objects: it is a structured, expanding distribution of stellar material whose light changes as the remnant evolves and the gas disperses.",
+    "reveal": "The Dumbbell and the Helix look different, but both show the return of an aging star's outer layers to space.",
+    "sources": []
+  },
+  "m5": {
+    "notice": "Compare the strongly crowded center with the more separated stars around the cluster's outskirts.",
+    "explain": "M5 is an ancient globular cluster, whose dense stellar population lets astronomers study stars with a long shared history. High-resolution observations also find blue stragglers: stars that look unexpectedly youthful for their surroundings. Mass transfer between stars or stellar collisions can help produce those objects, making cluster dynamics part of stellar evolution. This wide portrait shows the dramatic concentration of stars; individual blue stragglers require identification with dedicated measurements rather than color alone.",
+    "reveal": "An ancient cluster can contain apparently rejuvenated stars because stellar interactions can change a star's evolutionary path.",
+    "sources": []
+  },
+  "ic4756": {
+    "notice": "Look for the loose concentration of bright members without the blazing central crowding seen in M5.",
+    "explain": "IC 4756 is an open cluster: its member stars share a birth history, but the system is much more loosely organized than a globular cluster. Encounters and the Galaxy's tidal field gradually remove members. Gaia-based research has traced extended tidal features associated with this cluster, showing that its full dynamical footprint extends beyond the compact gathering that first catches the eye. Motion measurements distinguish those dispersed members from unrelated foreground and background stars.",
+    "reveal": "A star cluster can extend beyond its obvious visual boundary as escaping members spread into tidal structures.",
+    "sources": []
+  },
+  "witch-head": {
+    "notice": "Follow the pale elongated profile through the field and compare its brightness with nearby dark space.",
+    "explain": "The Witch Head shines by redirecting light associated with Rigel, rather than by producing a flame-like optical glow of its own. Dust scatters some wavelengths more efficiently than others, and both the illuminating star's spectrum and the intervening material influence the result. The recognizable profile is our angle through an irregular cloud. Its faint edges mark where scattered light drops below the image's sensitivity, not necessarily where all the dust physically ends.",
+    "reveal": "An external star can make a huge cloud visible without sitting at the center of its familiar outline.",
+    "sources": []
+  },
+  "cave": {
+    "notice": "Trace the luminous arc around the dark mouth and the subtler reflection light elsewhere in the field.",
+    "explain": "The Cave Nebula is part of the larger Cepheus B cloud environment, with a luminous arc marking ionized gas beside denser material. Radio and infrared observations reveal young stellar activity that optical dust can conceal. Its cave-like darkness is therefore not an empty chamber with a solid wall: it is a view shaped by illumination, obscuration and the amount of material along the line of sight. Different wavelengths expose different parts of this ongoing star-forming region.",
+    "reveal": "The apparent entrance to the cave is an illuminated cloud boundary, with additional stellar activity hidden from optical view.",
+    "sources": [
+      {
+        "title": "NASA · Cave Nebula / Caldwell 9",
+        "url": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-9/"
+      }
+    ]
+  },
+  "vdb126": {
+    "notice": "Find the small blue reflection patch within the much broader, less luminous dusty field.",
+    "explain": "The compact reflection nebula vdB 126 demonstrates how strongly local illumination controls what we notice. A star lights nearby dust and makes a small patch stand out, while a much larger expanse remains faint or becomes visible through obscuration. The bright patch need not contain most of the field's material. Its contrast comes from a favorable combination of incoming starlight, dust properties and our viewing angle, rather than requiring all the surrounding gas to emit light.",
+    "reveal": "A tiny bright reflection patch can be an illuminated signpost to a much larger reservoir of barely visible dust.",
+    "sources": []
+  },
+  "veil": {
+    "notice": "Follow the exceptionally thin, curved luminous filaments rather than looking for one central bright nebula.",
+    "explain": "The Veil is part of the Cygnus Loop, a supernova remnant where an expanding blast wave encounters surrounding material. Shocks heat and excite gas, producing line emission. Some thin-looking filaments are sheets viewed almost edge-on, so a long path through emitting material makes a narrow bright trace. These structures record an explosive stellar ending and its impact on interstellar gas, unlike the envelope loss of the Helix or the continuing wind from the star inside the Crescent.",
+    "reveal": "A filament can be the edge-on view of a glowing sheet swept up by a supernova shock.",
+    "sources": []
+  },
+  "north-america": {
+    "notice": "Compare the continent-like outline with the dark Gulf region and the bright, structured Cygnus Wall.",
+    "explain": "NGC 7000's familiar map-like shape depends heavily on obscuring dust placed in front of luminous gas. The Cygnus Wall highlights an interface where radiation meets denser material, while the wider complex contains young stars and additional dusty clouds. Infrared observations reveal populations concealed in the optical view. The outline is therefore an accident of perspective and wavelength: changing the light we detect changes the apparent geography without moving any of the underlying material.",
+    "reveal": "The cosmic coastline is partly drawn by foreground dust, and infrared light reveals a different geography.",
+    "sources": []
+  },
+  "loch-ness": {
+    "notice": "Follow the dark cloud's elongated outline and compare the number of stars inside it with the surrounding field.",
+    "explain": "In this LDN 772 field, the cloud's most direct signature is what it does to background starlight. Dust can redden a moderately obscured star or remove it from optical view when the column becomes thicker. Stars still seen within the outline can lie in front of the cloud or along clearer paths through it. The animal-like silhouette is a projected pattern of opacity, not a measured three-dimensional boundary or evidence that the material has one uniform density.",
+    "reveal": "The photograph detects this cloud through light that fails to reach us; the visible stars help reveal where the obstruction lies.",
+    "sources": []
+  }
+}

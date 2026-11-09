@@ -1,3 +1,4 @@
+import scienceInsights from './science-insights.json'
 import { scienceObjects } from './science'
 import Atlas from './Atlas'
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from 'react'
@@ -449,6 +450,7 @@ const legacyScienceIds:Record<string,string> = {"m51-whirlpool-galaxy": "m51", "
 function PhotographPage({ photo }: { photo: Photograph }) {
   const scienceId = legacyScienceIds[photo.slug]
   const science = scienceObjects[scienceId]
+  const insight = scienceInsights[scienceId as keyof typeof scienceInsights]
   const currentIndex = photographs.findIndex((item) => item.slug === photo.slug)
   const previous = photographs[(currentIndex - 1 + photographs.length) % photographs.length]
   const next = photographs[(currentIndex + 1) % photographs.length]
@@ -482,7 +484,7 @@ function PhotographPage({ photo }: { photo: Photograph }) {
           <div><p className="photo-note">{photo.note}</p>{facts.length > 0 && <dl>{facts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>}</div>
         </section>
 
-        {science && <section className="legacy-science"><p className="section-number">BEYOND THE FRAME / THE SCIENCE</p><h2>{science.kind}</h2><p>{science.lead}</p><a href={`/?photo=${scienceId}&media=science`}>Explore the science, current views & sources ↗</a></section>}
+        {science && <section className="legacy-science"><p className="section-number">BEYOND THE FRAME / THE SCIENCE</p><h2>{science.kind}</h2><p>{insight.reveal}</p><p>{insight.explain}</p><a href={`/?photo=${scienceId}&media=science`}>Explore the science, current views & sources ↗</a></section>}
         <nav className="photo-pagination" aria-label="Photograph navigation">
           <a href={photoHref(previous)}><span>← Previous</span><strong>{previous.title}</strong></a>
           <a href={photoHref(next)}><span>Next →</span><strong>{next.title}</strong></a>
