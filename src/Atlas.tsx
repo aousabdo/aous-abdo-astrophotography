@@ -1,3 +1,4 @@
+import { FullResolutionViewer, hasFullResolution } from './FullResolution'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { photographs, groups, type Photograph, type View } from './gallery'
 import { Films, FilmPlayer } from './Films'
@@ -21,6 +22,8 @@ function Atlas() {
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
   const [zoom, setZoom] = useState(false)
+  const [exploring, setExploring] = useState(false)
+  const [resolutionFocus, setResolutionFocus] = useState(false)
   const [watching, setWatching] = useState(false)
   const [science, setScience] = useState(false)
   const dialog = useRef<HTMLDivElement>(null)
@@ -37,27 +40,28 @@ function Atlas() {
     return result
   }, [filter, query, sort])
   const currentView: View | undefined = active?.views[viewIndex]
-  const photoUrl = (photo?: Photograph | null, index = 0, video = false, explore = false) => {
+  const photoUrl = (photo?: Photograph | null, index = 0, video = false, explore = false, detail = false) => {
     const url = new URL(window.location.href)
     if (photo) { url.searchParams.set('photo', photo.id); if (index) url.searchParams.set('view', photo.views[index].id); else url.searchParams.delete('view') }
     else { url.searchParams.delete('photo'); url.searchParams.delete('view') }
-    if (photo && explore) url.searchParams.set('media', 'science')
+    if (photo && detail) url.searchParams.set('media', 'detail')
+    else if (photo && explore) url.searchParams.set('media', 'science')
     else if (photo && video) url.searchParams.set('media', 'video')
     else url.searchParams.delete('media')
     return url.toString()
   }
-  const openPhoto = (photo: Photograph, index = 0, video = false, explore = false) => {
+  const openPhoto = (photo: Photograph, index = 0, video = false, explore = false, detail = false) => {
     opener.current = document.activeElement as HTMLElement
-    setActive(photo); setViewIndex(index); setZoom(false); setWatching(video); setScience(explore)
-    window.history.pushState({}, '', photoUrl(photo, index, video, explore))
+    setActive(photo); setViewIndex(index); setZoom(false); setWatching(video); setScience(explore); setExploring(detail); setResolutionFocus(detail)
+    window.history.pushState({}, '', photoUrl(photo, index, video, explore, detail))
   }
-  const closePhoto = () => { setActive(null); setZoom(false); setWatching(false); setScience(false); window.history.replaceState({}, '', photoUrl()); opener.current?.focus() }
-  const changeView = (index: number) => { setWatching(false); setScience(false); setViewIndex(index); setZoom(false); if (active) window.history.replaceState({}, '', photoUrl(active, index)) }
+  const closePhoto = () => { setActive(null); setExploring(false); setResolutionFocus(false); setZoom(false); setWatching(false); setScience(false); window.history.replaceState({}, '', photoUrl()); opener.current?.focus() }
+  const changeView = (index: number) => { setExploring(false); setResolutionFocus(false); setWatching(false); setScience(false); setViewIndex(index); setZoom(false); if (active) window.history.replaceState({}, '', photoUrl(active, index)) }
   const stepPhoto = (direction: number) => {
     if (!active) return
     const pool = visible.some(p => p.id === active.id) ? visible : photographs
     const next = pool[(pool.findIndex(p => p.id === active.id) + direction + pool.length) % pool.length]
-    setActive(next); setViewIndex(0); setZoom(false); setWatching(false); setScience(false); window.history.replaceState({}, '', photoUrl(next))
+    setActive(next); setExploring(false); setResolutionFocus(false); setViewIndex(0); setZoom(false); setWatching(false); setScience(false); window.history.replaceState({}, '', photoUrl(next))
   }
   useEffect(() => {
     const restore = () => {
@@ -68,6 +72,7 @@ function Atlas() {
       setActive(photo); setViewIndex(photo ? Math.max(0, photo.views.findIndex(v => v.id === params.get('view'))) : 0); setZoom(false)
       setWatching(Boolean(photo && ['sun','moon'].includes(photo.id) && params.get('media') === 'video'))
       setScience(Boolean(photo && params.get('media') === 'science'))
+      setExploring(Boolean(photo && params.get('media') === 'detail')); setResolutionFocus(Boolean(photo && params.get('media') === 'detail'))
       if (!photo && window.location.hash) requestAnimationFrame(() => document.getElementById(window.location.hash.slice(1))?.scrollIntoView())
       else if (!photo && window.location.pathname.startsWith('/gallery')) requestAnimationFrame(() => document.getElementById('collection')?.scrollIntoView())
     }
@@ -84,9 +89,9 @@ function Atlas() {
     if (!active) return
     const keydown = (e: KeyboardEvent) => {
       const isSelect = ['SELECT','VIDEO','INPUT','TEXTAREA'].includes((e.target as HTMLElement).tagName) || Boolean((e.target as HTMLElement).closest('.science-reader'))
-      if (e.key === 'Escape') { e.preventDefault(); if (zoom) setZoom(false); else closePhoto() }
-      if (!isSelect && e.key === 'ArrowRight') { e.preventDefault(); stepPhoto(1) }
-      if (!isSelect && e.key === 'ArrowLeft') { e.preventDefault(); stepPhoto(-1) }
+      if (e.key === 'Escape') { e.preventDefault(); if (resolutionFocus && exploring) setResolutionFocus(false); else if (exploring) exitFullResolution(); else if (zoom) setZoom(false); else closePhoto() }
+      if (!isSelect && !exploring && e.key === 'ArrowRight') { e.preventDefault(); stepPhoto(1) }
+      if (!isSelect && !exploring && e.key === 'ArrowLeft') { e.preventDefault(); stepPhoto(-1) }
       if (e.key === 'Tab') {
         const candidates = dialog.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), summary, select, video[controls], [tabindex="0"]')
         const elements = Array.from(candidates || []).filter(el => el.getClientRects().length > 0)
@@ -99,11 +104,21 @@ function Atlas() {
     window.addEventListener('keydown', keydown); return () => window.removeEventListener('keydown', keydown)
   })
   const share = async (photo?: Photograph | null, index = 0) => {
-    const url = photoUrl(photo, index, Boolean(photo && active?.id === photo.id && watching), Boolean(photo && active?.id === photo.id && science))
+    const url = photoUrl(photo, index, Boolean(photo && active?.id === photo.id && watching), Boolean(photo && active?.id === photo.id && science), Boolean(photo && active?.id === photo.id && exploring))
     try {
       if (navigator.share) await navigator.share({ title: photo ? `${photo.title} — Aous Abdo` : 'Aous Abdo — Astrophotography', url })
       else { await navigator.clipboard.writeText(url); setShareLabel('Link copied ✓'); window.setTimeout(() => setShareLabel('Share collection ↗'), 2200) }
     } catch (error) { if ((error as Error).name !== 'AbortError') { setShareLabel('Could not copy link'); window.setTimeout(() => setShareLabel('Share collection ↗'), 2200) } }
+  }
+  const enterFullResolution = () => {
+    if (!active || !currentView || !hasFullResolution(currentView.id)) return
+    setExploring(true); setResolutionFocus(false); setWatching(false); setScience(false); setZoom(false)
+    window.history.replaceState({}, '', photoUrl(active, viewIndex, false, false, true))
+  }
+  const exitFullResolution = () => {
+    setExploring(false); setResolutionFocus(false)
+    window.history.replaceState({}, '', photoUrl(active, viewIndex))
+    requestAnimationFrame(() => document.querySelector<HTMLElement>('.image-stage .fullres-launch')?.focus())
   }
   const selectGroup = (id: string) => { setFilter(id); setQuery(''); document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' }) }
 
@@ -123,6 +138,7 @@ function Atlas() {
         <div className="hero-bottom"><span>Photographs by Aous Abdo</span><span>{photographs.length} subjects · {viewCount} views · 4 films · Six collections</span></div>
       </section>
       <Films/>
+      <section className="resolution-sampler" aria-labelledby="resolution-heading"><div className="resolution-sampler-head"><div><p className="section-number">LOOK CLOSER / THE ORIGINAL PIXELS</p><h2 id="resolution-heading">Go beyond<br/><em>the first glance.</em></h2></div><p>Follow a dust lane through Andromeda. Wander through a mosaic. Move from the whole sky to the smallest details the photograph recorded.</p></div><div className="resolution-picks">{['andromeda','seahorse','lagoon-trifid'].map(id=>{const photo=photographs.find(p=>p.id===id)!,view=photo.views[0];return <button className="resolution-pick" key={id} onClick={()=>openPhoto(photo,0,false,false,true)}><img src={view.thumb} alt={photo.alt} loading="lazy"/><span><span><strong>{photo.title}</strong><small>Explore {Math.round(view.width*view.height/1e6)} megapixels · full resolution</small></span><b aria-hidden="true">↗</b></span></button>})}</div></section>
       <WallpaperSpotlight/>
       <ScienceStories onOpen={photo=>openPhoto(photo,0,false,true)}/>
       <section className="collections" id="collections">
@@ -144,10 +160,10 @@ function Atlas() {
       <section className="universe" id="universe"><header className="universe-head"><p className="section-number">04 / ELSEWHERE</p><div><h2>Photography is<br/>only one orbit.</h2><p>The wider trail—from nuclear structure to gamma-ray astronomy, stellar evolution, and the places where science meets reflection.</p></div></header><div className="project-grid">{relatedProjects.map((project, index) => <a className={`project-card ${project.className}`} href={project.url} target="_blank" rel="noreferrer" key={project.title}><span className="project-bg" style={{backgroundImage:`url(${project.image})`}} aria-hidden="true"/><span className="project-no">0{index+1}</span><div><small>{project.label}</small><h3>{project.title}</h3><p>{project.description}</p></div><b>Visit project ↗</b></a>)}</div><div className="wider-orbit"><div className="orbit-label"><span className="orbit-dot"/><p>Wider orbit</p></div>{widerProjects.map(p => <a href={p.url} target="_blank" rel="noreferrer" key={p.title}><div><h3>{p.title}</h3><p>{p.note}</p></div><span>↗</span></a>)}</div></section>
     </main>
     <footer><div className="footer-mark"><span className="orbit-dot"/> AA</div><p>Astrophotography by Aous Abdo<br/><span>Made on Earth from ancient light.</span></p><div><button onClick={() => share()} aria-live="polite">{shareLabel}</button><a href="#top">Back to the stars ↑</a></div></footer>
-    {active && currentView && <div ref={dialog} tabIndex={-1} className="lightbox" role="dialog" aria-modal="true" aria-labelledby="photo-title">
+    {active && currentView && <div ref={dialog} tabIndex={-1} className={`lightbox ${exploring && resolutionFocus ? 'full-resolution-focus' : ''}`} role="dialog" aria-modal="true" aria-labelledby="photo-title">
       <div className="lightbox-bar"><div><span>{active.catalog}</span><h2 id="photo-title">{active.title}</h2></div><div><button onClick={() => share(active, viewIndex)}>{shareLabel.startsWith('Link') ? 'Link copied ✓' : 'Share view ↗'}</button><button className="close" onClick={closePhoto} aria-label="Close photograph">Close ×</button></div></div>
-      <div className="lightbox-main">{science ? <ScienceReader key={active.id} photo={active}/> : watching ? <div className="viewer-film"><FilmPlayer key={active.id} subject={active.id} compact/></div> : <div className={`image-stage ${zoom ? 'zoomed' : ''}`}><button className="zoom-image" onClick={() => setZoom(!zoom)} aria-label={zoom ? 'Fit photograph to screen' : 'Zoom into photograph'}><img key={currentView.src} className={imageLoaded ? 'loaded' : ''} src={currentView.src} alt={active.alt} onLoad={() => setImageLoaded(true)} onError={() => {setImageError(true);setImageLoaded(true)}}/>{!imageLoaded && <span className="image-status">Gathering the light…</span>}{imageError && <span className="image-status">The image could not load. Try another view.</span>}</button><span className="zoom-hint">{zoom ? 'Click to fit frame' : 'Click to look closer'}</span></div>}
-        <aside className="photo-details">{['sun','moon'].includes(active.id) && <button className="watch-films" onClick={()=>{const next=!watching;setWatching(next);setScience(false);window.history.replaceState({}, '', photoUrl(active, viewIndex, next))}}>{watching?'Return to photograph ↗':'▶ Watch videos · 2'}</button>}<p className="section-number">{groupName(active.group)}</p>{!science&&<p className="photo-description">{active.description}</p>}<ScienceSummary photo={active} view={currentView} expanded={science} onExplore={()=>{const next=!science;setScience(next);setWatching(false);setZoom(false);window.history.replaceState({},'',photoUrl(active,viewIndex,false,next));}}/><p className="science-eyebrow capture-heading">BEHIND THE IMAGE / CAPTURE NOTES</p><dl><div><dt>Telescope</dt><dd>{currentView.rig}</dd></div><div><dt>View</dt><dd>{currentView.label}</dd></div>{currentView.hours && <div><dt>Integration</dt><dd>{Number(currentView.hours.toFixed(2))} hours</dd></div>}{currentView.integrationNote && <div><dt>Contributing data</dt><dd>{currentView.integrationNote}</dd></div>}{currentView.acquisition && <div><dt>Acquired</dt><dd>{currentView.acquisition}</dd></div>}<div><dt>{currentView.dateKind || 'Finished'}</dt><dd>{currentView.legacy ? 'Earlier collection' : dateLabel(currentView.date)}</dd></div><div><dt>Source size</dt><dd>{currentView.width.toLocaleString()} × {currentView.height.toLocaleString()} px</dd></div></dl>
+      <div className="lightbox-main">{science ? <ScienceReader key={active.id} photo={active}/> : watching ? <div className="viewer-film"><FilmPlayer key={active.id} subject={active.id} compact/></div> : exploring ? <div className="image-stage full-resolution-stage"><FullResolutionViewer key={currentView.id} viewId={currentView.id} title={active.title} preview={currentView.src} focused={resolutionFocus} onFocus={()=>setResolutionFocus(!resolutionFocus)} onExit={exitFullResolution}/></div> : <div className={`image-stage ${zoom ? 'zoomed' : ''}`}><button className="zoom-image" onClick={() => hasFullResolution(currentView.id) ? enterFullResolution() : setZoom(!zoom)} aria-label={hasFullResolution(currentView.id) ? 'Explore photograph at full resolution' : zoom ? 'Fit photograph to screen' : 'Zoom into photograph'}><img key={currentView.src} className={imageLoaded ? 'loaded' : ''} src={currentView.src} alt={active.alt} onLoad={() => setImageLoaded(true)} onError={() => {setImageError(true);setImageLoaded(true)}}/>{!imageLoaded && <span className="image-status">Gathering the light…</span>}{imageError && <span className="image-status">The image could not load. Try another view.</span>}</button>{hasFullResolution(currentView.id) ? <button className="fullres-launch" onClick={enterFullResolution}><span>Explore full resolution<small>{currentView.width.toLocaleString()} × {currentView.height.toLocaleString()} original pixels</small></span><b aria-hidden="true">↗</b></button> : <span className="zoom-hint">{zoom ? 'Click to fit frame' : 'Click to look closer'}</span>}</div>}
+        <aside className="photo-details">{['sun','moon'].includes(active.id) && <button className="watch-films" onClick={()=>{const next=!watching;setWatching(next);setScience(false);setExploring(false);setResolutionFocus(false);window.history.replaceState({}, '', photoUrl(active, viewIndex, next))}}>{watching?'Return to photograph ↗':'▶ Watch videos · 2'}</button>}<p className="section-number">{groupName(active.group)}</p>{!science&&<p className="photo-description">{active.description}</p>}{hasFullResolution(currentView.id) && <button className="fullres-launch fullres-launch-aside" onClick={exploring ? exitFullResolution : enterFullResolution}><span>{exploring ? 'Return to photograph' : 'Explore full resolution'}<small>Drag, pinch & look closer</small></span><b aria-hidden="true">↗</b></button>}<ScienceSummary photo={active} view={currentView} expanded={science} onExplore={()=>{const next=!science;setScience(next);setWatching(false);setExploring(false);setResolutionFocus(false);setZoom(false);window.history.replaceState({},'',photoUrl(active,viewIndex,false,next));}}/><p className="science-eyebrow capture-heading">BEHIND THE IMAGE / CAPTURE NOTES</p><dl><div><dt>Telescope</dt><dd>{currentView.rig}</dd></div><div><dt>View</dt><dd>{currentView.label}</dd></div>{currentView.hours && <div><dt>Integration</dt><dd>{Number(currentView.hours.toFixed(2))} hours</dd></div>}{currentView.integrationNote && <div><dt>Contributing data</dt><dd>{currentView.integrationNote}</dd></div>}{currentView.acquisition && <div><dt>Acquired</dt><dd>{currentView.acquisition}</dd></div>}<div><dt>{currentView.dateKind || 'Finished'}</dt><dd>{currentView.legacy ? 'Earlier collection' : dateLabel(currentView.date)}</dd></div><div><dt>Source size</dt><dd>{currentView.width.toLocaleString()} × {currentView.height.toLocaleString()} px</dd></div></dl>
           {active.views.length > 1 && <div className="alternate-views"><h3>Explore this subject <span>{active.views.length} views</span></h3><div className="view-options">{active.views.map((v, i) => <button key={v.id} className={i === viewIndex ? 'selected' : ''} aria-pressed={i === viewIndex} onClick={() => changeView(i)}><img src={v.thumb} alt="" loading="lazy"/><span><strong>{v.label}</strong><small>{v.rig}</small></span></button>)}</div></div>}
           <WallpaperLink photo={active.id} view={currentView.id}/><a className="download-link" href={currentView.src} download={`${active.id}-${currentView.id}.jpg`}>Download display image ↓</a>{currentView.astrobin && <a className="astrobin-link" href={currentView.astrobin} target="_blank" rel="noreferrer">View on AstroBin ↗</a>}
         </aside></div>

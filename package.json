@@ -14,16 +14,18 @@
     "store:migrate:remote": "wrangler d1 migrations apply one-more-photon-orders --remote --config store-worker/wrangler.jsonc",
     "preview": "vite preview --outDir dist/client",
     "lint": "eslint .",
-    "check:science": "node --experimental-strip-types scripts/check-science.mjs"
+    "check:science": "node --experimental-strip-types scripts/check-science.mjs",
+    "check:deepzoom": "node --experimental-strip-types scripts/check-deepzoom.mjs"
   },
   "dependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
+    "openseadragon": "6.1.1",
     "react": "latest",
     "react-dom": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest"
+    "typescript": "latest",
+    "vite": "latest"
   },
   "devDependencies": {
     "wrangler": "4.113.0"

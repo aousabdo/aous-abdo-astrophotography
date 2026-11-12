@@ -486,7 +486,7 @@ function PhotographPage({ photo }: { photo: Photograph }) {
           <div><p className="photo-note">{photo.note}</p>{facts.length > 0 && <dl>{facts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>}</div>
         </section>
 
-        <WallpaperLink photo={scienceId}/>{science && <section className="legacy-science"><p className="section-number">BEYOND THE FRAME / THE SCIENCE</p><h2>{science.kind}</h2><p>{insight.reveal}</p><p>{insight.explain}</p><a href={`/?photo=${scienceId}&media=science`}>Explore the science, current views & sources ↗</a></section>}
+        <WallpaperLink photo={scienceId}/>{scienceId&&<a className="legacy-resolution-link" href={`/?photo=${scienceId}&media=detail`}>Explore current full-resolution views <span>↗</span></a>}{science && <section className="legacy-science"><p className="section-number">BEYOND THE FRAME / THE SCIENCE</p><h2>{science.kind}</h2><p>{insight.reveal}</p><p>{insight.explain}</p><a href={`/?photo=${scienceId}&media=science`}>Explore the science, current views & sources ↗</a></section>}
         <nav className="photo-pagination" aria-label="Photograph navigation">
           <a href={photoHref(previous)}><span>← Previous</span><strong>{previous.title}</strong></a>
           <a href={photoHref(next)}><span>Next →</span><strong>{next.title}</strong></a>
