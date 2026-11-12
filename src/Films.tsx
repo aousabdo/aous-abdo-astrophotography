@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import soundtrackCatalog from './film-soundtracks.json'
+import './film-soundtracks.css'
 import { photographs } from './gallery'
 import { sources } from './science'
 import { SourceLinks } from './SciencePanel'
@@ -23,15 +25,29 @@ const videoNotes:Record<string,{type:string;time:string;physics:string;process:s
 
 export function FilmPlayer({subject, compact=false}: {subject:string;compact?:boolean}) {
   const group=films.find(f=>f.subject===subject)!
-  const [index,setIndex]=useState(0)
-  const clip=group.clips[index]
-  const notes=videoNotes[clip.id]
+  const [index,setIndex]=useState(0),[score,setScore]=useState(subject==='sun'?'celestial':'five')
+  const [soundOn,setSoundOn]=useState(false),[silent,setSilent]=useState(false),[failed,setFailed]=useState(false),[playHint,setPlayHint]=useState('')
+  const video=useRef<HTMLVideoElement>(null),volume=useRef(.8)
+  const clip=group.clips[index],notes=videoNotes[clip.id]
+  const soundtrack=soundtrackCatalog.films.find(f=>f.film===clip.id&&f.score===score)!
+  const src=silent?clip.src:soundtrack.url
   const poster=photographs.find(p=>p.id===subject)!.views[0].src
+  useEffect(()=>{const el=video.current;if(!el)return;el.volume=volume.current;return()=>el.pause()},[clip.id,score,silent])
+  const chooseClip=(next:number)=>{video.current?.pause();setIndex(next);setFailed(false);setSilent(false);setPlayHint('')}
+  const chooseScore=(next:string)=>{video.current?.pause();setScore(next);setSilent(false);setFailed(false);setPlayHint('')}
+  const toggleSound=()=>{
+    const el=video.current;if(!el||silent)return
+    const enabled=!soundOn;el.muted=!enabled;setSoundOn(enabled);setPlayHint('')
+    if(enabled){if(el.volume===0)el.volume=.8;if(el.paused)el.play().catch(e=>{if(e.name!=='AbortError')setPlayHint('Press play on the video to hear the selected music.')})}
+  }
   return <div className={`film-player ${compact?'compact':''}`}>
-    <div className="film-options" role="group" aria-label={`${subject==='sun'?'Sun':'Moon'} films`}>{group.clips.map((c,i)=><button key={c.id} className={i===index?'selected':''} aria-pressed={i===index} onClick={()=>setIndex(i)}>{i===0?(subject==='sun'?'Solar rotation':'Lunar tour'):'Raw → stacked'}<span>{c.duration}</span></button>)}</div>
-    <video key={clip.id} controls playsInline preload="none" poster={poster} aria-label={clip.title} aria-describedby={`caption-${compact?'viewer-':''}${subject}`}><source src={clip.src} type="video/mp4"/>Your browser cannot play this video. <a href={clip.src}>Open the film</a>.</video>
+    <div className="film-options" role="group" aria-label={`${subject==='sun'?'Sun':'Moon'} films`}>{group.clips.map((c,i)=><button key={c.id} className={i===index?'selected':''} aria-pressed={i===index} onClick={()=>chooseClip(i)}>{i===0?(subject==='sun'?'Solar rotation':'Lunar tour'):'Raw → stacked'}<span>{c.duration}</span></button>)}</div>
+    <video ref={video} key={`${clip.id}-${score}-${silent}`} src={src} muted={!soundOn} controls playsInline preload="none" poster={poster} aria-label={clip.title} aria-describedby={`caption-${compact?'viewer-':''}${subject}`} onPlay={event=>{document.querySelectorAll('video').forEach(other=>{if(other!==event.currentTarget)other.pause()})}} onVolumeChange={event=>{const el=event.currentTarget;volume.current=el.volume;if(!silent)setSoundOn(!el.muted&&el.volume>0)}} onError={()=>setFailed(true)}>Your browser cannot play this video. <a href={clip.src}>Open the silent film</a>.</video>
+    <div className="film-music-panel"><div className="film-music-heading"><div><p>LISTEN WHILE YOU WATCH</p><strong>Music for the sky</strong></div><button className="film-sound-toggle" onClick={toggleSound} disabled={silent} aria-pressed={soundOn} aria-label={soundOn?'Turn soundtrack sound off':'Turn soundtrack sound on'}><span aria-hidden="true">{soundOn?'♫':'♪'}</span>{silent?'Silent original':soundOn?'Sound on':'Sound off'}</button></div><div className="film-score-options" role="group" aria-label="Soundtrack options">{[{id:'one',title:'Cylinder One',letter:'A'},{id:'five',title:'Cylinder Five',letter:'B'},{id:'celestial',title:'Cinematic · Celestial',letter:'C'}].map(option=><button key={option.id} aria-pressed={!silent&&score===option.id} onClick={()=>chooseScore(option.id)}><small>{option.letter}</small>{option.title}<span>{!silent&&score===option.id?'✓':'↗'}</span></button>)}</div><p className="film-music-hint">Choose a soundtrack, then play. Sound is optional.</p>{playHint&&<p role="status" className="film-music-status">{playHint}</p>}</div>
+    {failed&&<div className="film-music-error" role="status"><span>This version could not load.</span><button onClick={()=>{video.current?.pause();setSilent(true);setSoundOn(false);setFailed(false)}}>Play the silent original</button></div>}
     <p className="film-description" id={`caption-${compact?'viewer-':''}${subject}`}>{clip.description}</p>
-    <p className="science-eyebrow">{notes.type}</p><div className="film-footer"><span>1080p · silent film</span><a href={clip.src} download>Download film ↓</a></div>
+    <p className="science-eyebrow">{notes.type}</p><div className="film-footer"><span>1080p · optional ambient music</span><div>{!silent&&<a href={soundtrack.url} download>Download with music ↓</a>}<a href={clip.src} download>Silent original ↓</a></div></div>
+    <details className="film-music-credits"><summary>Music & credits · {soundtrack.artist}</summary><p>“{soundtrack.track}” by <a href={soundtrack.source} target="_blank" rel="noreferrer">{soundtrack.artist}</a>{score==='celestial'?' — released under CC BY 4.0.':', from Cylinders (2014). Music © 2014 Chris Zabriskie.'} <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">Creative Commons Attribution 4.0</a>.</p><p>Excerpted, level-adjusted and faded to fit the film. Photography and video © Aous Abdo.</p><a href={soundtrackCatalog.credits}>Full music credits ↗</a></details>
     <details className="film-notes"><summary>About this video · time, physics & how it was made</summary><dl>{[['Time represented',notes.time],['What you are seeing',notes.physics],['How it was made',notes.process],['Reading the result',notes.limit]].map(([label,text])=><div key={label}><dt>{label}</dt><dd>{text}</dd></div>)}</dl><SourceLinks items={subject==='sun'?[sources.sunspots,sources.rotation]:[sources.craters,sources.phases]}/><p>Capture and edit notes: Aous Abdo’s records.</p></details>
     <a className="film-science-link" href={`?photo=${subject}&media=science`}>Explore the {subject==='sun'?'Sun’s':'Moon’s'} science · story & physics lab ↗</a>
   </div>
