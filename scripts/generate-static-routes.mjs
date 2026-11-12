@@ -43,6 +43,13 @@ await emit('gallery', {
   image: `${siteUrl}/astro/dark-shark-nebula-flt120.jpg`,
 })
 
+await emit('wallpapers', {
+  title: 'Wallpapers — One More Photon',
+  description: 'Free astrophotography wallpapers by Aous Abdo. Preview desktop, laptop, phone, tablet and ultrawide compositions, then download clean, curated editions selected for each screen.',
+  pathname: '/wallpapers/',
+  image: `${siteUrl}/gallery/58849ae674.jpg`,
+})
+
 await emit('about', {
   title: 'About Aous Abdo — One More Photon',
   description: 'From a borrowed monocular in Amman to Los Alamos, Michigan State, NASA, and a lifelong return to the night sky.',
@@ -72,4 +79,4 @@ await writeFile(path.join(outputRoot, '404.html'), pageHtml({
   pathname: '/404.html',
 }))
 
-console.log(`Generated ${photographs.length + 4} static routes.`)
+console.log(`Generated ${photographs.length + 5} static routes.`)

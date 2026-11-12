@@ -82,6 +82,19 @@ export const photographs: Photograph[] = [
     ],
     "views": [
       {
+        "id": "a243b758ff",
+        "src": "/gallery/a243b758ff.jpg",
+        "thumb": "/gallery/a243b758ff-900.jpg",
+        "rig": "Celestron C11 HyperStar",
+        "label": "November 11 · preferred final · 5.25 h",
+        "date": "2026-11-11",
+        "hours": 5.25,
+        "acquisition": "November 3/4 and 8/9, 2026 · 63 × 300 s; German Valley WV + Sky Meadows VA",
+        "astrobin": "https://app.astrobin.com/i/ypfvjq",
+        "width": 5984,
+        "height": 3840
+      },
+      {
         "id": "d9a7f4d5f5",
         "src": "/gallery/d9a7f4d5f5.jpg",
         "thumb": "/gallery/d9a7f4d5f5-900.jpg",

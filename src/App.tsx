@@ -1,3 +1,4 @@
+import { WallpapersPage, WallpaperLink } from './Wallpapers'
 import scienceInsights from './science-insights.json'
 import { scienceObjects } from './science'
 import Atlas from './Atlas'
@@ -10,6 +11,7 @@ const archiveUrl = 'https://photos.app.goo.gl/6wq4MaV3zakDoaQB6'
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/gallery/', label: 'Gallery' },
+  { href: '/wallpapers/', label: 'Wallpapers ↓' },
   { href: '/#films', label: '▶ Sun & Moon videos' },
   { href: '/about/', label: 'About' },
   { href: '/work/', label: 'Work' },
@@ -484,7 +486,7 @@ function PhotographPage({ photo }: { photo: Photograph }) {
           <div><p className="photo-note">{photo.note}</p>{facts.length > 0 && <dl>{facts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>}</div>
         </section>
 
-        {science && <section className="legacy-science"><p className="section-number">BEYOND THE FRAME / THE SCIENCE</p><h2>{science.kind}</h2><p>{insight.reveal}</p><p>{insight.explain}</p><a href={`/?photo=${scienceId}&media=science`}>Explore the science, current views & sources ↗</a></section>}
+        <WallpaperLink photo={scienceId}/>{science && <section className="legacy-science"><p className="section-number">BEYOND THE FRAME / THE SCIENCE</p><h2>{science.kind}</h2><p>{insight.reveal}</p><p>{insight.explain}</p><a href={`/?photo=${scienceId}&media=science`}>Explore the science, current views & sources ↗</a></section>}
         <nav className="photo-pagination" aria-label="Photograph navigation">
           <a href={photoHref(previous)}><span>← Previous</span><strong>{previous.title}</strong></a>
           <a href={photoHref(next)}><span>Next →</span><strong>{next.title}</strong></a>
@@ -514,6 +516,7 @@ function App() {
 
   if (path === '/') return <Atlas />
   if (path === '/gallery') return <Atlas />
+  if (path === '/wallpapers') return <WallpapersPage />
   if (path === '/about') return <AboutPage />
   if (path === '/work') return <WorkPage />
   if (photo) return <PhotographPage photo={photo} />
