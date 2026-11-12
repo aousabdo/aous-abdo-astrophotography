@@ -1,3 +1,4 @@
+import { NightStory } from './NightStory'
 import { WallpapersPage, WallpaperLink } from './Wallpapers'
 import scienceInsights from './science-insights.json'
 import { scienceObjects } from './science'
@@ -516,6 +517,7 @@ function App() {
 
   if (path === '/') return <Atlas />
   if (path === '/gallery') return <Atlas />
+  if (path === '/stories/seahorse') return <NightStory />
   if (path === '/wallpapers') return <WallpapersPage />
   if (path === '/about') return <AboutPage />
   if (path === '/work') return <WorkPage />

@@ -50,6 +50,14 @@ await emit('wallpapers', {
   image: `${siteUrl}/gallery/58849ae674.jpg`,
 })
 
+await emit('stories/seahorse', {
+  title: 'A Blue Lantern. Two November Nights. — One More Photon',
+  description: 'Behind the Seahorse photograph: two observing locations, the weather forecast, 63 exposures, and the correction of a glow that was not part of the nebula. Field notes by Aous Abdo.',
+  pathname: '/stories/seahorse/',
+  image: `${siteUrl}/stories/seahorse/after.webp`,
+  type: 'article',
+})
+
 await emit('about', {
   title: 'About Aous Abdo — One More Photon',
   description: 'From a borrowed monocular in Amman to Los Alamos, Michigan State, NASA, and a lifelong return to the night sky.',
@@ -79,4 +87,4 @@ await writeFile(path.join(outputRoot, '404.html'), pageHtml({
   pathname: '/404.html',
 }))
 
-console.log(`Generated ${photographs.length + 5} static routes.`)
+console.log(`Generated ${photographs.length + 6} static routes.`)
