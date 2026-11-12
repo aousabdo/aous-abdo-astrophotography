@@ -35,7 +35,7 @@ export function WallpapersPage({brand='One More Photon'}:{brand?:string}) {
  const [viewId,setViewId]=useState(()=>getParams().get('view')||''),[layout,setLayout]=useState(()=>getParams().get('layout')||'')
  const [clock,setClock]=useState(true),[shareText,setShareText]=useState('Copy link ↗')
  const panel=useRef<HTMLDivElement>(null),opener=useRef<HTMLElement|null>(null)
- useEffect(()=>{const controller=new AbortController();setError(false);fetch('/wallpapers/catalog.json?v=curated-v2',{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('catalog');return r.json()}).then(setCatalog).catch(e=>{if(e.name!=='AbortError')setError(true)});return()=>controller.abort()},[retry])
+ useEffect(()=>{const controller=new AbortController();setError(false);fetch('/wallpapers/catalog.json?v=curated-v2-r2',{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('catalog');return r.json()}).then(setCatalog).catch(e=>{if(e.name!=='AbortError')setError(true)});return()=>controller.abort()},[retry])
  const active=catalog?.photographs.find(p=>p.id===activeId)
  const view=active?.views.find(v=>v.id===viewId&&v.formats[deviceId])||active?.views.find(v=>v.formats[deviceId])||active?.views.find(v=>v.id===viewId)||active?.views[0]
  const device=catalog?.devices.find(d=>d.id===deviceId&&(!view||view.formats[d.id]))||catalog?.devices.find(d=>view?.formats[d.id])||catalog?.devices[0]
