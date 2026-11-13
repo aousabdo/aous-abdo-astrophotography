@@ -58,6 +58,13 @@ await emit('stories/seahorse', {
   type: 'article',
 })
 
+await emit('dedicate', {
+  title: 'Dedicate a Photograph — One More Photon',
+  description: 'A name, a few words, and a piece of the universe. Create a free personal astrophotography card with photographs by Aous Abdo. Download your card or share a dedication link.',
+  pathname: '/dedicate/',
+  image: `${siteUrl}/og.png`,
+})
+
 await emit('about', {
   title: 'About Aous Abdo — One More Photon',
   description: 'From a borrowed monocular in Amman to Los Alamos, Michigan State, NASA, and a lifelong return to the night sky.',
@@ -87,4 +94,4 @@ await writeFile(path.join(outputRoot, '404.html'), pageHtml({
   pathname: '/404.html',
 }))
 
-console.log(`Generated ${photographs.length + 6} static routes.`)
+console.log(`Generated ${photographs.length + 7} static routes.`)
