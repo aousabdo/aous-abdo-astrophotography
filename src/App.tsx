@@ -55,13 +55,13 @@ function Header() {
       <a className="wordmark" href="/" aria-label="One More Photon home">
         <span className="orbit-dot" />
         <span>One More Photon</span>
-        <small>Astrophotography by Aous Abdo</small>
+        <small>Astrophotography by Dr. Aous Abdo</small>
       </a>
       <nav className={menuOpen ? 'open' : ''} id="site-navigation" aria-label="Primary navigation">
         {navItems.map((item) => (
           <a key={item.href} href={item.href} aria-current={current === cleanPath(item.href) ? 'page' : undefined}>{item.label}</a>
         ))}
-        <button onClick={() => void sharePage('One More Photon', 'Deep-sky astrophotography by Aous Abdo.')}>Share ↗</button>
+        <button onClick={() => void sharePage('One More Photon', 'Deep-sky astrophotography by Dr. Aous Abdo.')}>Share ↗</button>
       </nav>
       <button
         className="menu-toggle"
@@ -80,12 +80,12 @@ function Footer() {
   return (
     <footer>
       <a className="footer-mark" href="/">AA</a>
-      <p>Astrophotography by Aous Abdo<br /><span>Made on Earth from ancient light.</span></p>
+      <p>Astrophotography by Dr. Aous Abdo<br /><span>Made on Earth from ancient light.</span></p>
       <div>
         <a href="/gallery/">Explore the gallery ↗</a>
-        <button onClick={() => void sharePage('One More Photon', 'Deep-sky astrophotography by Aous Abdo.')}>Share the collection ↗</button>
+        <button onClick={() => void sharePage('One More Photon', 'Deep-sky astrophotography by Dr. Aous Abdo.')}>Share the collection ↗</button>
       </div>
-      <p className="footer-right">© {new Date().getFullYear()} Aous Abdo<br /><span>All photographs reserved.</span></p>
+      <p className="footer-right">© {new Date().getFullYear()} Dr. Aous Abdo<br /><span>All photographs reserved.</span></p>
     </footer>
   )
 }

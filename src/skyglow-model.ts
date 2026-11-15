@@ -28,3 +28,9 @@ export function modelCrossing(population: number, target: number, envelope = tru
   }
   return (low + high) / 2
 }
+
+/** Fixed source rate and S/N, with sky shot noise dominating in the same passband and area. */
+export function skyLimitedExposure(referenceMagnitude: number, comparisonMagnitude: number): number {
+  if (!Number.isFinite(referenceMagnitude) || !Number.isFinite(comparisonMagnitude)) throw new RangeError('Sky magnitudes must be finite.')
+  return 10 ** (0.4 * (referenceMagnitude - comparisonMagnitude))
+}

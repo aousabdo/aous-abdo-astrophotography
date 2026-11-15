@@ -13,7 +13,7 @@ sources=json.loads(Path(args.sources).read_text());TAG='full-resolution-2026-11-
 BASE=f'https://github.com/aousabdo/aous-abdo-astrophotography/releases/download/{TAG}/'
 ORIGIN='https://aous-abdo-astrophotography.aousabdo.chatgpt.site';SRGB=ImageCms.createProfile('sRGB');ICC=ImageCms.ImageCmsProfile(SRGB).tobytes()
 README='''ONE MORE PHOTON — FULL-RESOLUTION EXPLORATION
-Photographs by Aous Abdo · https://onemorephoton.com/
+Photographs by Dr. Aous Abdo · https://onemorephoton.com/
 
 These locally generated image pyramids power the website's zoom viewer.
 Each archive contains one photograph at progressively smaller resolutions.
@@ -23,7 +23,7 @@ applied. The finished image is converted to sRGB and tiled as quality-92,
 4:4:4 JPEGs, with a one-pixel overlap to avoid seams. Private source paths
 and capture metadata are excluded from these public archives.
 
-Photography remains copyright Aous Abdo. These viewer assets do not grant
+Photography remains copyright Dr. Aous Abdo. These viewer assets do not grant
 commercial use, republication or redistribution rights. For personal device
 backgrounds, use the curated wallpaper collection on the website.
 '''

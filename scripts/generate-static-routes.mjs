@@ -14,7 +14,7 @@ const escapeHtml = (value) => value
   .replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;')
 
-function pageHtml({ title, description, pathname, image = `${siteUrl}/og.png`, type = 'website' }) {
+function pageHtml({ title, description, pathname, image = `${siteUrl}/og-dr-aous-abdo.png`, type = 'website' }) {
   const canonical = `${siteUrl}${pathname}`
   let html = template
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
@@ -38,21 +38,21 @@ async function emit(route, metadata) {
 
 await emit('gallery', {
   title: 'Gallery — One More Photon',
-  description: 'Explore the November 2026 collection, dark and glowing nebulae, galaxies, star fields, and Sun and Moon videos by Aous Abdo.',
+  description: 'Explore the November 2026 collection, dark and glowing nebulae, galaxies, star fields, and Sun and Moon videos by Dr. Aous Abdo.',
   pathname: '/gallery/',
   image: `${siteUrl}/astro/dark-shark-nebula-flt120.jpg`,
 })
 
 await emit('wallpapers', {
   title: 'Wallpapers — One More Photon',
-  description: 'Free astrophotography wallpapers by Aous Abdo. Preview desktop, laptop, phone, tablet and ultrawide compositions, then download clean, curated editions selected for each screen.',
+  description: 'Free astrophotography wallpapers by Dr. Aous Abdo. Preview desktop, laptop, phone, tablet and ultrawide compositions, then download clean, curated editions selected for each screen.',
   pathname: '/wallpapers/',
   image: `${siteUrl}/gallery/58849ae674.jpg`,
 })
 
 await emit('stories/seahorse', {
   title: 'A Blue Lantern. Two November Nights. — One More Photon',
-  description: 'Behind the Seahorse photograph: two observing locations, the weather forecast, 63 exposures, and the correction of a glow that was not part of the nebula. Field notes by Aous Abdo.',
+  description: 'Behind the Seahorse photograph: two observing locations, the weather forecast, 63 exposures, and the correction of a glow that was not part of the nebula. Field notes by Dr. Aous Abdo.',
   pathname: '/stories/seahorse/',
   image: `${siteUrl}/stories/seahorse/after.webp`,
   type: 'article',
@@ -60,13 +60,13 @@ await emit('stories/seahorse', {
 
 await emit('dedicate', {
   title: 'Dedicate a Photograph — One More Photon',
-  description: 'A name, a few words, and a piece of the universe. Create a free personal astrophotography card with photographs by Aous Abdo. Download your card or share a dedication link.',
+  description: 'A name, a few words, and a piece of the universe. Create a free personal astrophotography card with photographs by Dr. Aous Abdo. Download your card or share a dedication link.',
   pathname: '/dedicate/',
-  image: `${siteUrl}/og.png`,
+  image: `${siteUrl}/og-dr-aous-abdo.png`,
 })
 
 await emit('about', {
-  title: 'About Aous Abdo — One More Photon',
+  title: 'About Dr. Aous Abdo — One More Photon',
   description: 'From a borrowed monocular in Amman to Los Alamos, Michigan State, NASA, and a lifelong return to the night sky.',
   pathname: '/about/',
   image: `${siteUrl}/astro/stellar-dust.jpg`,
@@ -74,7 +74,7 @@ await emit('about', {
 
 await emit('work', {
   title: 'The Wider Orbit — One More Photon',
-  description: 'Astronomy, revelation, scientific visualization, and signal work by Aous Abdo.',
+  description: 'Astronomy, revelation, scientific visualization, and signal work by Dr. Aous Abdo.',
   pathname: '/work/',
 })
 

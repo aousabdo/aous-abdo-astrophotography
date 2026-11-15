@@ -60,6 +60,6 @@ export async function dedicationPng(value: Dedication, photo: Photograph, view: 
   }
   ctx.strokeStyle = lineColor; ctx.beginPath(); ctx.moveTo(750,canvas.height-150);ctx.lineTo(1050,canvas.height-150);ctx.stroke()
   ctx.font = '24px Georgia, serif'; ctx.fillStyle = muted; ctx.fillText(photo.title,900,canvas.height-124)
-  ctx.font = '19px Arial, sans-serif'; ctx.fillText('Photograph by Aous Abdo · onemorephoton.com',900,canvas.height-82)
+  ctx.font = '19px Arial, sans-serif'; ctx.fillText('Photograph by Dr. Aous Abdo · onemorephoton.com',900,canvas.height-82)
   return new Promise((resolve,reject) => canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('The card could not be downloaded. Please try again.')),'image/png'))
 }
