@@ -95,3 +95,5 @@ await writeFile(path.join(outputRoot, '404.html'), pageHtml({
 }))
 
 console.log(`Generated ${photographs.length + 7} static routes.`)
+
+await import('./generate-blog-routes.mjs')

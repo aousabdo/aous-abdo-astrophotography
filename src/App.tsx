@@ -1,3 +1,4 @@
+import { BlogRoute } from './BlogRoute'
 import { DedicationsPage, DedicationLink } from './Dedications'
 import { NightStory } from './NightStory'
 import { WallpapersPage, WallpaperLink } from './Wallpapers'
@@ -15,6 +16,7 @@ const navItems = [
   { href: '/gallery/', label: 'Gallery' },
   { href: '/wallpapers/', label: 'Wallpapers ↓' },
   { href: '/#films', label: '▶ Sun & Moon videos' },
+  { href: '/blog/', label: 'Blog' },
   { href: '/about/', label: 'About' },
   { href: '/work/', label: 'Work' },
 ]
@@ -518,6 +520,8 @@ function App() {
 
   if (path === '/') return <Atlas />
   if (path === '/gallery') return <Atlas />
+  if (path === '/blog') return <BlogRoute />
+  if (path === '/blog/how-far-for-dark-skies') return <BlogRoute article />
   if (path === '/stories/seahorse') return <NightStory />
   if (path === '/dedicate') return <DedicationsPage />
   if (path === '/wallpapers') return <WallpapersPage />

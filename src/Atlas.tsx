@@ -1,5 +1,5 @@
 import { DedicationSpotlight, DedicationLink } from './Dedications'
-import { NightStorySpotlight } from './NightStory'
+import { BlogSpotlight } from './BlogVisuals'
 import { FullResolutionViewer, hasFullResolution } from './FullResolution'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { photographs, groups, type Photograph, type View } from './gallery'
@@ -128,7 +128,7 @@ function Atlas() {
     <a className="skip-link" href="#collection">Skip to photographs</a>
     <header className="topbar">
       <a className="wordmark" href="#top"><span className="orbit-dot"/><span>One More Photon</span><small>Astrophotography by Aous Abdo</small></a>
-      <nav aria-label="Primary navigation"><a href="#collections">Collections</a><a href="#collection">Gallery</a><a href="#science">Science</a><a className="nav-wallpapers" href="/wallpapers/" aria-label="Download wallpapers"><b aria-hidden="true">↓</b><span>Wallpapers</span></a><a className="nav-videos" href="#films"><span aria-hidden="true">▶</span> Sun & Moon videos</a><a href="/about/">About</a><a href="/work/">Work</a><button onClick={() => share()}>{shareLabel}</button></nav>
+      <nav aria-label="Primary navigation"><a href="#collections">Collections</a><a href="#collection">Gallery</a><a href="#science">Science</a><a className="nav-wallpapers" href="/wallpapers/" aria-label="Download wallpapers"><b aria-hidden="true">↓</b><span>Wallpapers</span></a><a className="nav-videos" href="#films"><span aria-hidden="true">▶</span> Sun & Moon videos</a><a className="nav-blog" href="/blog/">Blog</a><a href="/about/">About</a><a href="/work/">Work</a><button onClick={() => share()}>{shareLabel}</button></nav>
     </header>
     <main id="top">
       <section className="hero">
@@ -142,7 +142,7 @@ function Atlas() {
       <Films/>
       <section className="resolution-sampler" aria-labelledby="resolution-heading"><div className="resolution-sampler-head"><div><p className="section-number">LOOK CLOSER / THE ORIGINAL PIXELS</p><h2 id="resolution-heading">Go beyond<br/><em>the first glance.</em></h2></div><p>Follow a dust lane through Andromeda. Wander through a mosaic. Move from the whole sky to the smallest details the photograph recorded.</p></div><div className="resolution-picks">{['andromeda','seahorse','lagoon-trifid'].map(id=>{const photo=photographs.find(p=>p.id===id)!,view=photo.views[0];return <button className="resolution-pick" key={id} onClick={()=>openPhoto(photo,0,false,false,true)}><img src={view.thumb} alt={photo.alt} loading="lazy"/><span><span><strong>{photo.title}</strong><small>Explore {Math.round(view.width*view.height/1e6)} megapixels · full resolution</small></span><b aria-hidden="true">↗</b></span></button>})}</div></section>
       <DedicationSpotlight/>
-      <NightStorySpotlight/>
+      <BlogSpotlight/>
       <WallpaperSpotlight/>
       <ScienceStories onOpen={photo=>openPhoto(photo,0,false,true)}/>
       <section className="collections" id="collections">

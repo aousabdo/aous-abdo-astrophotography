@@ -15,7 +15,8 @@
     "preview": "vite preview --outDir dist/client",
     "lint": "eslint .",
     "check:science": "node --experimental-strip-types scripts/check-science.mjs",
-    "check:deepzoom": "node --experimental-strip-types scripts/check-deepzoom.mjs"
+    "check:deepzoom": "node --experimental-strip-types scripts/check-deepzoom.mjs",
+    "check:blog": "node --experimental-strip-types --test scripts/skyglow-model.test.mjs"
   },
   "dependencies": {
     "@types/react": "latest",
