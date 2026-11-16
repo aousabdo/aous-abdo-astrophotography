@@ -5,10 +5,10 @@ const output=path.join(root,'dist/client'), site='https://onemorephoton.com'
 const template=await readFile(path.join(output,'index.html'),'utf8')
 const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')
 const posts=[
- {path:'/blog/how-far-for-dark-skies/',title:'How far must you travel for a dark sky?',description:'Why nearby towns can matter more than distant cities. Explore an illustrative skyglow experiment, the difference between SQM and Bortle, and the limits of population-distance estimates.',date:'2026-11-15',image:'/stories/seahorse/after.webp'},
+ {path:'/blog/how-far-for-dark-skies/',title:'How far must you travel for a dark sky?',description:'Why nearby towns can matter more than distant cities. Explore an illustrative skyglow experiment, the difference between SQM and Bortle, and the limits of population-distance estimates.',date:'2026-11-15',image:'/stories/dark-skies/dark-skies-photoreal-v3.webp'},
  {path:'/stories/seahorse/',title:'A blue lantern. Two November nights.',description:'Two observing locations, a changing forecast, 63 exposures, and a glow that was not part of the nebula.',image:'/stories/seahorse/after.webp'},
 ]
-for(const page of [{path:'/blog/',title:'Blog — Notes from Under the Sky',description:'The science behind the light and the choices behind a photograph. Dark-sky experiments and observing stories by Dr. Aous Abdo.',image:'/og-dr-aous-abdo.png'},posts[0]]) {
+for(const page of [{path:'/blog/',title:'Blog — Notes from Under the Sky',description:'The science behind the light and the choices behind a photograph. Dark-sky experiments and observing stories by Dr. Aous Abdo.',image:'/stories/dark-skies/dark-skies-photoreal-v3.webp'},posts[0]]) {
  const canonical=site+page.path, title=page.title+' — One More Photon'
  let html=template.replace(/<title>.*?<\/title>/,`<title>${esc(title)}</title>`).replace(/<meta name="description" content="[^"]*"\s*\/?>/,`<meta name="description" content="${esc(page.description)}"/>`)
  for(const pattern of [/<link rel="canonical"[^>]*>/g,/<meta property="og:[^"]+"[^>]*>/g,/<meta name="twitter:[^"]+"[^>]*>/g])html=html.replace(pattern,'')
