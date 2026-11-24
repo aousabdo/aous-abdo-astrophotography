@@ -1,9 +1,11 @@
+import { BlogHeader, BlogFooter } from './BlogChrome'
 import { DarkSkyArtwork, DARK_SKY_ARTWORK } from './BlogVisuals'
 import { ExposurePlot } from './ExposurePlot'
 import { MathText } from './Math'
 import { useEffect, useId, useState } from 'react'
 import { INITIAL_SOURCES, addedLight, brightnessBudget, modelCrossing, skyMagnitude } from './skyglow-model'
 import './blog.css'
+import './m81-post.css'
 
 export const DARK_SKY_PATH = '/blog/how-far-for-dark-skies/'
 const cover = '/stories/seahorse/after.webp'
@@ -16,16 +18,9 @@ const sources = [
 ]
 function Ref({ id }: { id: string }) { return <a className="blog-ref" href={`#ref-${id}`} aria-label={`Reference: ${sources.find(s=>s.id===id)?.title}`}>↗</a> }
 
-function BlogHeader({ article = false }: { article?: boolean }) {
-  return <header className="blog-header"><a href="/" className="blog-brand"><span className="blog-orbit"/>One More Photon<small>ASTROPHOTOGRAPHY / Dr. Aous Abdo</small></a><nav aria-label="Blog navigation"><a href="/#collection">Photographs</a><a href="/#films">Sun & Moon films</a><a href="/blog/" aria-current={article ? undefined : 'page'}>Blog</a></nav></header>
-}
-function BlogFooter() {
-  return <footer className="blog-footer"><a href="/">← Back to the photographs</a><p>Dr. Aous Abdo · One More Photon<br/><span>Notes from under the sky.</span></p><a href="/blog/feed.xml">RSS ↗</a></footer>
-}
-
 export function BlogIndex() {
   useEffect(()=>{document.title='Blog — One More Photon'},[])
-  return <div className="blog-root"><a className="skip-link" href="#blog-main">Skip to articles</a><BlogHeader/><main id="blog-main"><header className="blog-index-heading"><p className="blog-eyebrow">THE BLOG / ONE MORE PHOTON</p><h1>Notes from<br/><em>under the sky.</em></h1><p>The science behind the light, the choices behind a photograph, and the places where a night of observing begins.</p></header><a className="blog-feature" href={DARK_SKY_PATH}><DarkSkyArtwork compact/><div><span className="blog-eyebrow">DARK SKIES · INTERACTIVE ESSAY</span><h2>How far must you travel<br/>for a dark sky?</h2><p>Why a nearby town can matter as much as a distant city—and why one number cannot describe the whole sky.</p><span className="blog-byline">Dr. Aous Abdo · 15 November 2026 · 11 minute read</span><b>Read the story ↗</b></div></a><section className="blog-more" aria-labelledby="blog-more-title"><div><p className="blog-eyebrow">THE NIGHT BEHIND THE IMAGE</p><h2 id="blog-more-title">From photon<br/><em>to photograph.</em></h2><p>Observing is a chain of decisions. These are the stories behind them.</p></div><a className="blog-story-card" href="/stories/seahorse/"><img src={cover} alt="The Seahorse's blue reflection nebula at the end of an extended dusty cloud" loading="lazy" width="1000" height="642"/><span className="blog-eyebrow">OBSERVING & PROCESSING · NOVEMBER 2026</span><h3>A blue lantern.<br/>Two November nights.</h3><p>The Seahorse, two observing locations, a changing forecast, and a beautiful glow that wasn’t part of the nebula.</p><span className="blog-text-link">Read the field notes ↗</span></a></section></main><BlogFooter/></div>
+  return <div className="blog-root"><a className="skip-link" href="#blog-main">Skip to articles</a><BlogHeader/><main id="blog-main"><header className="blog-index-heading"><p className="blog-eyebrow">THE BLOG / ONE MORE PHOTON</p><h1>Notes from<br/><em>under the sky.</em></h1><p>The science behind the light, the choices behind a photograph, and the places where a night of observing begins.</p></header><a className="blog-feature" href="/blog/the-dust-between-us-and-m81/"><img className="ifn-feature-image" src="/stories/m81-ifn/blog_07_full_frame.jpg" width="2400" height="1570" alt="M81, M82 and the faint cirrus across the surrounding star field"/><div><span className="blog-eyebrow">NEW FIELD NOTE / DEEP SKY</span><h2>The dust between us<br/>and M81.</h2><p>Fifteen hours with a small telescope. A comparison with Planck. And the tests that made the faint dust harder to dismiss.</p><span className="blog-byline">Dr. Aous A. Abdo · 24 November 2026 · 12 minute read</span><b>Read the field note</b></div></a><section className="blog-archive" aria-labelledby="blog-archive-title"><header><p className="blog-eyebrow">KEEP EXPLORING</p><h2 id="blog-archive-title">The light.<br/><em>The night behind it.</em></h2><p>Earlier essays and observing stories from under the sky.</p></header><div className="blog-card-grid"><a className="blog-story-card" href={DARK_SKY_PATH}><DarkSkyArtwork compact/><span className="blog-eyebrow">DARK SKIES / INTERACTIVE ESSAY</span><h3>How far must you travel<br/>for a dark sky?</h3><p>Why nearby towns can matter as much as distant cities, and what a brighter background costs in exposure time.</p><span className="blog-text-link">Read & explore</span></a><a className="blog-story-card" href="/stories/seahorse/"><img src={cover} alt="The Seahorse’s blue reflection nebula at the end of a dusty cloud" loading="lazy" width="1000" height="642"/><span className="blog-eyebrow">OBSERVING & PROCESSING</span><h3>A blue lantern.<br/>Two November nights.</h3><p>The Seahorse, two observing locations, a changing forecast, and a glow that wasn’t part of the nebula.</p><span className="blog-text-link">Read the field notes</span></a></div></section></main><BlogFooter/></div>
 }
 
 function SourceExperiment() {

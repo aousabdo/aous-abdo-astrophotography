@@ -1,5 +1,4 @@
 import './blog.css'
-const DARK_SKY_PATH = '/blog/how-far-for-dark-skies/'
 
 export const DARK_SKY_ARTWORK = '/stories/dark-skies/dark-skies-photoreal-v3'
 
@@ -8,6 +7,5 @@ export function DarkSkyArtwork({ compact = false }: { compact?: boolean }) {
 }
 
 export function BlogSpotlight() {
-  return <section className="blog-spotlight" aria-labelledby="blog-spotlight-title"><a className="blog-spotlight-art" href={DARK_SKY_PATH} tabIndex={-1} aria-hidden="true"><DarkSkyArtwork compact/></a><div><p className="blog-eyebrow">FROM THE BLOG / DARK SKIES</p><h2 id="blog-spotlight-title">How far must you travel<br/><em>for a dark sky?</em></h2><p>A nearby town. A distant city. Why the whole sky matters—and what a simple model can actually tell us.</p><a className="blog-text-link" href={DARK_SKY_PATH}>Read & explore the experiment ↗</a><a className="blog-small-link" href="/blog/">All field notes →</a></div></section>
+  return <section className="blog-spotlight" aria-labelledby="blog-spotlight-title"><a className="blog-spotlight-art" href="/blog/the-dust-between-us-and-m81/" tabIndex={-1} aria-hidden="true"><img className="ifn-spotlight-image" src="/stories/m81-ifn/blog_07_full_frame.jpg" width="2400" height="1570" loading="lazy" alt="" style={{display:'block',width:'100%',height:'auto'}}/></a><div><p className="blog-eyebrow">NEW FROM THE BLOG / DEEP SKY</p><h2 id="blog-spotlight-title">The dust between us<br/><em>and M81.</em></h2><p>Fifteen hours, a 120 mm telescope, and a match with Planck that survives tests on every night, quarter and scale.</p><p className="blog-byline">A field note by Dr. Aous A. Abdo</p><a className="blog-text-link" href="/blog/the-dust-between-us-and-m81/">Read the field note</a><a className="blog-small-link" href="/blog/">All field notes</a></div></section>
 }
-
