@@ -1,4 +1,5 @@
 import { BlogHeader, BlogFooter } from './BlogChrome'
+import lagoonFieldNote from './lagoon-field-note.json'
 import { DarkSkyArtwork, DARK_SKY_ARTWORK } from './BlogVisuals'
 import { ExposurePlot } from './ExposurePlot'
 import { MathText } from './Math'
@@ -20,7 +21,22 @@ function Ref({ id }: { id: string }) { return <a className="blog-ref" href={`#re
 
 export function BlogIndex() {
   useEffect(()=>{document.title='Blog — One More Photon'},[])
-  return <div className="blog-root"><a className="skip-link" href="#blog-main">Skip to articles</a><BlogHeader/><main id="blog-main"><header className="blog-index-heading"><p className="blog-eyebrow">THE BLOG / ONE MORE PHOTON</p><h1>Notes from<br/><em>under the sky.</em></h1><p>The science behind the light, the choices behind a photograph, and the places where a night of observing begins.</p></header><a className="blog-feature" href="/blog/the-dust-between-us-and-m81/"><img className="ifn-feature-image" src="/stories/m81-ifn/blog_07_full_frame.jpg" width="2400" height="1570" alt="M81, M82 and the faint cirrus across the surrounding star field"/><div><span className="blog-eyebrow">NEW FIELD NOTE / DEEP SKY</span><h2>The dust between us<br/>and M81.</h2><p>Fifteen hours with a small telescope. A comparison with Planck. And the tests that made the faint dust harder to dismiss.</p><span className="blog-byline">Dr. Aous A. Abdo · 24 November 2026 · 12 minute read</span><b>Read the field note</b></div></a><section className="blog-archive" aria-labelledby="blog-archive-title"><header><p className="blog-eyebrow">KEEP EXPLORING</p><h2 id="blog-archive-title">The light.<br/><em>The night behind it.</em></h2><p>Earlier essays and observing stories from under the sky.</p></header><div className="blog-card-grid"><a className="blog-story-card" href={DARK_SKY_PATH}><DarkSkyArtwork compact/><span className="blog-eyebrow">DARK SKIES / INTERACTIVE ESSAY</span><h3>How far must you travel<br/>for a dark sky?</h3><p>Why nearby towns can matter as much as distant cities, and what a brighter background costs in exposure time.</p><span className="blog-text-link">Read & explore</span></a><a className="blog-story-card" href="/stories/seahorse/"><img src={cover} alt="The Seahorse’s blue reflection nebula at the end of a dusty cloud" loading="lazy" width="1000" height="642"/><span className="blog-eyebrow">OBSERVING & PROCESSING</span><h3>A blue lantern.<br/>Two November nights.</h3><p>The Seahorse, two observing locations, a changing forecast, and a glow that wasn’t part of the nebula.</p><span className="blog-text-link">Read the field notes</span></a></div></section></main><BlogFooter/></div>
+  return <div className="blog-root"><a className="skip-link" href="#blog-main">Skip to articles</a><BlogHeader/><main id="blog-main"><header className="blog-index-heading"><p className="blog-eyebrow">THE BLOG / ONE MORE PHOTON</p><h1>Notes from<br/><em>under the sky.</em></h1><p>The science behind the light, the choices behind a photograph, and the places where a night of observing begins.</p></header><a className="blog-feature" href={lagoonFieldNote.path}>
+      <img src="/stories/lagoon-trifid/field-2200.webp" width="2200" height="1434" alt={lagoonFieldNote.imageAlt} />
+      <div>
+        <span className="blog-eyebrow">New field note / Sagittarius</span>
+        <h2>Four telescopes,<br />one field.</h2>
+        <p>Follow 116 hours of exposure across the Lagoon and Trifid, then see where each telescope contributed.</p>
+        <span className="blog-byline">{lagoonFieldNote.author} · November 26, 2026</span>
+        <b>Read the field note</b>
+      </div>
+    </a><section className="blog-archive" aria-labelledby="blog-archive-title"><header><p className="blog-eyebrow">KEEP EXPLORING</p><h2 id="blog-archive-title">The light.<br/><em>The night behind it.</em></h2><p>Earlier essays and observing stories from under the sky.</p></header><div className="blog-card-grid"><a className="blog-story-card" href="/blog/the-dust-between-us-and-m81/">
+      <img src="/stories/m81-ifn/blog_07_full_frame.jpg" width="2400" height="1570" alt="M81, M82 and faint cirrus across the surrounding star field" loading="lazy" />
+      <span className="blog-eyebrow">Deep sky / Galactic cirrus</span>
+      <h3>The dust between us and M81.</h3>
+      <p>Fifteen hours with a small telescope, a comparison with Planck, and tests of the faint cirrus in front of two galaxies.</p>
+      <span className="blog-text-link">Read the field note</span>
+    </a><a className="blog-story-card" href={DARK_SKY_PATH}><DarkSkyArtwork compact/><span className="blog-eyebrow">DARK SKIES / INTERACTIVE ESSAY</span><h3>How far must you travel<br/>for a dark sky?</h3><p>Why nearby towns can matter as much as distant cities, and what a brighter background costs in exposure time.</p><span className="blog-text-link">Read & explore</span></a><a className="blog-story-card" href="/stories/seahorse/"><img src={cover} alt="The Seahorse’s blue reflection nebula at the end of a dusty cloud" loading="lazy" width="1000" height="642"/><span className="blog-eyebrow">OBSERVING & PROCESSING</span><h3>A blue lantern.<br/>Two November nights.</h3><p>The Seahorse, two observing locations, a changing forecast, and a glow that wasn’t part of the nebula.</p><span className="blog-text-link">Read the field notes</span></a></div></section></main><BlogFooter/></div>
 }
 
 function SourceExperiment() {

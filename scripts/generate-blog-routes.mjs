@@ -4,7 +4,9 @@ const root=new URL('..',import.meta.url).pathname
 const output=path.join(root,'dist/client'), site='https://onemorephoton.com'
 const template=await readFile(path.join(output,'index.html'),'utf8')
 const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')
+const lagoonFieldNote=JSON.parse(await readFile(path.join(root,'src/lagoon-field-note.json'),'utf8'))
 const posts=[
+ lagoonFieldNote,
  {path:'/blog/the-dust-between-us-and-m81/',title:'The dust between us and M81',description:'Fifteen hours with a 120 mm telescope, a comparison with Planck, and tests of the faint Galactic cirrus in front of M81 and M82. A field note by Dr. Aous A. Abdo.',date:'2026-11-24',author:'Dr. Aous A. Abdo',image:'/stories/m81-ifn/blog_07_full_frame.jpg',imageAlt:'M81, M82 and faint Galactic cirrus across the surrounding star field'},
  {path:'/blog/how-far-for-dark-skies/',title:'How far must you travel for a dark sky?',description:'Why nearby towns can matter more than distant cities. Explore an illustrative skyglow experiment, the difference between SQM and Bortle, and the limits of population-distance estimates.',date:'2026-11-15',author:'Dr. Aous Abdo',image:'/stories/dark-skies/dark-skies-photoreal-v3.webp',imageAlt:'Conceptual illustration of nearby and distant skyglow reaching an observing site'},
  {path:'/stories/seahorse/',title:'A blue lantern. Two November nights.',description:'Two observing locations, a changing forecast, 63 exposures, and a glow that was not part of the nebula.',author:'Dr. Aous Abdo',image:'/stories/seahorse/after.webp',imageAlt:'The Seahorse reflection nebula and its dark dusty cloud'},
@@ -21,4 +23,4 @@ for(const page of [index,...posts.filter(p=>p.path.startsWith('/blog/'))]) {
 }
 const feed=`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>One More Photon — Notes from Under the Sky</title><link>${site}/blog/</link><description>Science, dark skies, and the work behind the photographs.</description><language>en</language><atom:link href="${site}/blog/feed.xml" rel="self" type="application/rss+xml"/>${posts.map(p=>`<item><title>${esc(p.title)}</title><link>${site+p.path}</link><guid isPermaLink="true">${site+p.path}</guid><description>${esc(p.description)} By ${esc(p.author)}.</description>${p.date?`<pubDate>${new Date(p.date+'T00:00:00-05:00').toUTCString()}</pubDate>`:''}</item>`).join('')}</channel></rss>`
 await writeFile(path.join(output,'blog/feed.xml'),feed)
-console.log('Generated blog index, two articles, structured data and three-entry RSS feed.')
+console.log(`Generated blog index, ${posts.filter(p=>p.path.startsWith('/blog/')).length} articles, structured data and ${posts.length}-entry RSS feed.`)

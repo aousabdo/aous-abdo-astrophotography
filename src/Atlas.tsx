@@ -1,5 +1,6 @@
 import { DedicationSpotlight, DedicationLink } from './Dedications'
 import { BlogSpotlight } from './BlogVisuals'
+import { ScopeSpotlight } from './ScopeSpotlight'
 import { FullResolutionViewer, hasFullResolution } from './FullResolution'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { photographs, groups, type Photograph, type View } from './gallery'
@@ -160,6 +161,7 @@ function Atlas() {
         {!visible.length && <div className="empty-state"><h3>No photographs found.</h3><p>Try a catalog number such as M42, a target name, or a telescope.</p><button onClick={() => { setQuery(''); setFilter('all') }}>Show the whole sky ↗</button></div>}
         <div className="gallery-end"><span>Every photograph starts with time under the sky.</span><a href="#collections">Back to collections ↑</a></div>
       </section>
+      <ScopeSpotlight />
       <section className="manifesto" id="about"><p className="section-number">03 / BEHIND THE LIGHT</p><div><h2>These are<br/><em>old photons.</em></h2><p>Collected from my backyard and under darker skies, then calibrated, stacked, and carefully processed until the invisible starts to show.</p><p>Different telescopes reveal different scales. Different palettes help us see different structures. Here, those views live together, so you can explore each subject beyond a single frame.</p><a className="text-link" href="/about/">Read the story behind One More Photon ↗</a><br/><a className="text-link" href={archiveUrl} target="_blank" rel="noreferrer">Visit the Google Photos archive ↗</a></div><aside><span>Latest update</span><strong>2026</strong><small>Updated in November<br/>{latestCount} subjects added or revisited</small></aside></section>
       <section className="universe" id="universe"><header className="universe-head"><p className="section-number">04 / ELSEWHERE</p><div><h2>Photography is<br/>only one orbit.</h2><p>The wider trail—from nuclear structure to gamma-ray astronomy, stellar evolution, and the places where science meets reflection.</p></div></header><div className="project-grid">{relatedProjects.map((project, index) => <a className={`project-card ${project.className}`} href={project.url} target="_blank" rel="noreferrer" key={project.title}><span className="project-bg" style={{backgroundImage:`url(${project.image})`}} aria-hidden="true"/><span className="project-no">0{index+1}</span><div><small>{project.label}</small><h3>{project.title}</h3><p>{project.description}</p></div><b>Visit project ↗</b></a>)}</div><div className="wider-orbit"><div className="orbit-label"><span className="orbit-dot"/><p>Wider orbit</p></div>{widerProjects.map(p => <a href={p.url} target="_blank" rel="noreferrer" key={p.title}><div><h3>{p.title}</h3><p>{p.note}</p></div><span>↗</span></a>)}</div></section>
     </main>

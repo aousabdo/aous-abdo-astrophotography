@@ -1,0 +1,56 @@
+.lagoon-note { --b-bg: #100f15; --b-muted: #c2b9bf; --b-gold: #ffd3ae; }
+.lagoon-heading { width: min(1240px, 90%); margin: 0 auto; padding: clamp(52px, 8vw, 112px) 0 30px; }
+.lagoon-heading .blog-eyebrow { margin: 26px 0 14px; }
+.lagoon-heading h1 {
+  margin: 0 0 18px;
+  font: 300 clamp(3.1rem, 8vw, 8rem)/.9 var(--serif);
+  letter-spacing: -.058em;
+  text-wrap: balance;
+}
+.lagoon-heading h1 em { color: #f7c9ae; font-weight: 300; }
+.lagoon-deck { margin: 0; font-size: clamp(1.05rem, 2vw, 1.55rem); line-height: 1.45; }
+.lagoon-byline { margin: 18px 0 0; font: 400 .85rem/1.5 var(--sans); color: var(--b-muted); }
+.lagoon-field { width: min(1540px, 90%); margin: 0 auto; }
+.lagoon-image-stage { position: relative; overflow: hidden; background: #1c171b; }
+.lagoon-image-stage > img, .lagoon-detail img { display: block; width: 100%; height: auto; }
+.lagoon-coverage, .lagoon-full-outline { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.lagoon-full-outline { border: 2px solid #9ddbcf; background: #9ddbcf19; }
+.lagoon-scope-controls { display: flex; flex-wrap: wrap; gap: 9px; margin: 16px 0; }
+.lagoon-scope-controls button {
+  min-height: 44px;
+  padding: 7px 14px;
+  border: 1px solid #6a5e69;
+  background: #1b1720;
+  cursor: pointer;
+  font: 500 .87rem/1.25 var(--sans);
+}
+.lagoon-scope-controls button[aria-pressed="true"] { background: #f2dfcf; color: #1b1318; border-color: #f2dfcf; }
+.lagoon-scope-controls button:hover { border-color: #f2dfcf; }
+.lagoon-scope-controls button:focus-visible, .lagoon-link:focus-visible { outline: 2px solid #f6c399; outline-offset: 3px; }
+.lagoon-scope-swatch { display: inline-block; border: 1px solid #19141a65; width: .65em; height: .65em; margin-right: 7px; vertical-align: .05em; }
+.lagoon-field-caption, .lagoon-detail figcaption { color: var(--b-muted); font-size: .94rem; line-height: 1.6; }
+.lagoon-field-caption { min-height: 5.8em; margin: 0; }
+.lagoon-field-caption strong { color: #f3e3d7; margin-right: .7em; }
+.lagoon-text { max-width: 720px; margin: clamp(38px, 6vw, 80px) auto; padding: 0 24px; }
+.lagoon-text h2 { margin: 0 0 16px; font: 300 clamp(2.15rem, 4.6vw, 4.6rem)/1 var(--serif); letter-spacing: -.045em; text-wrap: balance; }
+.lagoon-text p { margin: 0 0 1em; }
+.lagoon-text a { text-decoration: underline; text-underline-offset: .2em; }
+.lagoon-detail {
+  width: min(1240px, 90%);
+  margin: 0 auto clamp(48px, 8vw, 110px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(24px, 5vw, 74px);
+  align-items: center;
+}
+.lagoon-detail figure { margin: 0; }
+.lagoon-detail figcaption { margin-top: 10px; }
+.lagoon-detail .lagoon-text { padding: 0; margin: 0; }
+.lagoon-link { display: inline-block; color: var(--b-gold); margin-top: 10px; font-weight: 600; }
+@media (max-width: 760px) {
+  .lagoon-detail { grid-template-columns: 1fr; }
+  .lagoon-scope-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lagoon-scope-controls button { padding: 8px; text-align: left; }
+  .lagoon-text { padding: 0 5%; }
+  .lagoon-field-caption strong { display: block; }
+}

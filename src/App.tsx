@@ -1,4 +1,5 @@
 import { BlogRoute } from './BlogRoute'
+import lagoonFieldNote from './lagoon-field-note.json'
 import { DedicationsPage, DedicationLink } from './Dedications'
 import { NightStory } from './NightStory'
 import { WallpapersPage, WallpaperLink } from './Wallpapers'
@@ -551,6 +552,7 @@ function App() {
   if (path === '/') return <Atlas />
   if (path === '/gallery') return <Atlas />
   if (path === '/blog') return <BlogRoute />
+  if (path === lagoonFieldNote.path.slice(0, -1)) return <BlogRoute lagoon />
   if (path === '/blog/the-dust-between-us-and-m81') return <BlogRoute m81 />
   if (path === '/blog/how-far-for-dark-skies') return <BlogRoute article />
   if (path === '/stories/seahorse') return <NightStory />
