@@ -230,16 +230,29 @@ img { max-width: 100%; }
 
 .timeline-section, .equipment-section, .process-section { padding: 140px clamp(22px, 7vw, 120px); }
 .timeline-section { background: var(--paper); color: var(--ink); }
-.timeline-section .section-heading, .equipment-section .section-heading { border-color: var(--dark-line); }
+.timeline-section .section-heading { border-color: var(--dark-line); }
 .timeline { margin-top: 60px; border-top: 1px solid var(--dark-line); }
 .timeline article { min-height: 220px; display: grid; grid-template-columns: 100px minmax(300px, .75fr) minmax(330px, 1fr); gap: 42px; align-items: center; border-bottom: 1px solid var(--dark-line); }
 .timeline article > span { color: #85847f; font: 400 8px/1 var(--mono); }
 .timeline article div p { margin: 0 0 12px; color: #73736f; font: 400 8px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .timeline h3 { margin: 0; font: 300 clamp(34px, 3.3vw, 55px)/1 var(--serif); letter-spacing: -.04em; }
 .timeline article > p { max-width: 620px; margin: 0; color: #56575a; font-size: 15px; line-height: 1.7; }
-.equipment-section { background: #dcdad1; color: var(--ink); }
-.equipment-grid { margin-top: 60px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--dark-line); border-left: 1px solid var(--dark-line); }
-.equipment-grid article { min-width: 0; padding: clamp(14px, 2.1vw, 30px); border-right: 1px solid var(--dark-line); border-bottom: 1px solid var(--dark-line); }
+.equipment-section { position: relative; isolation: isolate; scroll-margin-top: 86px; background: #090b0e; color: #f7f3ed; }
+.equipment-backdrop { position: absolute; z-index: -1; inset: 0 0 auto; height: clamp(680px, 74vw, 1120px); pointer-events: none; }
+.equipment-backdrop img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; }
+.equipment-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, #090b0e, rgba(9,11,14,.42) 34%, transparent 72%),
+    linear-gradient(90deg, rgba(9,11,14,.87), rgba(9,11,14,.65) 40%, rgba(9,11,14,.08) 87%);
+}
+.equipment-section .section-number, .equipment-section .section-heading > div > p { color: #e5ded7; }
+.equipment-section .section-action a { color: #fff5ed; background: rgba(9,11,14,.78); border: 1px solid rgba(255,245,237,.36); padding: 10px 12px; }
+.equipment-section .section-action a:hover { border-color: var(--blue); }
+.equipment-grid { margin-top: 60px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.equipment-grid article { min-width: 0; padding: clamp(14px, 2.1vw, 30px); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(11,13,17,.88); }
 .equipment-photo { display: block; color: inherit; }
 .equipment-photo img { display: block; width: 100%; height: auto; background: #101015; }
 .equipment-photo > span { display: block; margin-top: 12px; font: 500 11px/1.4 var(--mono); }
@@ -249,7 +262,8 @@ img { max-width: 100%; }
 .equipment-grid h3 { margin: 0 0 12px; }
 .process-grid h3 { margin: auto 0 20px; }
 .process-grid article > span { color: #7d7d78; font: 400 8px/1 var(--mono); }
-.equipment-grid p, .process-grid p { margin: 0; color: #62625f; font-size: 12px; line-height: 1.65; }
+.equipment-grid p, .process-grid p { margin: 0; font-size: 12px; line-height: 1.65; }
+.equipment-grid p { color: #c4c3c2; }
 .process-section { background: #090b0e; }
 .process-grid { margin-top: 60px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .process-grid article { min-height: 380px; padding: 32px; display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -413,6 +427,11 @@ footer button, footer a:not(.footer-mark) { padding: 0; background: none; color:
   .archive-callout h2 { font-size: 58px; }
 
   .timeline-section, .equipment-section, .process-section { padding: 90px 20px; }
+  .equipment-section { scroll-margin-top: 74px; }
+  .equipment-backdrop img { object-position: 64% center; }
+  .equipment-backdrop::after {
+    background: linear-gradient(0deg, #090b0e, rgba(9,11,14,.48) 54%, rgba(9,11,14,.64));
+  }
   .timeline article { min-height: 0; padding: 32px 0; grid-template-columns: 45px 1fr; gap: 20px; }
   .timeline article > p { grid-column: 2; font-size: 13px; }
   .timeline h3 { font-size: 37px; }

@@ -375,7 +375,25 @@ function AboutPage() {
       </section>
 
       <section className="equipment-section" id="scope-and-sky">
-        <SectionHeading number="02" eyebrow="INSTRUMENTS" title={<>Different glass.<br />The same sky.</>} description="Six telescopes, each paired with a photograph I made through it." />
+        <div className="equipment-backdrop" aria-hidden="true">
+          <img
+            src={asset('astro/scope-and-sky/rho-ophiuchi-background-1200.webp')}
+            srcSet={`${asset('astro/scope-and-sky/rho-ophiuchi-background-1200.webp')} 1200w, ${asset('astro/scope-and-sky/rho-ophiuchi-background-2400.webp')} 2400w`}
+            sizes="100vw"
+            width="2400"
+            height="1603"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <SectionHeading
+          number="02"
+          eyebrow="INSTRUMENTS"
+          title={<>Different glass.<br />The same sky.</>}
+          description="Six telescopes, each paired with a photograph I made through it."
+          action={<a href="https://app.astrobin.com/i/uoxhof" target="_blank" rel="noreferrer">Rho Ophiuchi · Askar SQA55 <span aria-hidden="true">↗</span></a>}
+        />
         <div className="equipment-grid">
           {equipment.map((item) => (
             <article key={item.name}>
