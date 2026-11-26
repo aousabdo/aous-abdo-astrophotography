@@ -40,6 +40,57 @@ export const groups = [
 ]
 export const photographs: Photograph[] = [
   {
+    "id": "orion-sword-and-belt",
+    "title": "Orion’s Sword and Belt",
+    "catalog": "M42 · M43 · NGC 1977 · B33 · NGC 2024",
+    "group": "emission",
+    "caption": "The Orion Nebula, Horsehead and Flame in one 4.5° field.",
+    "description": "The wide field traces Orion’s Sword and Belt, from the Running Man and Orion Nebula at upper right to the Horsehead and Flame at lower left. From the Askar SQA85 Orion field, with natural colour, HOO and SHO finishes. Select any finish to compare the broadband-led version with the narrowband palettes.",
+    "alt": "The wide field traces Orion’s Sword and Belt, from the Running Man and Orion Nebula at upper right to the Horsehead and Flame at lower left.",
+    "tags": [
+      "M42_SQA85_region",
+      "Orion SQA85"
+    ],
+    "views": [
+      {
+        "id": "61df1416ad",
+        "label": "Natural colour + Hα",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/61df1416ad.jpg",
+        "thumb": "/gallery/61df1416ad-900.jpg",
+        "width": 8592,
+        "height": 6224,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      },
+      {
+        "id": "ce4f17e3df",
+        "label": "HOO · Hydrogen and oxygen",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/ce4f17e3df.jpg",
+        "thumb": "/gallery/ce4f17e3df-900.jpg",
+        "width": 8592,
+        "height": 6224,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      },
+      {
+        "id": "2e003cbe17",
+        "label": "SHO · Hubble palette",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/2e003cbe17.jpg",
+        "thumb": "/gallery/2e003cbe17-900.jpg",
+        "width": 8592,
+        "height": 6224,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      }
+    ]
+  },
+  {
     "id": "iris",
     "title": "The Iris Nebula",
     "catalog": "NGC 7023",
@@ -376,6 +427,363 @@ export const photographs: Photograph[] = [
         "astrobin": "https://app.astrobin.com/i/5w9u18",
         "width": 4800,
         "height": 3200
+      }
+    ]
+  },
+  {
+    "id": "orion-nebula-running-man-sqa85",
+    "title": "Orion Nebula and Running Man",
+    "catalog": "M42 · M43 · NGC 1977",
+    "group": "emission",
+    "caption": "Orion’s bright core beside the Running Man’s reflection nebula.",
+    "description": "The Orion Nebula and M43 share the field with the Running Man, where starlight illuminates dust beside the glowing gas. From the Askar SQA85 Orion field, with natural colour, HOO and SHO finishes.",
+    "alt": "The Orion Nebula and M43 share the field with the Running Man, where starlight illuminates dust beside the glowing gas.",
+    "tags": [
+      "M42_SQA85_region",
+      "Orion SQA85"
+    ],
+    "views": [
+      {
+        "id": "3d650790b2",
+        "label": "Natural colour + Hα",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/3d650790b2.jpg",
+        "thumb": "/gallery/3d650790b2-900.jpg",
+        "width": 3093,
+        "height": 2800,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      },
+      {
+        "id": "31d44f7d20",
+        "label": "HOO · Hydrogen and oxygen",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/31d44f7d20.jpg",
+        "thumb": "/gallery/31d44f7d20-900.jpg",
+        "width": 3093,
+        "height": 2800,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      },
+      {
+        "id": "7326f3d6a3",
+        "label": "SHO · Hubble palette",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/7326f3d6a3.jpg",
+        "thumb": "/gallery/7326f3d6a3-900.jpg",
+        "width": 3093,
+        "height": 2800,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      }
+    ]
+  },
+  {
+    "id": "orion-m42-m43-sqa85",
+    "title": "The Orion Nebula and M43",
+    "catalog": "M42 · M43",
+    "group": "emission",
+    "caption": "M42’s bright folds above the smaller glow of M43.",
+    "description": "This closer view of the Orion Nebula shows its luminous central folds, the dark lane that divides M42 from M43, and the teardrop-shaped glow around M43. From the Askar SQA85 Orion field, with natural colour, HOO and SHO finishes.",
+    "alt": "This closer view of the Orion Nebula shows its luminous central folds, the dark lane that divides M42 from M43, and the teardrop-shaped glow around M43.",
+    "tags": [
+      "M42_SQA85_region",
+      "Orion SQA85"
+    ],
+    "views": [
+      {
+        "id": "963156f551",
+        "label": "Natural colour + Hα",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/963156f551.jpg",
+        "thumb": "/gallery/963156f551-900.jpg",
+        "width": 2000,
+        "height": 1750,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      },
+      {
+        "id": "69fe7fa61c",
+        "label": "HOO · Hydrogen and oxygen",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/69fe7fa61c.jpg",
+        "thumb": "/gallery/69fe7fa61c-900.jpg",
+        "width": 2000,
+        "height": 1750,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      },
+      {
+        "id": "05d8c2a9ef",
+        "label": "SHO · Hubble palette",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/05d8c2a9ef.jpg",
+        "thumb": "/gallery/05d8c2a9ef-900.jpg",
+        "width": 2000,
+        "height": 1750,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      }
+    ]
+  },
+  {
+    "id": "running-man-sqa85",
+    "title": "The Running Man Nebula",
+    "catalog": "NGC 1977",
+    "group": "reflection",
+    "caption": "A dark silhouette between islands of illuminated dust.",
+    "description": "The Running Man is a reflection and emission complex beside the Orion Nebula. Dust around its stars reflects their light and dark lanes define the figure. From the Askar SQA85 Orion field, with natural colour, HOO and SHO finishes.",
+    "alt": "The Running Man is a reflection and emission complex beside the Orion Nebula. Dust around its stars reflects their light and dark lanes define the figure.",
+    "tags": [
+      "M42_SQA85_region",
+      "Orion SQA85"
+    ],
+    "views": [
+      {
+        "id": "4f97378266",
+        "label": "Natural colour + Hα",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/4f97378266.jpg",
+        "thumb": "/gallery/4f97378266-900.jpg",
+        "width": 1160,
+        "height": 870,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      },
+      {
+        "id": "044f396b69",
+        "label": "HOO · Hydrogen and oxygen",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/044f396b69.jpg",
+        "thumb": "/gallery/044f396b69-900.jpg",
+        "width": 1160,
+        "height": 870,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      },
+      {
+        "id": "59d99180fd",
+        "label": "SHO · Hubble palette",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/59d99180fd.jpg",
+        "thumb": "/gallery/59d99180fd-900.jpg",
+        "width": 1160,
+        "height": 870,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      }
+    ]
+  },
+  {
+    "id": "orion-trapezium-sqa85",
+    "title": "The Trapezium and Orion Bar",
+    "catalog": "M42 core",
+    "group": "emission",
+    "caption": "Bright ridges and dark lanes in the heart of M42.",
+    "description": "The compact Trapezium region and the bright edge of the Orion Bar sit amid the intricate gas and dust of the Orion Nebula. A shorter-exposure FLT120 stack was blended into the bright core. From the Askar SQA85 Orion field, with natural colour, HOO and SHO finishes.",
+    "alt": "The compact Trapezium region and the bright edge of the Orion Bar sit amid the intricate gas and dust of the Orion Nebula. A shorter FLT120 exposure was blended into the bright core.",
+    "tags": [
+      "M42_SQA85_region",
+      "Orion SQA85"
+    ],
+    "views": [
+      {
+        "id": "0ddd944cbd",
+        "label": "Natural colour + Hα",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/0ddd944cbd.jpg",
+        "thumb": "/gallery/0ddd944cbd-900.jpg",
+        "width": 1200,
+        "height": 900,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      },
+      {
+        "id": "3ff05dd6fa",
+        "label": "HOO · Hydrogen and oxygen",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/3ff05dd6fa.jpg",
+        "thumb": "/gallery/3ff05dd6fa-900.jpg",
+        "width": 1200,
+        "height": 900,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      },
+      {
+        "id": "33c8b424f8",
+        "label": "SHO · Hubble palette",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/33c8b424f8.jpg",
+        "thumb": "/gallery/33c8b424f8-900.jpg",
+        "width": 1200,
+        "height": 900,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85. A 36 min FLT120 stack contributes selected detail in the M42 core."
+      }
+    ]
+  },
+  {
+    "id": "horsehead-flame-sqa85",
+    "title": "The Horsehead and the Flame",
+    "catalog": "Barnard 33 · IC 434 · NGC 2024",
+    "group": "emission",
+    "caption": "Two nebulae on either side of the light of Alnitak.",
+    "description": "The Horsehead silhouette breaks the glowing IC 434 curtain. Beside it, dark branches cross the bright Flame Nebula, close to the bright star Alnitak. From the Askar SQA85 Orion field, with natural colour, HOO and SHO finishes.",
+    "alt": "The Horsehead silhouette breaks the glowing IC 434 curtain. Beside it, dark branches cross the bright Flame Nebula, close to the bright star Alnitak.",
+    "tags": [
+      "M42_SQA85_region",
+      "Orion SQA85"
+    ],
+    "views": [
+      {
+        "id": "c84ad81588",
+        "label": "Natural colour + Hα",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/c84ad81588.jpg",
+        "thumb": "/gallery/c84ad81588-900.jpg",
+        "width": 2627,
+        "height": 1970,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      },
+      {
+        "id": "5245deeb8a",
+        "label": "HOO · Hydrogen and oxygen",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/5245deeb8a.jpg",
+        "thumb": "/gallery/5245deeb8a-900.jpg",
+        "width": 2627,
+        "height": 1970,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      },
+      {
+        "id": "ec4b2148f6",
+        "label": "SHO · Hubble palette",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/ec4b2148f6.jpg",
+        "thumb": "/gallery/ec4b2148f6-900.jpg",
+        "width": 2627,
+        "height": 1970,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      }
+    ]
+  },
+  {
+    "id": "orion-horsehead-sqa85",
+    "title": "The Horsehead Nebula",
+    "catalog": "Barnard 33 · IC 434",
+    "group": "dark-dust",
+    "caption": "A small dark cloud against a curtain of hydrogen.",
+    "description": "Barnard 33 rises in silhouette against the luminous background of IC 434. Below it lies the reflection nebula NGC 2023. From the Askar SQA85 Orion field, with natural colour, HOO and SHO finishes.",
+    "alt": "Barnard 33 rises in silhouette against the luminous background of IC 434. Below it lies the reflection nebula NGC 2023.",
+    "tags": [
+      "M42_SQA85_region",
+      "Orion SQA85"
+    ],
+    "views": [
+      {
+        "id": "7fcdbfcaf4",
+        "label": "Natural colour + Hα",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/7fcdbfcaf4.jpg",
+        "thumb": "/gallery/7fcdbfcaf4-900.jpg",
+        "width": 1600,
+        "height": 1200,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      },
+      {
+        "id": "b60a92cf89",
+        "label": "HOO · Hydrogen and oxygen",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/b60a92cf89.jpg",
+        "thumb": "/gallery/b60a92cf89-900.jpg",
+        "width": 1600,
+        "height": 1200,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      },
+      {
+        "id": "1a38ba3b32",
+        "label": "SHO · Hubble palette",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/1a38ba3b32.jpg",
+        "thumb": "/gallery/1a38ba3b32-900.jpg",
+        "width": 1600,
+        "height": 1200,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      }
+    ]
+  },
+  {
+    "id": "orion-flame-sqa85",
+    "title": "The Flame Nebula",
+    "catalog": "NGC 2024",
+    "group": "emission",
+    "caption": "Dark dust branches across one of Orion’s brightest clouds.",
+    "description": "The Flame’s bright lobes are broken by dark dust lanes. The bright star Alnitak sits near the upper edge of the crop. From the Askar SQA85 Orion field, with natural colour, HOO and SHO finishes.",
+    "alt": "The Flame’s bright lobes are broken by dark dust lanes. The bright star Alnitak sits near the upper edge of the crop.",
+    "tags": [
+      "M42_SQA85_region",
+      "Orion SQA85"
+    ],
+    "views": [
+      {
+        "id": "a3bec4ae05",
+        "label": "Natural colour + Hα",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/a3bec4ae05.jpg",
+        "thumb": "/gallery/a3bec4ae05-900.jpg",
+        "width": 1200,
+        "height": 1200,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      },
+      {
+        "id": "86946de450",
+        "label": "HOO · Hydrogen and oxygen",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/86946de450.jpg",
+        "thumb": "/gallery/86946de450-900.jpg",
+        "width": 1200,
+        "height": 1200,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
+      },
+      {
+        "id": "8cef4f2e3c",
+        "label": "SHO · Hubble palette",
+        "rig": "Askar SQA85",
+        "date": "2026-11-26",
+        "src": "/gallery/8cef4f2e3c.jpg",
+        "thumb": "/gallery/8cef4f2e3c-900.jpg",
+        "width": 1200,
+        "height": 1200,
+        "hours": 17.7,
+        "acquisition": "Nov 16, 18 and 19, 2026 · ZWO ASI6200MM Pro · 17.7 h with the SQA85."
       }
     ]
   },

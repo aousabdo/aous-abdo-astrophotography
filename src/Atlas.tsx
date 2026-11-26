@@ -17,7 +17,7 @@ const groupName = (id: string) => groups.find(g => g.id === id)?.title || id
 
 function Atlas() {
   const [filter, setFilter] = useState('all')
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState(() => new URLSearchParams(window.location.search).get('q') ?? '')
   const [sort, setSort] = useState('curated')
   const [active, setActive] = useState<Photograph | null>(null)
   const [viewIndex, setViewIndex] = useState(0)
@@ -151,6 +151,7 @@ function Atlas() {
           <p>Follow the dust, the glow, or the galaxies beyond. Each collection brings a different part of the sky into view.</p>
           <nav aria-label="Featured work">
             <a href="/scope-and-sky/">Scope &amp; Sky</a>
+            <a href="/?q=Orion%20SQA85#collection">New Orion series</a>
             <a href="/blog/four-telescopes-one-field/">Lagoon–Trifid field note</a>
           </nav>
         </div></header>
