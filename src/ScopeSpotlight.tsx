@@ -2,10 +2,10 @@ import './scope-spotlight.css'
 
 const rho = '/astro/scope-and-sky/rho-ophiuchi-background'
 
-export function ScopeSpotlight({ href = '/about/#scope-and-sky' }: { href?: string }) {
+export function ScopeSpotlight() {
   return (
     <section className="scope-spotlight" aria-labelledby="scope-spotlight-title">
-      <a href={href} className="scope-spotlight-link">
+      <a href="/scope-and-sky/" className="scope-spotlight-link">
         <img
           src={rho + '-1200.webp'}
           srcSet={`${rho}-1200.webp 1200w, ${rho}-2400.webp 2400w`}

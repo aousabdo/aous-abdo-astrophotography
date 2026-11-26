@@ -49,3 +49,10 @@
   .scope-spotlight-link > img { object-position: 62% center; }
   .scope-spotlight-link::after { background: linear-gradient(0deg, #090911f0, #09091174 62%, #09091113); }
 }
+
+.collections-feature-links { flex: 0 1 370px; }
+.collections-feature-links p { margin: 0; color: var(--soft, #aaa9a3); font-size: .94rem; line-height: 1.7; }
+.collections-feature-links nav { display: flex; flex-wrap: wrap; gap: 12px 19px; margin-top: 14px; }
+.collections-feature-links a { padding: 2px 0; border-bottom: 1px solid currentColor; color: var(--blue, #92bde2); font-weight: 600; font-size: .9rem; }
+.collections-feature-links a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (max-width: 700px) { .collections-feature-links { max-width: 370px; margin-top: 22px; } }
