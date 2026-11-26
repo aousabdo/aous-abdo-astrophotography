@@ -345,11 +345,12 @@ function AboutPage() {
     { year: '2013 — now', place: 'Under the night sky', title: 'The universe never left', text: 'I stepped away from academia, but not from astronomy. Nebulae, galaxies, and the patience of long exposure still pull me into the dark.' },
   ]
   const equipment = [
-    { name: 'Celestron Origin', use: 'Wide-field nebulae, star clouds, and an observatory that can travel.' },
-    { name: 'William Optics FLT 120', use: 'The newest deep-sky instrument: 120 millimeters of aperture for fine dust, narrow structures, and long integrations.', isNew: true },
-    { name: 'C11 EdgeHD', use: 'Long focal length and close studies of structures such as the Pillars of Creation.' },
-    { name: 'Askar 103APO', use: 'A wider, detailed view of nebulae and stellar nurseries.' },
-    { name: 'Askar SQA 55', use: 'An immense, flat field for dust rivers, reflection nebulae, and the full architecture around a target.', isNew: true },
+    { name: 'Celestron Origin', use: 'A portable wide-field setup for nebulae and star clouds.', subject: 'Lagoon Nebula', image: 'lagoon', astrobin: 'tv3uqt' },
+    { name: 'William Optics FLT120', use: '120 mm of aperture for fine dust, narrow structures, and long integrations.', subject: 'Pleiades', image: 'pleiades', astrobin: 'g5zenp' },
+    { name: 'Celestron EdgeHD 11', use: 'Long focal length for close studies of small structures.', subject: 'Pillars of Creation', image: 'pillars', astrobin: '3hid93' },
+    { name: 'Askar 103APO', use: 'Detailed views of nebulae and, with a solar filter, the Sun.', subject: 'The Sun in white light', image: 'sun', astrobin: 'e1mwc7' },
+    { name: 'Askar SQA55', use: 'A wide, flat 264 mm field for dust and reflection nebulae.', subject: 'Rho Ophiuchi', image: 'rho-ophiuchi', astrobin: 'uoxhof' },
+    { name: 'Askar SQA85', use: 'A 408 mm field that can take in a nebular complex and still resolve detail.', subject: 'Horsehead & Flame', image: 'horsehead-flame', astrobin: 'efpqdp' },
   ]
 
   return (
@@ -373,10 +374,21 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="equipment-section">
-        <SectionHeading number="02" eyebrow="INSTRUMENTS" title={<>Different glass.<br />The same sky.</>} description="Each telescope changes the scale of the conversation—from an entire star cloud to the face of a stellar nursery." />
+      <section className="equipment-section" id="scope-and-sky">
+        <SectionHeading number="02" eyebrow="INSTRUMENTS" title={<>Different glass.<br />The same sky.</>} description="Six telescopes, each paired with a photograph I made through it." />
         <div className="equipment-grid">
-          {equipment.map((item, index) => <article className={item.isNew ? 'instrument-new' : ''} key={item.name}><span>0{index + 1}</span>{item.isNew && <small>2026 field work</small>}<h3>{item.name}</h3><p>{item.use}</p></article>)}
+          {equipment.map((item) => (
+            <article key={item.name}>
+              <a className="equipment-photo" href={`https://app.astrobin.com/i/${item.astrobin}`} target="_blank" rel="noreferrer" aria-label={`${item.subject} on AstroBin`}>
+                <img src={asset(`astro/scope-and-sky/${item.image}.webp`)} alt="" width="1000" height="625" loading="lazy" decoding="async" />
+                <span>{item.subject} <span aria-hidden="true">↗</span></span>
+              </a>
+              <div className="equipment-copy">
+                <h3>{item.name}</h3>
+                <p>{item.use}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
