@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { photographs, groups, type Photograph, type View } from './gallery'
 import { Films, FilmPlayer } from './Films'
 import { WallpaperSpotlight, WallpaperLink } from './Wallpapers'
+import { ChristmasSpotlight } from './ChristmasSpotlight'
 import { ScienceSummary, ScienceReader, ScienceStories } from './SciencePanel'
 import { archiveUrl, relatedProjects, widerProjects } from './atlas-projects'
 
@@ -140,6 +141,7 @@ function Atlas() {
         <button className="hero-caption" onClick={() => openPhoto(hero)}><span>November / new finish</span><strong>The Iris Nebula</strong><small>NGC 7023 · {hoursLabel(heroView.hours) || 'Cepheus'} <b>↗</b></small></button>
         <div className="hero-bottom"><span>Photographs by Dr. Aous Abdo</span><span>{photographs.length} subjects · {viewCount} views · 4 films · Six collections</span></div>
       </section>
+      <ChristmasSpotlight/>
       <Films/>
       <section className="resolution-sampler" aria-labelledby="resolution-heading"><div className="resolution-sampler-head"><div><p className="section-number">LOOK CLOSER / THE ORIGINAL PIXELS</p><h2 id="resolution-heading">Go beyond<br/><em>the first glance.</em></h2></div><p>Follow a dust lane through Andromeda. Wander through a mosaic. Move from the whole sky to the smallest details the photograph recorded.</p></div><div className="resolution-picks">{['andromeda','seahorse','lagoon-trifid'].map(id=>{const photo=photographs.find(p=>p.id===id)!,view=photo.views[0];return <button className="resolution-pick" key={id} onClick={()=>openPhoto(photo,0,false,false,true)}><img src={view.thumb} alt={photo.alt} loading="lazy"/><span><span><strong>{photo.title}</strong><small>Explore {Math.round(view.width*view.height/1e6)} megapixels · full resolution</small></span><b aria-hidden="true">↗</b></span></button>})}</div></section>
       <DedicationSpotlight/>

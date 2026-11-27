@@ -1,0 +1,7 @@
+.orion-christmas-spotlight{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:clamp(18px,4vw,56px);padding:clamp(20px,4vw,38px) clamp(22px,7vw,100px);background:#351620;color:#fff5ed;border-bottom:1px solid #805667}
+.orion-christmas-spotlight img{display:block;width:clamp(76px,12vw,135px);height:auto;box-shadow:0 6px 20px #21091382}
+.orion-christmas-spotlight h2{margin:0;font:400 clamp(31px,4.4vw,62px)/.99 Georgia,serif;letter-spacing:-.035em}
+.orion-christmas-spotlight p{margin:8px 0 14px;color:#ead0cd;font-size:clamp(12px,1.3vw,15px);max-width:54ch;line-height:1.55}
+.orion-christmas-spotlight a{display:inline-flex;align-items:center;gap:10px;color:#fff4e5;font-weight:650;font-size:clamp(12px,1.3vw,15px);text-decoration:underline;text-underline-offset:4px}
+.orion-christmas-spotlight a:hover{color:#f5bac4}
+.orion-christmas-spotlight a:focus-visible{outline:2px solid #f5bac4;outline-offset:4px}
