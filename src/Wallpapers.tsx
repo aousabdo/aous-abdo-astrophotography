@@ -9,8 +9,10 @@ type Device = {id:string;title:string;width:number;height:number;ratio:string;no
 type Format = {rotation:number;recommended:Layout;exports:Partial<Record<Layout,Export>>}
 type WallpaperView = {id:string;label:string;rig:string;date:string;sourceWidth:number;sourceHeight:number;note:string;bundle:{file:string;url:string;bytes:number;images:number};formats:Record<string,Format>}
 type WallpaperPhoto = {id:string;title:string;catalog:string;group:string;caption:string;alt:string;views:WallpaperView[]}
-type Pack = {device:string;file:string;url:string;bytes:number;images:number}
-type Catalog = {edition:string;photographer:string;license:string;devices:Device[];packs:Pack[];photographs:WallpaperPhoto[]}
+type Archive = {file:string;url:string;bytes:number;images:number}
+type Pack = Archive & {device:string}
+type OrionCollection = {complete:Archive;packs:Pack[]}
+type Catalog = {edition:string;photographer:string;license:string;devices:Device[];packs:Pack[];photographs:WallpaperPhoto[];orionCollection?:OrionCollection}
 const bytes=(n:number)=>n<1e6?`${Math.round(n/1000)} KB`:`${(n/1e6).toFixed(1)} MB`
 const deviceIcon:Record<string,string>={desktop:'▰',laptop:'▱',phone:'▯',tablet:'▣',ultrawide:'▬'}
 const clockDevice=(id:string)=>id==='phone'
@@ -27,6 +29,37 @@ export function WallpaperLink({photo,view}:{photo:string;view?:string}) {
 function ScreenPreview({entry,device,clock=false,alt='',large=false}:{entry:Export;device:Device;clock?:boolean;alt?:string;large?:boolean}) {
  return <div className={`wp-screen wp-screen-${device.id} ${large?'wp-screen-large':''}`} style={{aspectRatio:`${device.width}/${device.height}`}}><img src={entry.preview} alt={alt} loading={large?'eager':'lazy'}/>{clock&&clockDevice(device.id)&&<div className="wp-clock" aria-hidden="true"><small>WEDNESDAY</small><strong>9:41</strong></div>}{device.id==='laptop'&&<span className="wp-camera" aria-hidden="true"/>}</div>
 }
+function OrionDownloads({collection, devices}:{collection:OrionCollection;devices:Device[]}) {
+ const {complete, packs} = collection
+ return (
+   <section className="wp-orion-downloads" aria-labelledby="wp-orion-downloads-heading">
+     <div className="wp-orion-downloads-header">
+       <div>
+         <h2 id="wp-orion-downloads-heading">Download Orion wallpapers</h2>
+         <p>Eight scenes in three colour finishes. Each ZIP has the right crops for its screen.</p>
+       </div>
+       <a className="wp-action" href={complete.url} download={complete.file}>
+         <span>Download all {complete.images} wallpapers ↓<small>ZIP · {bytes(complete.bytes)}</small></span>
+       </a>
+     </div>
+     <ul className="wp-orion-packs">
+       {devices.map(device=>{
+         const pack = packs.find(item=>item.device===device.id)
+         if(!pack)return null
+         return (
+           <li key={device.id}>
+             <a href={pack.url} download={pack.file} aria-label={`Download ${device.title.toLowerCase()} Orion wallpapers`}>
+               <strong>{device.title}</strong>
+               <span aria-hidden="true">↓</span>
+               <small>{device.width} × {device.height} · {pack.images} JPGs · {bytes(pack.bytes)}</small>
+             </a>
+           </li>
+         )
+       })}
+     </ul>
+   </section>
+ )
+}
 export function WallpapersPage({brand='One More Photon'}:{brand?:string}) {
  useEffect(()=>{document.title=`Wallpapers — ${brand}`},[brand])
  const [catalog,setCatalog]=useState<Catalog|null>(null),[error,setError]=useState(false),[retry,setRetry]=useState(0)
@@ -35,7 +68,7 @@ export function WallpapersPage({brand='One More Photon'}:{brand?:string}) {
  const [viewId,setViewId]=useState(()=>getParams().get('view')||''),[layout,setLayout]=useState(()=>getParams().get('layout')||'')
  const [clock,setClock]=useState(true),[shareText,setShareText]=useState('Copy link ↗')
  const panel=useRef<HTMLDivElement>(null),opener=useRef<HTMLElement|null>(null)
- useEffect(()=>{const controller=new AbortController();setError(false);fetch('/wallpapers/catalog.json?v=orion-edge-20261127',{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('catalog');return r.json()}).then(setCatalog).catch(e=>{if(e.name!=='AbortError')setError(true)});return()=>controller.abort()},[retry])
+ useEffect(()=>{const controller=new AbortController();setError(false);fetch('/wallpapers/catalog.json?v=orion-packs-20261127',{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('catalog');return r.json()}).then(setCatalog).catch(e=>{if(e.name!=='AbortError')setError(true)});return()=>controller.abort()},[retry])
  const active=catalog?.photographs.find(p=>p.id===activeId)
  const view=active?.views.find(v=>v.id===viewId&&v.formats[deviceId])||active?.views.find(v=>v.formats[deviceId])||active?.views.find(v=>v.id===viewId)||active?.views[0]
  const device=catalog?.devices.find(d=>d.id===deviceId&&(!view||view.formats[d.id]))||catalog?.devices.find(d=>view?.formats[d.id])||catalog?.devices[0]
@@ -45,6 +78,7 @@ export function WallpapersPage({brand='One More Photon'}:{brand?:string}) {
  
  const visible=useMemo(()=>catalog?.photographs.filter(p=>p.views.some(v=>v.formats[device?.id||deviceId])&&(group==='all'||p.group===group)&&(!query||`${p.title} ${p.catalog} ${p.caption} ${p.views.map(v=>v.rig).join(' ')}`.toLowerCase().includes(query.toLowerCase().trim())))||[],[catalog,group,query,device?.id,deviceId])
  const pack=catalog?.packs.find(p=>p.device===device?.id)
+ const orionCollection=query.trim().toLowerCase()==='sqa85'?catalog?.orionCollection:undefined
  const updateUrl=(photo:string|null,vid='',did=device?.id||deviceId,mode='')=>{const url=new URL(window.location.href);for(const key of ['photo','view','device','layout'])url.searchParams.delete(key);if(photo){url.searchParams.set('photo',photo);if(vid)url.searchParams.set('view',vid)}if(did)url.searchParams.set('device',did);if(mode)url.searchParams.set('layout',mode);return url.toString()}
  const close=()=>{setActiveId(null);setViewId('');setLayout('');window.history.replaceState({},'',updateUrl(null,'',deviceId));opener.current?.focus()}
  const open=(p:WallpaperPhoto)=>{opener.current=document.activeElement as HTMLElement;setActiveId(p.id);setViewId((p.views.find(v=>v.formats[device!.id])||p.views[0]).id);setLayout('');window.history.pushState({},'',updateUrl(p.id,p.views[0].id))}
@@ -57,10 +91,11 @@ export function WallpapersPage({brand='One More Photon'}:{brand?:string}) {
   <main><section className="wp-intro"><div><p className="wp-eyebrow">TAKE THE SKY WITH YOU / NOVEMBER 2026</p><h1>Your screen.<br/><em>The universe.</em></h1><p>A considered edit of the sky. Rotated, framed, and selected for the screen in front of you. Every available edition earns its place.</p></div><aside><div className="wp-intro-screens"><img className="wp-intro-desktop" src="/wallpapers/previews/58849ae674-desktop-fill.webp" alt="The Iris Nebula prepared as a desktop wallpaper"/><img className="wp-intro-phone" src={`/wallpapers/previews/${photographs.find(p=>p.id==='moon')!.views[0].id}-phone-full-frame.webp`} alt="The Moon prepared as a phone wallpaper"/><span aria-hidden="true">9:41</span></div><span>MADE FROM THE FINISHED PHOTOGRAPHS</span><strong>{catalog?catalog.photographs.length:'—'} <small>selected skies</small></strong><p>Compositions selected for five screen shapes<br/>Free for personal use · no watermark</p><a href="#wallpaper-grid">Choose your view ↓</a></aside></section>
   <section className="wp-browser" id="wallpaper-grid"><div className="wp-format-bar"><div><p className="wp-eyebrow">FIRST, CHOOSE YOUR SCREEN</p><h2>Where will the light land?</h2></div><div className="wp-device-options" role="group" aria-label="Screen format">{catalog?.devices.map(d=><button key={d.id} aria-pressed={device?.id===d.id} onClick={()=>{setDeviceId(d.id);setLayout('')}}><span aria-hidden="true">{deviceIcon[d.id]}</span><strong>{d.title}</strong><small>{d.width} × {d.height}</small></button>)}</div></div>
    <div className="wp-find"><div className="wp-filters" role="group" aria-label="Wallpaper collection">{[{id:'all',title:'All subjects'},...groups].map(g=><button key={g.id} aria-pressed={group===g.id} onClick={()=>setGroup(g.id)}>{g.title}</button>)}</div><label className="wp-search"><span>Find your sky</span><input type="search" placeholder="Iris, Moon, M31…" value={query} onChange={e=>setQuery(e.target.value)}/></label></div>
+   {catalog&&orionCollection&&<OrionDownloads collection={orionCollection} devices={catalog.devices}/>}
    <p className="wp-result-count" role="status">{catalog?`${visible.length} subjects · ${device?.title} previews · curated for this screen shape`:'Preparing the collection…'}</p>
    {error?<div className="wp-empty"><h2>The collection could not load.</h2><p>Your connection may have paused. Try loading the wallpaper catalog again.</p><button onClick={()=>setRetry(retry+1)}>Try again ↗</button></div>:!catalog?<div className="wp-loading" aria-label="Loading wallpaper collection"/>:!visible.length?<div className="wp-empty"><h2>No matching skies.</h2><button onClick={()=>{setGroup('all');setQuery('')}}>Show all wallpapers ↗</button></div>:<div className={`wp-grid wp-grid-${device?.id}`}>{visible.map(p=>{const v=p.views.find(v=>v.formats[device!.id])!,f=v.formats[device!.id],e=f.exports[f.recommended]!;return <article className="wp-card" key={p.id}><button className="wp-card-preview" onClick={()=>open(p)} aria-label={`Preview ${p.title} wallpaper`}><ScreenPreview entry={e} device={device!} alt={p.alt}/><span className="wp-card-open">Preview & download <b>↗</b></span></button><div className="wp-card-meta"><p>{p.catalog}</p><h3><button onClick={()=>open(p)}>{p.title}</button></h3><span>{p.views.length>1?'Screen-specific finishes':'Selected wallpaper edition'}<button onClick={()=>open(p)} aria-label={`Download ${p.title} wallpaper`}>↓</button></span></div></article>})}</div>}
   </section>
-  {pack&&device&&<section className="wp-collection-pack"><div><p className="wp-eyebrow">CAN’T PICK JUST ONE?</p><h2>A whole sky.<br/><em>Ready for your {device.id==='phone'?'phone':device.id==='tablet'?'tablet':'screen'}.</em></h2><p>{pack.images} selected {device.title.toLowerCase()} editions, each with its own composition. Only photographs that work at this screen shape make it into the collection.</p></div><a className="wp-action" href={pack.url} download={pack.file}><span>Download {device.title.toLowerCase()} collection ↓<small>ZIP · {bytes(pack.bytes)} · {pack.images} JPGs</small></span></a></section>}
+  {pack&&device&&!orionCollection&&<section className="wp-collection-pack"><div><p className="wp-eyebrow">CAN’T PICK JUST ONE?</p><h2>A whole sky.<br/><em>Ready for your {device.id==='phone'?'phone':device.id==='tablet'?'tablet':'screen'}.</em></h2><p>{pack.images} selected {device.title.toLowerCase()} editions, each with its own composition. Only photographs that work at this screen shape make it into the collection.</p></div><a className="wp-action" href={pack.url} download={pack.file}><span>Download {device.title.toLowerCase()} collection ↓<small>ZIP · {bytes(pack.bytes)} · {pack.images} JPGs</small></span></a></section>}
   <section className="wp-notes"><div><h2>Made for the photograph.<br/>Then for the screen.</h2><p>Long clouds and galaxy disks can turn to follow a phone. Wider fields stay wide for a desktop. The Ghost gets its close-up. A photograph is offered only in the screen shapes where the composition and source detail hold up.</p><p>Each wallpaper is made locally from a finished photograph. No invented sky, mirrored fields, or added detail. Solar and lunar discs stay intact on black. The preview shows the actual downloadable composition.</p></div><div><details><summary>How do I set it as my wallpaper?</summary><p>Download the JPG to your device, then choose the saved image in your wallpaper or desktop-background settings. On a phone, save the image to your photo library if your wallpaper picker needs it there.</p><p>Turn off extra zoom if you want to keep the exported composition. Screen shapes vary, so a device may trim a little at its edges.</p></details><details><summary>Are these free to use?</summary><p>Yes, for personal device wallpapers. Photography remains © Dr. Aous Abdo. Please ask before publishing, selling, redistributing a collection, or using a photograph commercially.</p></details><details><summary>Does the download include a clock or signature?</summary><p>No. Downloads are clean photographs on their chosen canvas. A phone clock can be shown in the preview to help you judge placement; it is not printed in the file.</p></details></div></section>
   </main><footer className="wp-footer"><a href="/">{brand} ↗</a><p>Photography by Dr. Aous Abdo<br/><span>A little more sky in the everyday.</span></p><a href="/#collection">Back to the photographs ↑</a></footer>
   {active&&view&&device&&format&&entry&&<div className="wp-modal" role="dialog" aria-modal="true" aria-labelledby="wp-photo-title" ref={panel} tabIndex={-1}><div className="wp-modal-bar"><div><small>{active.catalog}</small><h2 id="wp-photo-title">{active.title}</h2></div><div><button onClick={share}>{shareText}</button><button className="wp-close" onClick={close}>Close ×</button></div></div><div className="wp-customizer"><div className="wp-preview-stage"><ScreenPreview entry={entry} device={device} clock={clock} alt={`${active.title}, ${selectedLayout==='fill'?'cropped to fill the screen':'full composition'}`} large/><p>{device.width} × {device.height} px <span>·</span> {selectedLayout==='fill'?'Curated crop':'Full frame'}{clock&&device.id==='phone'?' · clock preview only':''}</p></div><aside className="wp-controls"><p className="wp-eyebrow">ONE PHOTOGRAPH. YOUR SCREEN.</p><p className="wp-customizer-intro">{active.caption}</p><label className="wp-select-label">Screen shape<select value={device.id} onChange={e=>{setDeviceId(e.target.value);setLayout('')}}>{catalog!.devices.filter(d=>active.views.some(v=>Boolean(v.formats[d.id]))).map(d=><option key={d.id} value={d.id}>{d.title} · {d.width} × {d.height}</option>)}</select></label>

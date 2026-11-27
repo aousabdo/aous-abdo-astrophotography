@@ -23,3 +23,15 @@ body.wallpaper-open{overflow:hidden}
 .wp-page .wp-screen{border:0;box-shadow:0 0 0 6px #263943,0 14px 22px #0005}.wp-page .wp-screen-large{box-shadow:0 0 0 9px #263943,0 18px 34px #0007}
 
 .wp-page .wp-composition-note{border-block:1px solid #32434c;padding:20px 0;margin:22px 0;color:#b9c8cc;font-size:14px;line-height:1.7}.wp-page .wp-composition-note small{font:10px DM Mono,monospace;color:#90a9b2}
+
+.wp-orion-downloads{margin:24px 0 34px;padding:clamp(16px,2.5vw,30px);border:1px solid #334f5c;background:#10212a}
+.wp-orion-downloads-header{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.wp-orion-downloads-header h2{font:400 clamp(27px,3vw,43px)/1.05 var(--wp-serif);margin:0;color:#e9ebe0}
+.wp-orion-downloads-header p{margin:7px 0 0;color:#aec4cc;font-size:13px;line-height:1.55}
+.wp-orion-downloads-header .wp-action{flex-shrink:0}
+.wp-orion-packs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(145px,100%),1fr));gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.wp-orion-packs a{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:5px 10px;height:100%;padding:11px 12px;background:#0a161e;color:#dbe4df;border:1px solid #304b58;text-decoration:none}
+.wp-orion-packs a:hover,.wp-orion-packs a:focus-visible{border-color:#bcd4cc;color:#f3f2db}
+.wp-orion-packs strong{font:600 13px/1.2 var(--wp-mono)}
+.wp-orion-packs small{grid-column:1/-1;color:#a8bdc7;font:400 10px/1.45 var(--wp-mono)}
+@media(max-width:700px){.wp-orion-downloads-header{flex-direction:column;align-items:stretch;gap:13px}.wp-orion-downloads-header .wp-action{justify-content:space-between}.wp-orion-packs{grid-template-columns:repeat(auto-fit,minmax(min(126px,100%),1fr))}}

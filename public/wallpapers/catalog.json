@@ -6077,5 +6077,56 @@
         }
       ]
     }
-  ]
+  ],
+  "orionCollection": {
+    "complete": {
+      "file": "one-more-photon-orion-sqa85-screen-fill-20261127.zip",
+      "url": "https://github.com/aousabdo/aous-abdo-astrophotography/releases/download/wallpapers-2026-11-curated-v2/one-more-photon-orion-sqa85-screen-fill-20261127.zip",
+      "bytes": 105951756,
+      "images": 120,
+      "sha256": "43dc09928f9ee9e2fe2c26b795b216e863a1a83dc5d6b6bff82d78c1eb3a2f71"
+    },
+    "packs": [
+      {
+        "device": "desktop",
+        "file": "one-more-photon-orion-sqa85-desktop-wallpapers-20261127.zip",
+        "url": "https://github.com/aousabdo/aous-abdo-astrophotography/releases/download/wallpapers-2026-11-curated-v2/one-more-photon-orion-sqa85-desktop-wallpapers-20261127.zip",
+        "bytes": 30262193,
+        "images": 24,
+        "sha256": "042434f76f0e2a42f75b14388aeb08fec7da63aeadb9c21566fca7e7c320d682"
+      },
+      {
+        "device": "laptop",
+        "file": "one-more-photon-orion-sqa85-laptop-wallpapers-20261127.zip",
+        "url": "https://github.com/aousabdo/aous-abdo-astrophotography/releases/download/wallpapers-2026-11-curated-v2/one-more-photon-orion-sqa85-laptop-wallpapers-20261127.zip",
+        "bytes": 24282041,
+        "images": 24,
+        "sha256": "8923f4e9830108ca572f4f8842e5df93587439b9ac7fb16c14907f18f189904f"
+      },
+      {
+        "device": "phone",
+        "file": "one-more-photon-orion-sqa85-phone-wallpapers-20261127.zip",
+        "url": "https://github.com/aousabdo/aous-abdo-astrophotography/releases/download/wallpapers-2026-11-curated-v2/one-more-photon-orion-sqa85-phone-wallpapers-20261127.zip",
+        "bytes": 10625872,
+        "images": 24,
+        "sha256": "b6451f7d714310f9e731698305f72bb17723266011a7e87e97b58be1d38a3894"
+      },
+      {
+        "device": "tablet",
+        "file": "one-more-photon-orion-sqa85-tablet-wallpapers-20261127.zip",
+        "url": "https://github.com/aousabdo/aous-abdo-astrophotography/releases/download/wallpapers-2026-11-curated-v2/one-more-photon-orion-sqa85-tablet-wallpapers-20261127.zip",
+        "bytes": 21777844,
+        "images": 24,
+        "sha256": "05f4ca8010c185c92b8aebcd3fe7149f7e101ac630c0a46dbd88d5755d2b9952"
+      },
+      {
+        "device": "ultrawide",
+        "file": "one-more-photon-orion-sqa85-ultrawide-wallpapers-20261127.zip",
+        "url": "https://github.com/aousabdo/aous-abdo-astrophotography/releases/download/wallpapers-2026-11-curated-v2/one-more-photon-orion-sqa85-ultrawide-wallpapers-20261127.zip",
+        "bytes": 19002070,
+        "images": 24,
+        "sha256": "18dc4211933bffed558f9750b21176daa399d10b9b46769a6cd511412c1d4e56"
+      }
+    ]
+  }
 }
